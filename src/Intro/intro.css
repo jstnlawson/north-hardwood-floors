@@ -1,10 +1,61 @@
-.full-width {
-    min-width: 100vw;
-    height: auto;
-    max-height: 75vh;
+.intro-container {
+    background-color: #c9beb2;
 }
 
 .intro-text-container {
-    background-color: #e4ddd7;
+    background-color: #c9beb2;
     color: #2e404c;
+    flex: 1;
 }
+
+
+
+.intro-image-container img {
+    flex: 1;
+    max-width: 100%;
+}
+
+
+
+@media (min-width: 1118px) {
+    .intro-image-container img {
+        
+      float: right; /* Align image to the right */
+    }
+    .intro-text-container {
+        height: 710px;
+        padding: 50px; /* Add left padding to the text container */
+        /* margin-left: 20px;  */
+    }
+    .floating-container {
+        height: 710px;
+        width: 19vw;
+        background-color: transparent;
+        position: absolute;
+    }
+  }
+
+  @media (min-width: 1380px) {
+    .floating-container {
+        width: 35vw;
+        background-color: transparent;
+        position: absolute;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .floating-container {
+        width: 600px; /* Set a maximum width for the container */
+        background-color: transparent;
+        position: absolute;
+        right: 58%; /* Adjust the percentage as needed */
+    }
+}
+
+@media (min-width: 1700px) {
+    .intro-container {
+        margin: 0 auto; /* Center the content horizontally */
+        max-width: 1700px; /* Set a maximum width for the content */
+    }
+}
+

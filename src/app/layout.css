@@ -1,5 +1,6 @@
 h1 {
     font-size: xx-large;
+    font-weight: bold;
 }
 
 h1, p {
@@ -7,3 +8,4 @@ h1, p {
     margin-left: 5px;
     margin-right: 5px;
 }
+
