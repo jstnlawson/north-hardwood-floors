@@ -4,7 +4,7 @@
 
 .intro-text-container {
     background-color: #c9beb2;
-    color: #2e404c;
+    color: #334b5c;
     flex: 1;
 }
 
@@ -28,6 +28,7 @@
         /* margin-left: 20px;  */
     }
     .floating-container {
+        margin-top: 100px;
         height: 710px;
         width: 19vw;
         background-color: transparent;
