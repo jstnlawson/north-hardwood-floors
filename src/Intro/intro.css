@@ -1,0 +1,10 @@
+.full-width {
+    min-width: 100vw;
+    height: auto;
+    max-height: 75vh;
+}
+
+.intro-text-container {
+    background-color: #e4ddd7;
+    color: #2e404c;
+}
