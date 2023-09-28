@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import "./intro.css";
-import mainFloor from 'public/images/mainFloor.png'
+import tallerMainFloor from 'public/images/tallerMainFloor.png'
 
 
 
@@ -11,7 +11,7 @@ export default function Intro() {
             <section className="flex-grow  flex flex-col justify-center items-center p-4 ">
                 <div className="intro-image-container ">
                     <Image
-                        src={mainFloor}
+                        src={tallerMainFloor}
                         alt="My Image"
                         // className="w-full lg:max-w-1/2 !important"
                     />

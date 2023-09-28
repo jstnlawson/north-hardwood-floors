@@ -1,9 +1,17 @@
 .intro-container {
-    background-color: #c9beb2;
+    /* background-color: white; */
+        /* background: linear-gradient(to left, #c9beb2 80%, white 100%); */
+            /* background: linear-gradient(to right, white 15%,  #c9beb2 55%); */
+
+
 }
 
 .intro-text-container {
-    background-color: #c9beb2;
+    /* background: linear-gradient(to right, white 15%,  #c9beb2 55%); */
+
+    background-color: whitesmoke;
+    /* background: linear-gradient(to right, #f5f5f5 90%, #c9beb2 100%); */
+    /* background: linear-gradient(to left, #c9beb2 80%, white 100%); */
     color: #334b5c;
     flex: 1;
 }
@@ -23,26 +31,31 @@
       float: right; /* Align image to the right */
     }
     .intro-text-container {
-        height: 710px;
+        background-color: #e1d9d3;
+         /* background: linear-gradient(to left, #c9beb2 99%, white 200%); */
+        height: 856px;
         padding: 50px; /* Add left padding to the text container */
         /* margin-left: 20px;  */
     }
     .floating-container {
+        
         margin-top: 100px;
-        height: 710px;
+        height: 856px;
         width: 19vw;
         background-color: transparent;
         position: absolute;
     }
   }
 
-  @media (min-width: 1380px) {
+  
+
+  /* @media (min-width: 1380px) {
     .floating-container {
         width: 35vw;
         background-color: transparent;
         position: absolute;
     }
-  }
+  } */
 
   @media (min-width: 1600px) {
     .floating-container {
@@ -50,6 +63,9 @@
         background-color: transparent;
         position: absolute;
         right: 58%; /* Adjust the percentage as needed */
+    }
+    .intro-text-container {
+        background: linear-gradient(to right, white 0%,  #e1d9d3 10%);
     }
 }
 

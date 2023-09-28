@@ -1,0 +1,20 @@
+.services-container {
+    background-color: #334b5c;
+}
+
+.large-grid-container{
+    display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Three equal-width columns */
+            gap: 16px; 
+            padding: 10px;
+            margin: 10px;
+}
+
+.services-logo-containers{
+    background-color: #e1d9d3;
+    display: flex;
+    justify-content: center;
+    height: 140px;
+    width: 140px;
+    border-radius: 70px;
+}
