@@ -3,6 +3,11 @@ h1 {
     font-weight: bold;
 }
 
+h2 {
+    font-size: large;
+    font-weight: bold;
+}
+
 h1, p {
     padding: 5px;
     margin-left: 5px;

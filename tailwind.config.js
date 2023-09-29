@@ -13,6 +13,9 @@ module.exports = {
         'lg': '1024px',   
         'xl': '1280px',   
       },
+      maxWidth: {
+        '1700': '1700px',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

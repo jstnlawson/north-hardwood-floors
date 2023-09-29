@@ -25,3 +25,19 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+h1 {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: large;
+  font-weight: bold;
+}
+
+/* h1, p {
+  padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+} */

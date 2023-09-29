@@ -25,7 +25,7 @@
 
 
 
-@media (min-width: 1118px) {
+@media (min-width: 1024px) {
     .intro-image-container img {
         
       float: right; /* Align image to the right */
@@ -33,7 +33,7 @@
     .intro-text-container {
         background-color: #e1d9d3;
          /* background: linear-gradient(to left, #c9beb2 99%, white 200%); */
-        height: 856px;
+        /* height: 856px; */
         padding: 50px; /* Add left padding to the text container */
         /* margin-left: 20px;  */
     }
@@ -47,17 +47,13 @@
     }
   }
 
-  
-
-  /* @media (min-width: 1380px) {
-    .floating-container {
-        width: 35vw;
-        background-color: transparent;
-        position: absolute;
+  @media (min-width: 1150px) {
+    .center-text-container {
+        margin-top: 70px;
     }
-  } */
+  }
 
-  @media (min-width: 1600px) {
+  @media (min-width: 1440px) {
     .floating-container {
         width: 600px; /* Set a maximum width for the container */
         background-color: transparent;
@@ -65,14 +61,22 @@
         right: 58%; /* Adjust the percentage as needed */
     }
     .intro-text-container {
-        background: linear-gradient(to right, white 0%,  #e1d9d3 10%);
+        height: 856px;
+        /* background: linear-gradient(to right, white 0%,  #e1d9d3 10%); */
+    }
+    .center-text-container {
+        margin-top: 180px;
     }
 }
 
-@media (min-width: 1700px) {
+@media (min-width: 1585px) {
     .intro-container {
         margin: 0 auto; /* Center the content horizontally */
         max-width: 1700px; /* Set a maximum width for the content */
+    }
+    .intro-text-container{
+                background: linear-gradient(to right, white 0%,  #e1d9d3 10%);
+
     }
 }
 

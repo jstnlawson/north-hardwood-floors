@@ -4,10 +4,12 @@
 
 .large-grid-container{
     display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* Three equal-width columns */
+            grid-template-columns: 1fr 1fr 1fr; 
             gap: 16px; 
             padding: 10px;
             margin: 10px;
+            height: fit-content;
+            justify-content: center;
 }
 
 .services-logo-containers{
@@ -17,4 +19,12 @@
     height: 140px;
     width: 140px;
     border-radius: 70px;
+}
+
+.sanding-container, .repairs-container, .buff-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text within the container */
+    padding: 20px;
 }

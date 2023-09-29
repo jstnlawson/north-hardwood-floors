@@ -4,12 +4,12 @@ import uglyLogo from 'public/images/uglyLogo.svg';
 
 const Header = () => {
   return (
-    <header className='bg-white h-20 sm:h-20 md:h-24 lg:h-32 xl:h-40'>
-      <div className="header-image-container ">
+    <header className='bg-transparent  relative'>
+      <div className="header-image-container absolute">
         <Image
           src={uglyLogo}
           alt="ugly logo"
-          className="h-20 sm:h-20 md:h-24 lg:h-32 xl:h-40 float-left ml-6"
+          className="w-auto h-20 sm:h-20 md:h-24 lg:h-32  float-left "
         />
       </div>
 
@@ -21,3 +21,5 @@ Header.noHMR = true; // Disable HMR for this component
 
 export default Header;
 
+// h-20 sm:h-20 md:h-24 lg:h-32 xl:h-40
+// h-20 sm:h-20 md:h-24 lg:h-32 xl:h-40

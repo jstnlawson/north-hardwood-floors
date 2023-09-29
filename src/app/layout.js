@@ -12,7 +12,9 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} max-w-1700 mx-auto`}>
+      {children}
+      </body>
     </html>
   )
 }
