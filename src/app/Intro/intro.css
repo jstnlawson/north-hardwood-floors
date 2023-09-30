@@ -1,82 +1,17 @@
-.intro-container {
-    /* background-color: white; */
-        /* background: linear-gradient(to left, #c9beb2 80%, white 100%); */
-            /* background: linear-gradient(to right, white 15%,  #c9beb2 55%); */
 
-
-}
-
-.intro-text-container {
-    /* background: linear-gradient(to right, white 15%,  #c9beb2 55%); */
-
-    background-color: whitesmoke;
-    /* background: linear-gradient(to right, #f5f5f5 90%, #c9beb2 100%); */
-    /* background: linear-gradient(to left, #c9beb2 80%, white 100%); */
+  .intro-container {
+    position: relative; /* Add this to make sure absolute positioning is relative to this container */
+  }
+  
+  .intro-text-container {
+    position: absolute; /* Position the text container absolutely */
+    top: 1; /* Align it to the top of the parent container */
+    left: 0; /* Align it to the left of the parent container */
+    background-color: transparent;
     color: #334b5c;
-    flex: 1;
-}
-
-
-
-.intro-image-container img {
-    flex: 1;
-    max-width: 100%;
-}
-
-
-
-@media (min-width: 1024px) {
-    .intro-image-container img {
-        
-      float: right; /* Align image to the right */
-    }
-    .intro-text-container {
-        background-color: #e1d9d3;
-         /* background: linear-gradient(to left, #c9beb2 99%, white 200%); */
-        /* height: 856px; */
-        padding: 50px; /* Add left padding to the text container */
-        /* margin-left: 20px;  */
-    }
-    .floating-container {
-        
-        margin-top: 100px;
-        height: 856px;
-        width: 19vw;
-        background-color: transparent;
-        position: absolute;
-    }
+    z-index: 1; /* Ensure the text is above the image */
+    width: 30vw;
+    margin-left: 5vw;
   }
-
-  @media (min-width: 1150px) {
-    .center-text-container {
-        margin-top: 70px;
-    }
-  }
-
-  @media (min-width: 1440px) {
-    .floating-container {
-        width: 600px; /* Set a maximum width for the container */
-        background-color: transparent;
-        position: absolute;
-        right: 58%; /* Adjust the percentage as needed */
-    }
-    .intro-text-container {
-        height: 856px;
-        /* background: linear-gradient(to right, white 0%,  #e1d9d3 10%); */
-    }
-    .center-text-container {
-        margin-top: 180px;
-    }
-}
-
-@media (min-width: 1585px) {
-    .intro-container {
-        margin: 0 auto; /* Center the content horizontally */
-        max-width: 1700px; /* Set a maximum width for the content */
-    }
-    .intro-text-container{
-                background: linear-gradient(to right, white 0%,  #e1d9d3 10%);
-
-    }
-}
+  
 

@@ -14,7 +14,7 @@ module.exports = {
         'xl': '1280px',   
       },
       maxWidth: {
-        '1700': '1700px',
+        '1440': '1440px',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -9,7 +9,9 @@ const Header = () => {
         <Image
           src={uglyLogo}
           alt="ugly logo"
-          className="w-auto h-20 sm:h-20 md:h-24 lg:h-32  float-left "
+          width={36}
+          height={32}
+          className=" sm:h-20 sm:w-24 md:h-24 md:w-28 lg:h-32 lg:w-36 m-4"
         />
       </div>
 
