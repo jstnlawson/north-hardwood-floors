@@ -12,6 +12,9 @@
     z-index: 1; /* Ensure the text is above the image */
     width: 30vw;
     margin-left: 5vw;
+    max-width: 450px;
   }
+
+  
   
 
