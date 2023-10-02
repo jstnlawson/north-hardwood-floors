@@ -13,10 +13,6 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
-    /* hamburger menu */
-    --bar-width: 60px;
-    --bar-height: 8px;
-    --hamburger-gap: 6px;
   }
 }
 
@@ -30,7 +26,13 @@ body {
     rgb(var(--background-start-rgb));
     max-width: 1440px;
     min-width: 320px;
+    overflow-x:hidden;
 }
+
+html {
+  overflow-x:hidden;
+}
+
 
 h1 {
   font-size: xx-large;
