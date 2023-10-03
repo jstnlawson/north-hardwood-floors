@@ -1,16 +1,30 @@
-.gallery-container{
-    background-color: #EAF1F5;
-    
-}
 
-.gallery-cover-image-container{
-    padding: 4rem 0 4rem 8rem;
-
-}
-
-.gallery-text-contaner{
-    padding: 10px;
-    margin: 10px;
-    max-width: 375px;
+.gallery-container {
+    background-color: #eaf1f5;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery-cover-image-container {
+    position: relative;
+    left: 10%;
+    top: 50%;
+    margin: 5rem;
+  }
+  
+  .gallery-text-container {
+    background-color: #ffffffc8;
+    padding: 20px;
+    max-width: 500px;
     min-width: 320px;
-}
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  
