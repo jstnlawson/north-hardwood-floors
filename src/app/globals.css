@@ -43,3 +43,53 @@ h2 {
   font-size: large;
   font-weight: bold;
 }
+
+.blue-button {
+  display: flex;
+  align-items: center;
+  background-color: #334b5c;
+  margin: 1rem 0;
+  padding: 0.65rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 17px;
+  font-variant: small-caps;
+}
+
+.blue-button:active {
+  background-color: #334b5cb0; 
+}
+
+.blue-button:focus {
+  background-color: #334b5cee;
+  outline-offset: 2px;
+  outline: 1px solid #334b5c;
+}
+
+.blue-button:hover {
+  background-color: #334b5cee;
+}
+
+.orange-button {
+  display: flex;
+  align-items: center;
+  background-color: #e59163;
+  margin: 1rem 0;
+  padding: 0.65rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 17px;
+  font-variant: small-caps;
+}
+
+.orange-button:active {
+  background-color: #e59063b4; 
+}
+
+.orange-button:focus {
+  background-color: #e59063db;
+  outline-offset: 2px;
+  outline: 1px solid #e59163;
+}
+
+.orange-button:hover {
+  background-color: #e59063db;
+}

@@ -34,7 +34,7 @@ export default function Intro() {
 
                     <Image
                         src={tallerMainFloor}
-                        alt="My Image"
+                        alt="Main Image"
                         priority={true}
                         quality={100}
                     />

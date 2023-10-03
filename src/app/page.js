@@ -5,6 +5,7 @@ import Footer from './Footer/Footer'
 import Intro from '@/app/Intro/Intro'
 import Services from './Sevices/Services'
 import ServicesCarousel from './ServicesCarousel/ServicesCarousel'
+import Gallery from './Gallery/Gallery'
 
 
 
@@ -12,10 +13,9 @@ export default function Home() {
   
   return (
     <div>
-      {/* <Header /> */}
       <Intro />
       <Services />
-      {/* <ServicesCarousel /> */}
+      <Gallery />
       <Footer />
       </div>
     

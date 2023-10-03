@@ -6,7 +6,7 @@ import "./Hamburger.css"
 export default function () {
     return (
         <>
-            <div className="hamburger-container">
+            <div className="hamburger-container sm:hidden">
                 <label className="hamburger-menu">
                     <input type="checkbox" />
                 </label>

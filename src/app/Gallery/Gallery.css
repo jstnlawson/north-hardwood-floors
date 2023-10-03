@@ -1,0 +1,16 @@
+.gallery-container{
+    background-color: #EAF1F5;
+    
+}
+
+.gallery-cover-image-container{
+    padding: 4rem 0 4rem 8rem;
+
+}
+
+.gallery-text-contaner{
+    padding: 10px;
+    margin: 10px;
+    max-width: 375px;
+    min-width: 320px;
+}
