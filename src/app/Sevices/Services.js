@@ -43,7 +43,7 @@ export default function () {
                             />
                         </div>
                         <h2 className="mt-4">SANDING & REFINISHING</h2>
-                        <p>Sanding off the old finish and applting new-to reveal beautiful, smooth floors.
+                        <p>Sanding off the old finish and applying new-to reveal beautiful, smooth floors.
                             Stain can also be applied at this stage to give your floors the color you want.
                         </p>
                     </div>
