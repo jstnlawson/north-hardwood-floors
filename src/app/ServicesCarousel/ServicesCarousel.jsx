@@ -43,8 +43,8 @@ const ServicesCarousel = () => {
                                 className="p-1"
                             />
                         </div>
-                        <h2 className="mt-4">SANDING & REFINISHING</h2>
-                        <p>Sanding off the old finish and applying new-to reveal beautiful, smooth floors.
+                        <h2 className="mt-4 mb-4">SANDING & REFINISHING</h2>
+                        <p className="mb-8">Sanding off the old finish and applying new-to reveal beautiful, smooth floors.
                             Stain can also be applied at this stage to give your floors the color you want.
                         </p>
                     </div>
@@ -58,8 +58,8 @@ const ServicesCarousel = () => {
                                 className="p-1"
                             />
                         </div>
-                        <h2 className="mt-4">REPAIRS</h2>
-                        <p>If you have pet stains, broken boards, or water damage-some boards may need replacing.
+                        <h2 className="mt-4 mb-4">REPAIRS</h2>
+                        <p className="mb-8">If you have pet stains, broken boards, or water damage-some boards may need replacing.
                             This is done in combination with a refinish to make the repair look seamless.
                         </p>
                     </div>
@@ -73,8 +73,8 @@ const ServicesCarousel = () => {
                                 className="p-1"
                             />
                         </div>
-                        <h2 className="mt-4">BUFF & COAT</h2>
-                        <p>Seeing light wear patterns on your floors? Or need a little shine in your life? A
+                        <h2 className="mt-4 mb-4">BUFF & COAT</h2>
+                        <p className="mb-8">Seeing light wear patterns on your floors? Or need a little shine in your life? A
                             quick buff and a new layer of finish will shine it right up!
                         </p>
                     </div>

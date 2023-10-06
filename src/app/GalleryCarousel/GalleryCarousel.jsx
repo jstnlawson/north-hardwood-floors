@@ -2,9 +2,9 @@
 import React, { useRef, useEffect } from "react";
 import { register } from 'swiper/element/bundle';
 import Image from "next/image";
-import sandingLogo from "public/images/sandingLogo.svg";
-import repairLogo from "public/images/repairLogo.svg";
-import buffLogo from "public/images/buffLogo.svg";
+import Refinish from "public/images/Refinish.jpeg";
+import weave from "public/images/weave.jpeg";
+import sand from "public/images/sand.jpeg";
 import "./GalleryCarousel.css";
 
 register();
@@ -27,7 +27,7 @@ const GalleryCarousel = ({handleShowGallery}) => {
 
     return (
         <div className="modal-overlay">
-            <div className="mt-72"></div>
+            <div className=""></div>
             <div className="carousel-content">
             <swiper-container
                 ref={swiperElRef}
@@ -38,34 +38,31 @@ const GalleryCarousel = ({handleShowGallery}) => {
                 <swiper-slide>
                     <div className="photo-containers" >
                         <Image
-                            src={sandingLogo}
-                            alt="sanding logo"
-                            className="p-1"
+                            src={Refinish}
+                            alt="walnut flooring"
                         />
                     </div>
                 </swiper-slide>
                 <swiper-slide>
                     <div className="photo-containers" >
                         <Image
-                            src={repairLogo}
-                            alt="repair logo"
-                            className="p-1"
+                            src={weave}
+                            alt="repair"
                         />
                     </div>
                 </swiper-slide>
                 <swiper-slide>
                     <div className="photo-containers" >
                         <Image
-                            src={buffLogo}
-                            alt="sanding logo"
-                            className="p-1"
+                            src={sand}
+                            alt="character flooring"
                         />
                     </div>
                 </swiper-slide>
                 ...
             </swiper-container>
             </div>
-            <button className="flex ml-auto mr-auto" onClick={handleShowGallery}>x-close</button>
+            <button className="flex ml-auto mr-auto mt-2" onClick={handleShowGallery}>CLOSE</button>
         </div>
     )
 }

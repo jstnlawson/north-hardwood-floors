@@ -78,6 +78,7 @@ h2 {
   border-radius: 0.75rem;
   font-size: 17px;
   font-variant: small-caps;
+  color: black;
 }
 
 .orange-button:active {
@@ -92,4 +93,45 @@ h2 {
 
 .orange-button:hover {
   background-color: #e59063db;
+}
+
+.quiz-button {
+  display: flex;
+  align-items: center;
+  background-color: #e1d9d3;
+  margin: 1rem 0 5rem 0;
+  padding: 0.55rem 1rem;
+  border: 1px solid #334b5c;
+  border-radius: 0.75rem;
+  font-size: 17px;
+  font-variant: small-caps;
+  color: #334b5c;
+}
+
+.quiz-button:focus {
+  background-color: #f9f1ea;
+  outline-offset: 2px;
+  outline: 1px solid #1f2e38;
+}
+
+.quiz-button:hover {
+  background-color: #f9f1ea;
+  
+}
+
+.quiz-checkbox {
+  width: 1em;
+    height: 1em;
+    background-color: transparent;
+    border-radius: 50%;
+    vertical-align: middle;
+    outline-offset: 1px;
+    outline: 1px solid #e59163;
+    appearance: none;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.quiz-checkbox:checked {
+  background-color: #e59163;
 }
