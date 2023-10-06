@@ -1,9 +1,15 @@
-import React from "react";
+"use client";
+import React, {useState} from "react";
+import QuizModal from "../QuizModal/QuizModal";
 
 
 export default function Quiz() {
 
+    const [showQuiz, setShowQuiz]=useState(false);
 
+    const handleShowQuiz = () => {
+        setShowQuiz(!showQuiz)
+    }
 
     return(
         <div className="quiz-container flex flex-col items-center justify-center p-10 bg-northBeige w-100">
@@ -20,7 +26,9 @@ export default function Quiz() {
                 <br />
                 floor requires but this may get you started (and, it's fun!).
             </p>
-            <button className="orange-button">take the service suggestion quiz →</button>
+            <button className="orange-button" onClick={handleShowQuiz}>take the service suggestion quiz →</button>
+            {showQuiz && 
+            <QuizModal handleShowQuiz={handleShowQuiz}/>}
         </div>
     )
 }

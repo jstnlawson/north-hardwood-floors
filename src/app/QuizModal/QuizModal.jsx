@@ -4,7 +4,7 @@ import "./QuizModal.css";
 
 
 
-export default function QuizModal() {
+export default function QuizModal({handleShowQuiz}) {
 
     const [step, setStep] = useState(1);
 
@@ -21,9 +21,10 @@ export default function QuizModal() {
     };
 
     return (
-        <div className="questions-container flex flex-row overflow-hidden">
+        <div className="modal-overlay">
+        <div className="questions-container flex flex-row overflow-hidden mt-20">
             <div className={`quiz-step step-${step}`}>
-                <div className="question-one-container bg-northBeige flex flex-col items-center justify-center pb-20">
+                <div className="question-one-container bg-northBeige flex flex-col items-center justify-center pb-20 pt-20">
                     <span className="uppercase font-bold text-xs text-northBlue text-center">
                         1 of 3
                     </span>
@@ -80,7 +81,7 @@ export default function QuizModal() {
             </div>
 
             <div className={`quiz-step step-${step}`}>
-                <div className="question-two-container bg-northBeige flex flex-col items-center justify-center pb-20">
+                <div className="question-two-container bg-northBeige flex flex-col items-center justify-center pb-20 pt-20">
                     <span className="uppercase font-bold text-xs text-northBlue text-center">
                         2 of 3
                     </span>
@@ -162,7 +163,7 @@ export default function QuizModal() {
             </div>
 
             <div className={`quiz-step step-${step}`}>
-                <div className="question-two-container bg-northBeige flex flex-col items-center justify-center pb-20">
+                <div className="question-two-container bg-northBeige flex flex-col items-center justify-center pb-20 pt-20">
                     <span className="uppercase font-bold text-xs text-northBlue text-center">
                         3 of 3
                     </span>
@@ -222,6 +223,8 @@ export default function QuizModal() {
                     </div>
                 </div>
             </div>
+        </div>
+
         </div>
     )
 }
