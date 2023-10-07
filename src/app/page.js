@@ -16,7 +16,6 @@ export default function Home() {
       <Gallery />
       <Quiz />
       <Footer />
-      </div>
-    
+     </div>
   )
 }

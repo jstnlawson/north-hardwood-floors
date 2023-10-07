@@ -26,7 +26,7 @@ const ServicesCarousel = () => {
     }, []);
 
     return (
-        <div className="carousel-container ">
+        <div className="carousel-container">
             <h1 className="text-center pt-4">Services</h1>
             <swiper-container
                 ref={swiperElRef}

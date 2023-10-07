@@ -26,7 +26,8 @@ module.exports = {
       },
       colors: {
         'northBlue': '#334b5c',
-        'northBeige': '#e1d9d3'
+        'northBeige': '#e1d9d3',
+        'northOrange': '#e59163'
       },
     },
   },

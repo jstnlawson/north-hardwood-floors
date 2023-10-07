@@ -28,7 +28,7 @@ const GalleryCarousel = ({handleShowGallery}) => {
     return (
         <div className="modal-overlay">
             <div className=""></div>
-            <div className="carousel-content">
+            <div className="carousel-content mt-24">
             <swiper-container
                 ref={swiperElRef}
                 slidesPerView="1"
