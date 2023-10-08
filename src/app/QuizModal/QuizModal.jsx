@@ -57,6 +57,7 @@ export default function QuizModal({ handleShowQuiz }) {
         const sandTrue = [answer1b, answer1e, answer2a, answer2b, answer2c, answer2d, answer2e, answer2f, answer3a, answer3b, answer3c, answer3d];
         const sandFalse = [answer1a, answer1c, answer1d];
         const repairTrue = [answer2a, answer2b, answer2d, answer2e];
+        const repairFalse = [answer2c, answer2f];
         const stainTrue = [answer3c];
         
 
@@ -77,23 +78,29 @@ export default function QuizModal({ handleShowQuiz }) {
         const isRepairTrueSelected = repairTrue.some((option) =>
             selectedAnswers.includes(option)
         );
+        const isRepairFalseSelected = repairFalse.some((option) =>
+            selectedAnswers.includes(option)
+        );
 
         const isStainTrueSelected = stainTrue.some((option) =>
             selectedAnswers.includes(option)
         );
         
-
-        if (isBuffTrueSelected && !isBuffFalseSelected) {
-            setSuggestedService("Buff & Coat");
+        if ((isSandTrueSelected && !isSandFalseSelected) && (isRepairTrueSelected  && isStainTrueSelected)) {
+            setSuggestedService("Repair, sand, stain, & finish")
         } 
-        if (isSandTrueSelected && !isSandFalseSelected) {
-            setSuggestedService("Sand & Finish")
-        } 
-        if (isSandTrueSelected && !isSandFalseSelected && isRepairTrueSelected) {
+        else if (isSandTrueSelected && !isSandFalseSelected && isRepairTrueSelected) {
             setSuggestedService("Repair, sand, & finish")
         } 
-        if (isSandTrueSelected && !isSandFalseSelected && isRepairTrueSelected && isStainTrueSelected) {
-            setSuggestedService("Repair, sand, stain, & finish")
+        else if (isSandTrueSelected && !isSandFalseSelected && isStainTrueSelected) {
+            setSuggestedService("Sand, stain, & finish")
+        }
+        else if (isSandTrueSelected && !isSandFalseSelected) {
+            setSuggestedService("Sand & Finish")
+        } 
+        
+        else if (isBuffTrueSelected && !isBuffFalseSelected) {
+            setSuggestedService("Buff & Coat");
         } 
         else {setSuggestedService("Contact Bart to find out what your floor needs!")}
 
