@@ -8,7 +8,7 @@ export default function About() {
 
 
     return (
-        <div className="flex bg-northBeige p-16 relative justify-center items-center overflow-hidden">
+        <div className="flex bg-northLightBlue p-16 relative justify-center items-center overflow-hidden">
 
             <div className="bart-container ">
                 <Image

@@ -1,6 +1,4 @@
-.services-container {
-    background-color: #334b5c;
-}
+
 
 .large-grid-container{
     display: grid;
@@ -12,7 +10,7 @@
 }
 
 .services-logo-containers{
-    background-color: #e1d9d3;
+    background-color: #f1e9e3;
     display: flex;
     justify-content: center;
     height: 140px;

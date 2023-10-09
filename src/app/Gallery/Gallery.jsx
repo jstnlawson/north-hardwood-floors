@@ -16,7 +16,7 @@ export default function Gallery() {
     }
 
     return (
-        <div className="gallery-container flex ">
+        <div className="gallery-container flex bg-northBeige relative justify-center items-center overflow-hidden">
             <div className="gallery-cover-image-container">
                 <Image
                     src={galleryCover}

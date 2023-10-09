@@ -29,10 +29,10 @@ export default function () {
     }, []);
 
     return (
-        <div className="services-container">
+        <div className="services-container bg-northBlue">
             {!display && (
             <div className="large-services-container ">
-                <h1 className="text-center pt-4 text-northBeige">Services</h1>
+                <h1 className="text-center pt-4 text-white">Services</h1>
                 <div className="large-grid-container">
                     <div className="sanding-container ml-10">
                         <div className="services-logo-containers" >

@@ -100,7 +100,7 @@ h2 {
 .quiz-button {
   display: flex;
   align-items: center;
-  background-color: #e1d9d3;
+  background-color: 'northBeige';
   margin: 1rem;
   padding: 0.55rem 1rem;
   border: 1px solid #334b5c;
