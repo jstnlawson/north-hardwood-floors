@@ -1,6 +1,7 @@
 "use client";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import QuizModal from "../QuizModal/QuizModal";
+import "./Quiz.css"
 
 
 export default function Quiz() {
@@ -13,7 +14,7 @@ export default function Quiz() {
 
     return(
         <div className="quiz-container flex flex-col items-center justify-center p-10 bg-northBeige w-100">
-            <h1 className="text-northBlue">
+            <h1 className="text-northBlue text-center">
                 Unsure of what service you need?
             </h1>
             <p className="text-northBlue text-center mt-1 mb-1">

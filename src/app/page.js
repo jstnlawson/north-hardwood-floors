@@ -4,7 +4,8 @@ import Intro from '@/app/Intro/Intro'
 import Services from './Sevices/Services'
 import Gallery from './Gallery/Gallery'
 import Quiz from './Quiz/Quiz'
-
+import About from './About/About'
+import Process from './Process/Process'
 
 
 export default function Home() {
@@ -13,7 +14,9 @@ export default function Home() {
     <div>
       <Intro />
       <Services />
+      <About />
       <Gallery />
+      <Process />
       <Quiz />
       <Footer />
      </div>

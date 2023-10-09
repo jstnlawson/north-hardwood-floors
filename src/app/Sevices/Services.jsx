@@ -55,9 +55,9 @@ export default function () {
                                 
                             />
                         </div>
-                        <h2 className="mt-4">REPAIRS</h2>
-                        <p>If you have pet stains, broken boards, or water damage-some boards may need replacing.
-                            This is done in combination with a refinish to make the repair look seamless.</p>
+                        <h2 className="mt-4">INSTALLATION & REPAIRS</h2>
+                        <p>Wether you want to start fresh, add to your current floor, or repair a damaged area, 
+                            a seamless solution is available.</p>
                     </div>
                     <div className="buff-container mr-10">
                         <div className="services-logo-containers" >

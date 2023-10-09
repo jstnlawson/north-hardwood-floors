@@ -1,0 +1,11 @@
+.bart-container {
+    position: relative;
+    min-width: 700px;
+    left: 10%;
+}
+
+.about-text-container {
+    max-height: 230px;
+    min-width: 400px;
+    right: 10%;
+}

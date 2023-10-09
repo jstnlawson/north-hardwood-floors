@@ -1,0 +1,11 @@
+.process-container {
+    position: relative;
+    min-width: 700px;
+    left: 10%;
+}
+
+.process-text-container {
+    max-height: 250px;
+    min-width: 400px;
+    right: 10%;
+}
