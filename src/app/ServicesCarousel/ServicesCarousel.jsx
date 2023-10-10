@@ -35,8 +35,8 @@ const ServicesCarousel = () => {
                 pagination="true"
             >
                 <swiper-slide>
-                    <div className="small-service-container">
-                        <div className="small-logo-containers" >
+                    <div className="small-service-container ">
+                        <div className="small-logo-containers bg-northBeige" >
                             <Image
                                 src={sandingLogo}
                                 alt="sanding logo"
@@ -51,7 +51,7 @@ const ServicesCarousel = () => {
                 </swiper-slide>
                 <swiper-slide>
                 <div className="small-service-container">
-                        <div className="small-logo-containers" >
+                        <div className="small-logo-containers bg-northBeige" >
                             <Image
                                 src={repairLogo}
                                 alt="repair logo"
@@ -66,7 +66,7 @@ const ServicesCarousel = () => {
                 </swiper-slide>
                 <swiper-slide>
                 <div className="small-service-container">
-                        <div className="small-logo-containers" >
+                        <div className="small-logo-containers bg-northBeige" >
                             <Image
                                 src={buffLogo}
                                 alt="sanding logo"

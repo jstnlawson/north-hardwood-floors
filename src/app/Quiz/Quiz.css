@@ -1,0 +1,14 @@
+.quiz-text-container {
+    height: 300px;
+    width: 330px;
+}
+
+.the-guidance {
+    border-bottom: solid 4px;
+    border-color: #e59163;
+    padding-bottom: 5px;
+}
+
+.guidance-container{
+    width: 40vw;
+}

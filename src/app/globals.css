@@ -38,12 +38,11 @@ html {
 
 h1 {
   font-size: xx-large;
-  font-weight: bold;
 }
 
 h2 {
   font-size: large;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .blue-button {
@@ -100,7 +99,7 @@ h2 {
 .quiz-button {
   display: flex;
   align-items: center;
-  background-color: 'northBeige';
+  background-color: #f1e9e3;
   margin: 1rem;
   padding: 0.55rem 1rem;
   border: 1px solid #334b5c;

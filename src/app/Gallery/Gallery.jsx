@@ -16,7 +16,15 @@ export default function Gallery() {
     }
 
     return (
-        <div className="gallery-container flex bg-northBeige relative justify-center items-center overflow-hidden">
+        <div className="gallery-container flex bg-northBeige p-16 relative justify-center items-center overflow-hidden">
+            <div className="gallery-text-container bg-white relative p-2">
+                <h1 className="text-northBlue">Have a Look</h1>
+                <p className="text-northBlue">
+                    North Harwood Floors completes every project with a skillful blend of
+                    professional service and true craftsmanship.
+                </p>
+                <button className="blue-button" onClick={handleShowGallery}>view the gallery →</button>
+            </div>
             <div className="gallery-cover-image-container">
                 <Image
                     src={galleryCover}
@@ -24,14 +32,6 @@ export default function Gallery() {
                     quality={100}
                     layout="intrinsic"
                 />
-            </div>
-            <div className="gallery-text-container bg-white">
-                <h1 className="text-northBlue">Have a Look</h1>
-                <p className="text-northBlue">
-                    North Harwood Floors completes every project with a skillful blend of
-                    professional service and true craftsmanship.
-                </p>
-                <button className="blue-button" onClick={handleShowGallery}>view the gallery →</button>
             </div>
             {showGallery && 
             <GalleryCarousel handleShowGallery={handleShowGallery}/>
