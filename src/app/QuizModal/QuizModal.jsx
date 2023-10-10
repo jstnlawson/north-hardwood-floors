@@ -1,5 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
+import buffer from 'public/images/buffer.png';
+import drumSander from 'public/images/drumSander.png';
+import weave from 'public/images/weave.jpeg';
+import squareStain from 'public/images/squareStain.jpeg';
 import "./QuizModal.css";
 
 
@@ -40,16 +45,16 @@ export default function QuizModal({ handleShowQuiz }) {
 
     const handleCheckboxChange = (event) => {
         const selectedOption = event.target.value; // Get the value of the selected option
-      
+
         // Check if the selected option is already in selectedAnswers
         if (selectedAnswers.includes(selectedOption)) {
-          // If it is, remove it from the selectedAnswers array
-          setSelectedAnswers(selectedAnswers.filter((option) => option !== selectedOption));
+            // If it is, remove it from the selectedAnswers array
+            setSelectedAnswers(selectedAnswers.filter((option) => option !== selectedOption));
         } else {
-          // If it's not, add it to the selectedAnswers array
-          setSelectedAnswers([...selectedAnswers, selectedOption]);
+            // If it's not, add it to the selectedAnswers array
+            setSelectedAnswers([...selectedAnswers, selectedOption]);
         }
-      };
+    };
 
     const handleSuggestService = () => {
         const buffTrue = [answer1a, answer1c, answer1d, answer2c, answer2f, answer3a, answer3b, answer3d];
@@ -60,7 +65,7 @@ export default function QuizModal({ handleShowQuiz }) {
         // const repairFalse = [answer2c, answer2f];
         const stainTrue = [answer3c];
         const unsureTrue = [answer1c, answer2c, answer3b]
-        
+
 
         const isBuffTrueSelected = buffTrue.some((option) =>
             selectedAnswers.includes(option)
@@ -90,16 +95,16 @@ export default function QuizModal({ handleShowQuiz }) {
         const isUnsureTrueSelected = unsureTrue.some((option) =>
             selectedAnswers.includes(option)
         );
-        
-        if (isSandTrueSelected && isRepairTrueSelected  && isStainTrueSelected) {
+
+        if (isSandTrueSelected && isRepairTrueSelected && isStainTrueSelected) {
             setSuggestedService("Repair, sand, stain, & finish")
-        } 
+        }
         else if (isSandTrueSelected && isRepairTrueSelected) {
             setSuggestedService("Repair, sand, & finish")
-        } 
+        }
         else if (isBuffTrueSelected && !isBuffFalseSelected) {
             setSuggestedService("Buff & Coat");
-        } 
+        }
         else if (isSandTrueSelected && isStainTrueSelected) {
             setSuggestedService("Sand, stain, & finish")
         }
@@ -108,8 +113,8 @@ export default function QuizModal({ handleShowQuiz }) {
         }
         else if (isSandTrueSelected) {
             setSuggestedService("Sand & Finish")
-        } 
-        else {setSuggestedService("Contact Bart to find out what your floor needs!")}
+        }
+        else { setSuggestedService("Contact Bart to find out what your floor needs!") }
 
         handleNextStep()
     }
@@ -133,34 +138,34 @@ export default function QuizModal({ handleShowQuiz }) {
                         <div className="flex flex-row ">
                             <div className="flex flex-col sm:mr-16 ">
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
                                         value={answer1a} // Set the value to the corresponding answer
                                         checked={selectedAnswers.includes(answer1a)} // Check if the answer is already selected
-                                        onChange={handleCheckboxChange}/>
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer1a}
                                     </span>
                                 </div>
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer1b} 
-                                        checked={selectedAnswers.includes(answer1b)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer1b}
+                                        checked={selectedAnswers.includes(answer1b)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer1b}
                                     </span>
                                 </div>
                                 <div className="flex flex-row m-4">
                                     <input
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer1c} 
-                                        checked={selectedAnswers.includes(answer1c)} 
-                                        onChange={handleCheckboxChange}/>
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer1c}
+                                        checked={selectedAnswers.includes(answer1c)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer1c}
                                     </span>
@@ -168,23 +173,23 @@ export default function QuizModal({ handleShowQuiz }) {
                             </div>
                             <div className="flex flex-col sm:ml-16">
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer1d} 
-                                        checked={selectedAnswers.includes(answer1d)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer1d}
+                                        checked={selectedAnswers.includes(answer1d)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer1d}
                                     </span>
                                 </div>
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer1e} 
-                                        checked={selectedAnswers.includes(answer1e)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer1e}
+                                        checked={selectedAnswers.includes(answer1e)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer1e}
                                     </span>
@@ -211,34 +216,34 @@ export default function QuizModal({ handleShowQuiz }) {
                         <div className="flex flex-row">
                             <div className="flex flex-col sm:mr-16">
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer2a} 
-                                        checked={selectedAnswers.includes(answer2a)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer2a}
+                                        checked={selectedAnswers.includes(answer2a)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer2a}
                                     </span>
                                 </div>
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer2b} 
-                                        checked={selectedAnswers.includes(answer2b)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer2b}
+                                        checked={selectedAnswers.includes(answer2b)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer2b}
                                     </span>
                                 </div>
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer2c} 
-                                        checked={selectedAnswers.includes(answer2c)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer2c}
+                                        checked={selectedAnswers.includes(answer2c)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer2c}
                                     </span>
@@ -246,34 +251,34 @@ export default function QuizModal({ handleShowQuiz }) {
                             </div>
                             <div className="flex flex-col sm:ml-16">
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer2d} 
-                                        checked={selectedAnswers.includes(answer2d)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer2d}
+                                        checked={selectedAnswers.includes(answer2d)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer2d}
                                     </span>
                                 </div>
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer2e} 
-                                        checked={selectedAnswers.includes(answer2e)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer2e}
+                                        checked={selectedAnswers.includes(answer2e)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer2e}
                                     </span>
                                 </div>
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer2f} 
-                                        checked={selectedAnswers.includes(answer2f)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer2f}
+                                        checked={selectedAnswers.includes(answer2f)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer2f}
                                     </span>
@@ -307,23 +312,23 @@ export default function QuizModal({ handleShowQuiz }) {
                         <div className="flex flex-row">
                             <div className="flex flex-col sm:mr-16">
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer3a} 
-                                        checked={selectedAnswers.includes(answer3a)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer3a}
+                                        checked={selectedAnswers.includes(answer3a)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer3a}
                                     </span>
                                 </div>
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer3b} 
-                                        checked={selectedAnswers.includes(answer3b)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer3b}
+                                        checked={selectedAnswers.includes(answer3b)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer3b}
                                     </span>
@@ -331,23 +336,23 @@ export default function QuizModal({ handleShowQuiz }) {
                             </div>
                             <div className="flex flex-col sm:ml-16">
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer3c} 
-                                        checked={selectedAnswers.includes(answer3c)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer3c}
+                                        checked={selectedAnswers.includes(answer3c)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer3c}
                                     </span>
                                 </div>
                                 <div className="flex flex-row m-4">
-                                    <input 
-                                        type="checkbox" 
-                                        className="quiz-checkbox" 
-                                        value={answer3d} 
-                                        checked={selectedAnswers.includes(answer3d)} 
-                                        onChange={handleCheckboxChange}/>
+                                    <input
+                                        type="checkbox"
+                                        className="quiz-checkbox"
+                                        value={answer3d}
+                                        checked={selectedAnswers.includes(answer3d)}
+                                        onChange={handleCheckboxChange} />
                                     <span className="text-xs text-northBlue w-28">
                                         {answer3d}
                                     </span>
@@ -366,46 +371,133 @@ export default function QuizModal({ handleShowQuiz }) {
                 </div>
 
                 <div className={`quiz-step step-${step}`}>
-                    <div className="suggestions-container bg-northBeige flex flex-col items-center justify-center pb-20 pt-20">
+                    <div className="suggestions-container bg-northLightBlue flex flex-col items-center justify-center pb-20 pt-20">
 
                         {suggestedService === "Buff & Coat" && (
-                            <div className="suggest-buff">
-                                <h1 className="text-northOrange">Your suggested service is:</h1>
-                                <h1 className="text-northBlue">Buff & Coat</h1>
+                            <div className="suggest-buff flex flex-col justify-center items-center">
+                                <h1 className="text-northOrange text-center mb-2">Your suggested service is:</h1>
+                                <h1 className="text-northBlue text-center mb-4">Buff & Coat</h1>
+                                <button className="orange-button">set up an estimate →</button>
+                                <div className="">
+                                    <Image
+                                        src={buffer}
+                                        width={267}
+                                        height={217}
+                                        className="m-1"
+                                        alt="floor buffer"
+                                    />
+                                </div>
                             </div>
                         )}
 
                         {suggestedService === "Sand & Finish" && (
-                            <div className="suggest-sand">
-                                <h1 className="text-northOrange">Your suggested service is:</h1>
-                                <h1 className="text-northBlue">Sand & Finish</h1>
+                            <div className="suggest-sand flex flex-col justify-center items-center">
+                                <h1 className="text-northOrange text-center mb-2">Your suggested service is:</h1>
+                                <h1 className="text-northBlue text-center mb-4">Sand & Finish</h1>
+                                <button className="orange-button">set up an estimate →</button>
+                                <div className="">
+                                    <Image
+                                        src={drumSander}
+                                        width={267}
+                                        height={217}
+                                        className="m-1"
+                                        alt="floor sander"
+                                    />
+                                </div>
                             </div>
                         )}
 
                         {suggestedService === "Repair, sand, & finish" && (
-                            <div className="suggest-repair-sand">
-                                <h1 className="text-northOrange">Your suggested service is:</h1>
-                                <h1 className="text-northBlue">Repair, sand, & finish</h1>
+                            <div className="suggest-repair-sand flex flex-col justify-center items-center">
+                                <h1 className="text-northOrange text-center mb-2">Your suggested service is:</h1>
+                                <h1 className="text-northBlue text-center mb-4">Repair, sand, & finish</h1>
+                                <button className="orange-button">set up an estimate →</button>
+                                <div className="sm:h-56 flex mt-4">
+                                    <Image
+                                        src={weave}
+                                        width={267}
+                                        height={217}
+                                        sizes="(max-width: 640px) 40vw"
+                                        className="m-1"
+                                        alt="floor repair"
+                                    />
+                                    <Image
+                                        src={drumSander}
+                                        width={267}
+                                        height={217}
+                                        sizes="(max-width: 640px) 40vw"
+                                        className="m-1"
+                                        alt="floor sander"
+                                    />
+                                </div>
                             </div>
                         )}
 
                         {suggestedService === "Sand, stain, & finish" && (
-                            <div className="suggest-sand-stain">
-                                <h1 className="text-northOrange">Your suggested service is:</h1>
-                                <h1 className="text-northBlue">Sand, stain, & finish</h1>
+                            <div className="suggest-sand-stain flex flex-col justify-center items-center">
+                                <h1 className="text-northOrange text-center mb-2">Your suggested service is:</h1>
+                                <h1 className="text-northBlue text-center mb-4">Sand, stain, & finish</h1>
+                                <button className="orange-button">set up an estimate →</button>
+                                <div className="sm:h-56 flex mt-4">
+                                <Image
+                                        src={drumSander}
+                                        width={267}
+                                        height={217}
+                                        sizes="(max-width: 640px) 40vw"
+                                        className="m-1"
+                                        alt="floor sander"
+                                    />
+                                    <Image
+                                        src={squareStain}
+                                        width={267}
+                                        height={217}
+                                        sizes="(max-width: 640px) 40vw"
+                                        className="m-1"
+                                        alt="stained floor"
+                                    />
+                                    
+                                </div>
                             </div>
                         )}
 
                         {suggestedService === "Repair, sand, stain, & finish" && (
-                            <div className="suggest-repair-sand-stain">
-                                <h1 className="text-northOrange">Your suggested service is:</h1>
-                                <h1 className="text-northBlue">Repair, sand, stain, & finish</h1>
+                            <div className="suggest-repair-sand-stain flex flex-col justify-center items-center">
+                                <h1 className="text-northOrange text-center mb-2">Your suggested service is:</h1>
+                                <h1 className="text-northBlue text-center mb-4">Repair, sand, stain, & finish</h1>
+                                <button className="orange-button">set up an estimate →</button>
+                                <div className="sm:h-56 flex mt-4">
+                                    <Image
+                                        src={weave}
+                                        height={217}
+                                        width={267}
+                                        sizes="(max-width: 815px) 30vw"
+                                        className="m-1"
+                                        alt="floor repair"
+                                    />
+                                    <Image
+                                        src={drumSander}
+                                        width={267}
+                                        height={217}
+                                        sizes="(max-width: 815px) 30vw"
+                                        className="m-1"
+                                        alt="floor sander"
+                                    />
+                                    <Image
+                                        src={squareStain}
+                                        width={267}
+                                        height={217}
+                                        sizes="(max-width: 815px) 30vw"
+                                        className="m-1"
+                                        alt="stained floor"
+                                    />
+                                    
+                                </div>
                             </div>
                         )}
 
                         {suggestedService === "Contact Bart to find out what your floor needs!" && (
                             <div className="suggest-unsure">
-                                <h1 className="text-northOrange">It seems like you can use some help.</h1>
+                                <h1 className="text-northOrange">The Robot can't help you.</h1>
                                 <h1 className="text-northBlue">Contact Bart to find out what your floor needs!</h1>
                             </div>
                         )}
