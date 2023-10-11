@@ -16,9 +16,9 @@
 
 .quiz-step {
     flex: 1;
-    min-width: 100vw; /* Each step occupies the full width */
+    min-width: 100vw; 
     
-    transition: transform 0.5s ease; /* Apply a smooth transition for the horizontal movement */
+    transition: transform 0.5s ease; 
   }
   
   .step-1 {

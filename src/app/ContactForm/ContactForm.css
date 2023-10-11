@@ -1,0 +1,18 @@
+.northOrange {
+    color: var(--color-northOrange);
+  }
+
+.contact-heading::before {
+    content: '\2014\2014'; 
+    margin-right: 10px; 
+    color: var(--color-northOrange); 
+}
+
+.contact-input{
+    width: 70vw;
+    border-bottom: solid 1px black;
+    margin: 1rem 0;
+}
+.contact-instruction{
+    width: 70vw;
+}
