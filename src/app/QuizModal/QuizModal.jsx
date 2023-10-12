@@ -6,6 +6,7 @@ import drumSander from 'public/images/drumSander.png';
 import weave from 'public/images/weave.jpeg';
 import squareStain from 'public/images/squareStain.jpeg';
 import "./QuizModal.css";
+import ContactForm from "../ContactForm/ContactForm";
 
 
 
@@ -14,6 +15,7 @@ export default function QuizModal({ handleShowQuiz }) {
     const [step, setStep] = useState(1);
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     const [suggestedService, setSuggestedService] = useState("");
+    const [showContactForm, setShowContactForm] = useState(false);
 
     const answer1a = "Light wear patterns";
     const answer1b = "Lots of noticeable scratches";
@@ -117,6 +119,10 @@ export default function QuizModal({ handleShowQuiz }) {
         else { setSuggestedService("Contact Bart to find out what your floor needs!") }
 
         handleNextStep()
+    }
+
+    const handleContactForm = () => {
+        setShowContactForm(!showContactForm)
     }
 
     return (
@@ -371,13 +377,15 @@ export default function QuizModal({ handleShowQuiz }) {
                 </div>
 
                 <div className={`quiz-step step-${step}`}>
-                    <div className="suggestions-container bg-northLightBlue flex flex-col items-center justify-center pb-20 pt-20">
+                    <div className="suggestions-container bg-northLightBlue flex flex-col items-center justify-center sm:pb-20 sm:pt-20">
 
                         {suggestedService === "Buff & Coat" && (
                             <div className="suggest-buff flex flex-col justify-center items-center">
-                                <h1 className="text-northOrange text-center mb-2">Your suggested service is:</h1>
+                                <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Buff & Coat</h1>
-                                <button className="orange-button">set up an estimate →</button>
+                                {showContactForm ? null : (
+                                    <div className="flex flex-col items-center">
+                                <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
                                 <div className="">
                                     <Image
                                         src={buffer}
@@ -387,14 +395,21 @@ export default function QuizModal({ handleShowQuiz }) {
                                         alt="floor buffer"
                                     />
                                 </div>
+                                </div>
+                                )}
+                                {showContactForm && (
+                                <ContactForm />
+                                )}
                             </div>
                         )}
 
                         {suggestedService === "Sand & Finish" && (
                             <div className="suggest-sand flex flex-col justify-center items-center">
-                                <h1 className="text-northOrange text-center mb-2">Your suggested service is:</h1>
+                                <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Sand & Finish</h1>
-                                <button className="orange-button">set up an estimate →</button>
+                                {showContactForm ? null : (
+                                    <div className="flex flex-col items-center">
+                                <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
                                 <div className="">
                                     <Image
                                         src={drumSander}
@@ -404,14 +419,21 @@ export default function QuizModal({ handleShowQuiz }) {
                                         alt="floor sander"
                                     />
                                 </div>
+                                </div>
+                                )}
+                                {showContactForm && (
+                                <ContactForm />
+                                )}
                             </div>
                         )}
 
                         {suggestedService === "Repair, sand, & finish" && (
                             <div className="suggest-repair-sand flex flex-col justify-center items-center">
-                                <h1 className="text-northOrange text-center mb-2">Your suggested service is:</h1>
+                                <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Repair, sand, & finish</h1>
-                                <button className="orange-button">set up an estimate →</button>
+                                {showContactForm ? null : (
+                                    <div className="flex flex-col items-center">
+                                <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
                                 <div className="sm:h-56 flex mt-4">
                                     <Image
                                         src={weave}
@@ -430,14 +452,21 @@ export default function QuizModal({ handleShowQuiz }) {
                                         alt="floor sander"
                                     />
                                 </div>
+                                </div>
+                                )}
+                                {showContactForm && (
+                                <ContactForm />
+                                )}
                             </div>
                         )}
 
                         {suggestedService === "Sand, stain, & finish" && (
                             <div className="suggest-sand-stain flex flex-col justify-center items-center">
-                                <h1 className="text-northOrange text-center mb-2">Your suggested service is:</h1>
+                                <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Sand, stain, & finish</h1>
-                                <button className="orange-button">set up an estimate →</button>
+                                {showContactForm ? null : (
+                                    <div className="flex flex-col items-center">
+                                <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
                                 <div className="sm:h-56 flex mt-4">
                                 <Image
                                         src={drumSander}
@@ -457,14 +486,21 @@ export default function QuizModal({ handleShowQuiz }) {
                                     />
                                     
                                 </div>
+                                </div>
+                                )}
+                                {showContactForm && (
+                                <ContactForm />
+                                )}
                             </div>
                         )}
 
                         {suggestedService === "Repair, sand, stain, & finish" && (
                             <div className="suggest-repair-sand-stain flex flex-col justify-center items-center">
-                                <h1 className="text-northOrange text-center mb-2">Your suggested service is:</h1>
+                                <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Repair, sand, stain, & finish</h1>
-                                <button className="orange-button">set up an estimate →</button>
+                                {showContactForm ? null : (
+                                    <div className="flex flex-col items-center">
+                                <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
                                 <div className="sm:h-56 flex mt-4">
                                     <Image
                                         src={weave}
@@ -490,18 +526,30 @@ export default function QuizModal({ handleShowQuiz }) {
                                         className="m-1"
                                         alt="stained floor"
                                     />
-                                    
+                                </div>    
                                 </div>
+                                )}
+                                {showContactForm && (
+                                <ContactForm />
+                                )}
                             </div>
                         )}
 
                         {suggestedService === "Contact Bart to find out what your floor needs!" && (
                             <div className="suggest-unsure">
-                                <h1 className="text-northOrange">The Robot can't help you.</h1>
-                                <h1 className="text-northBlue">Contact Bart to find out what your floor needs!</h1>
+                                <h1 className="text-northOrange">Suggested service is:</h1>
+                                <h1 className="text-northBlue">Contact Bart!</h1>
+                                {showContactForm ? null : (
+                                    <div className="flex flex-col items-center">
+                                <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
+                                </div>
+                                )}
+                                {showContactForm && (
+                                <ContactForm />
+                                )}
                             </div>
                         )}
-
+                        
                     </div>
                 </div>
             </div>

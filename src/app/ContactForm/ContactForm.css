@@ -1,6 +1,6 @@
-.northOrange {
-    color: var(--color-northOrange);
-  }
+.contact-container {
+    max-width: 1440px;
+}
 
 .contact-heading::before {
     content: '\2014\2014'; 
@@ -9,10 +9,11 @@
 }
 
 .contact-input{
-    width: 70vw;
+    width: 80%;
     border-bottom: solid 1px black;
     margin: 1rem 0;
+    color: black;
 }
 .contact-instruction{
-    width: 70vw;
+    width: 80%;
 }
