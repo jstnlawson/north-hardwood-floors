@@ -4,7 +4,7 @@ import isoHeadphones1 from 'public/images/isoHeadphones1.jpeg';
 import isoHeadphones2 from 'public/images/isoHeadphones2.jpeg';
 import "./ProcessModal.css"
 
-export default function DuringConstruction () {
+export default function DuringConstruction ({handleNextStep}) {
 
     return (
         <div className="bg-northLightBlue flex flex-col justify-center items-center">
@@ -59,7 +59,7 @@ export default function DuringConstruction () {
                     </ul>
                 </div>
             </div>
-            <button className="orange-button">next →</button>
+            <button className="orange-button" onClick={handleNextStep}>next →</button>
         </div>
     )
 }

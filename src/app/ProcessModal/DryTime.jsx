@@ -1,9 +1,10 @@
+
 import React from "react";
 import Image from "next/image";
 import wetFloor from 'public/images/wetFloor.jpeg';
 import "./ProcessModal.css"
 
-export default function DryTime () {
+export default function DryTime ({handleShowProcess}) {
 
     return (
         <div className="bg-northLightBlue flex flex-col justify-center items-center">
@@ -41,7 +42,7 @@ export default function DryTime () {
                     </ul>
                 </div>
             </div>
-            <button className="blue-button">close</button>
+            <button className="blue-button" onClick={handleShowProcess}>close</button>
         </div>
     )
 }

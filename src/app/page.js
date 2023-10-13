@@ -6,7 +6,6 @@ import Gallery from './Gallery/Gallery'
 import Quiz from './Quiz/Quiz'
 import About from './About/About'
 import Process from './Process/Process'
-import ProcessModal from './ProcessModal/ProcessModal'
 
 
 export default function Home() {
@@ -19,7 +18,7 @@ export default function Home() {
       <Gallery />
       <Process />
       <Quiz />
-      <ProcessModal />
+      
       <Footer />
      </div>
   )

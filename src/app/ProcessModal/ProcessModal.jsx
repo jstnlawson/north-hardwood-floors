@@ -6,7 +6,7 @@ import DuringConstruction from "./DuringConstruction";
 import DryTime from "./DryTime";
 
 
-export default function ProcessModal () {
+export default function ProcessModal ({handleShowProcess}) {
 
     const [step, setStep] = useState(1);
 
@@ -23,8 +23,10 @@ export default function ProcessModal () {
         }
     };
 
+    
+
     return (
-        <div className="modal-overlay">
+        <div className="modal-overlay flex ">
             <div className="steps-container flex flex-row overflow-hidden">
             <div className={`quiz-step step-${step}`}>
                 <Prep handleNextStep={handleNextStep}/>
@@ -33,7 +35,7 @@ export default function ProcessModal () {
                 <DuringConstruction handleNextStep={handleNextStep}/>
             </div>
             <div className={`quiz-step step-${step}`}>
-                <DryTime />
+                <DryTime handleShowProcess={handleShowProcess}/>
             </div>
             </div>
         </div>
