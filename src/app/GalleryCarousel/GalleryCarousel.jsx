@@ -8,7 +8,7 @@ import weave from "public/images/weave.jpeg";
 import sand from "public/images/sand.jpeg";
 import "./GalleryCarousel.css";
 
-register();
+// register();
 
 const GalleryCarousel = ({handleShowGallery}) => {
 
@@ -25,6 +25,7 @@ const GalleryCarousel = ({handleShowGallery}) => {
     //         console.log('slide changed');
     //     });
     // }, []);
+    const [currentIndex, setCurrentIndex] = useState(0)
 
     const slides = [
         {
@@ -39,20 +40,34 @@ const GalleryCarousel = ({handleShowGallery}) => {
             src: sand,
             alt: "walnut flooring"
            }
-    ]
+    ];
 
+    const prevSlide = () => {
+        const isFirstSlide = currentIndex === 0;
+        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+        console.log('Current index:', currentIndex);
+        setCurrentIndex(newIndex);
+    }
+
+    const nextSlide = () => {
+       const isLastSlide = currentIndex == slides.length - 1;
+       const newIndex = isLastSlide ? 0 : currentIndex + 1;
+       setCurrentIndex(newIndex);
+    }
     return (
 
-        <div className="modal-overlay flex max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative">
-            {/* <div 
-                style={{backgroundImage: `url(${slides[0].src}`}} 
-                className="w-full h-full rounded-2xl bg-center bg-cover duration-500">
-            </div> */}
+        <div className="modal-overlay flex max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group">
             
                 <div>
-                    <Image src={slides[0].src} alt={slides[0].alt} width={500} height={500} /> 
+                    <Image src={slides[currentIndex].src} alt={slides[currentIndex].alt} width={500} height={500} className="w-full h-full rounded-2xl bg-center bg-cover duration-500"/> 
                 </div>
             
+            <div className="hidden group-hover:block absolute top[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+                <BsChevronCompactLeft onClick={prevSlide} size={30}/>
+            </div>
+            <div className="hidden group-hover:block absolute top[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+                <BsChevronCompactRight onClick={nextSlide} size={30}/>
+            </div>
         </div>
 
 
