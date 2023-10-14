@@ -1,6 +1,8 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import {BsChevronCompactLeft, BsChevronCompactRight} from 'react-icons/bs'
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
+import { RxDotFilled } from 'react-icons/rx';
+import { IoMdClose } from 'react-icons/io';
 import { register } from 'swiper/element/bundle';
 import Image from "next/image";
 import Refinish from "public/images/Refinish.jpeg";
@@ -10,7 +12,7 @@ import "./GalleryCarousel.css";
 
 // register();
 
-const GalleryCarousel = ({handleShowGallery}) => {
+const GalleryCarousel = ({ handleShowGallery }) => {
 
     // const swiperElRef = useRef(null);
 
@@ -29,17 +31,17 @@ const GalleryCarousel = ({handleShowGallery}) => {
 
     const slides = [
         {
-         src: Refinish,
-         alt: "walnut flooring"
+            src: Refinish,
+            alt: "walnut flooring"
         },
         {
             src: weave,
             alt: "walnut flooring"
-           },
-           {
+        },
+        {
             src: sand,
             alt: "walnut flooring"
-           }
+        }
     ];
 
     const prevSlide = () => {
@@ -50,23 +52,52 @@ const GalleryCarousel = ({handleShowGallery}) => {
     }
 
     const nextSlide = () => {
-       const isLastSlide = currentIndex == slides.length - 1;
-       const newIndex = isLastSlide ? 0 : currentIndex + 1;
-       setCurrentIndex(newIndex);
+        const isLastSlide = currentIndex == slides.length - 1;
+        const newIndex = isLastSlide ? 0 : currentIndex + 1;
+        setCurrentIndex(newIndex);
     }
+
+    const goToSlide = (slideIndex) => {
+        setCurrentIndex(slideIndex);
+    };
+
     return (
 
-        <div className="modal-overlay flex max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group">
-            
-                <div>
-                    <Image src={slides[currentIndex].src} alt={slides[currentIndex].alt} width={500} height={500} className="w-full h-full rounded-2xl bg-center bg-cover duration-500"/> 
-                </div>
-            
-            <div className="hidden group-hover:block absolute top[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-                <BsChevronCompactLeft onClick={prevSlide} size={30}/>
+        <div className="modal-overlay-dark m-auto py-16 px-4 relative group">
+            <div  className="absolute right-5 top-10">
+            <IoMdClose 
+            size={30}
+            onClick={handleShowGallery}/>
             </div>
-            <div className="hidden group-hover:block absolute top[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
-                <BsChevronCompactRight onClick={nextSlide} size={30}/>
+            <div className="mt-12 " style={{ maxWidth: "900px", margin: "0 auto" }}>
+                <Image 
+                src={slides[currentIndex].src} 
+                alt={slides[currentIndex].alt} 
+                // width={500} 
+                // height={500} 
+                className="w-full h-full rounded-2xl bg-center bg-cover  duration-500" />
+            </div>
+
+            <div className=" absolute  left-5 top-1/2 transform -translate-y-1/2  text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+                <BsChevronCompactLeft onClick={prevSlide} size={30} />
+            </div>
+            <div className=" absolute right-5 top-1/2 transform -translate-y-1/2  text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+                <BsChevronCompactRight onClick={nextSlide} size={30} />
+            </div>
+
+            <div className="flex justify-center items-center mt-10 py-2">
+                {slides.map((slide, slideIndex) => (
+                    <div
+                        key={slideIndex}
+                        onClick={() => goToSlide(slideIndex)}
+                        className="text-2xl cursor-pointer">
+                        {currentIndex === slideIndex ? (
+                            <RxDotFilled style={{ color: "black" }} /> 
+                        ) : (
+                            <RxDotFilled style={{ color: "white" }} />
+                        )}
+                    </div>
+                ))}
             </div>
         </div>
 
