@@ -26,7 +26,7 @@ export default function ProcessModal ({handleShowProcess}) {
     
 
     return (
-        <div className="modal-overlay flex ">
+        <div className="modal-overlay-dark flex ">
             <div className="steps-container flex flex-row overflow-hidden">
             <div className={`quiz-step step-${step}`}>
                 <Prep handleNextStep={handleNextStep}/>
