@@ -16,7 +16,7 @@ export default function About() {
 
     return (
         <>
-        <div className="flex bg-northLightBlue p-16 relative justify-center items-center overflow-hidden">
+        <div id="process" className="flex bg-northLightBlue p-16 relative justify-center items-center overflow-hidden">
 
             <div className="process-container ">
                 <Image

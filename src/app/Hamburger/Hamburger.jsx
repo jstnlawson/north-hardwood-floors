@@ -4,17 +4,40 @@ import "./Hamburger.css"
 
 
 export default function () {
+
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: 'center' });
+        }
+    };
+
     return (
         <>
-            <div className="hamburger-container sm:hidden">
+            <div className="hamburger-container md:hidden">
                 <label className="hamburger-menu">
                     <input type="checkbox" />
                 </label>
                 <aside className="sidebar">
                     <nav>
-                        <div>Gallery</div>
-                        <div>Customer Guide</div>
-                        <div>About</div>
+                        <div>
+                            <span className='cursor-pointer m-2' onClick={() => scrollToSection("services")}>Services</span>
+                        </div>
+                        <div>
+                            <span className=' cursor-pointer m-2' onClick={() => scrollToSection("about")}>About</span>
+                        </div>
+                        <div>
+                            <span className=' cursor-pointer m-2' onClick={() => scrollToSection("gallery")}>Gallery</span>
+                        </div>
+                        <div>
+                            <span className=' cursor-pointer m-2' onClick={() => scrollToSection("process")}>Process</span>
+                        </div>
+                        <div>
+                            <span className=' cursor-pointer m-2' onClick={() => scrollToSection("quiz")}>Guide</span>
+                        </div>
+                        <div>
+                            <span className=' cursor-pointer m-2'>Contact</span>
+                        </div>
                     </nav>
                 </aside>
             </div>

@@ -14,8 +14,8 @@ import Paragraph from "../Paragraph/Paragraph";
 export default function Intro() {
     return (
         <>
-        <div className="flex intro-container">
-            <Header />
+        <div className="flex intro-container mt-12">
+            {/* <Header /> */}
             <section className="flex-grow flex justify-center items-center">
 
                 <div className="intro-text-container">

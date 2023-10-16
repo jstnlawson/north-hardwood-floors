@@ -76,7 +76,7 @@
     background-color: var(--foreground);
     color: var(--background);
     width: 10rem;
-    min-height: 65vh;
+    min-height: 100vh;
 }
 
 .hamburger-menu:has(input:checked)+.sidebar {

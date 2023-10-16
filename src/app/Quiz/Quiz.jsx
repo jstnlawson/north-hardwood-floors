@@ -17,7 +17,7 @@ export default function Quiz() {
     }
 
     return (
-        <div className="quiz-container flex items-center justify-center p-10 bg-northBeige w-100">
+        <div id="quiz" className="quiz-container flex items-center justify-center p-10 bg-northBeige w-100">
             <div className="flex flex-row">
                 <div className="guidance-container flex justify-center items-center">
                     <h2 className="text-northBlue text-center mb-36 ">TH<span className="the-guidance">E GUIDAN</span>CE</h2>

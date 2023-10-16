@@ -514,7 +514,8 @@ export default function QuizModal({ handleShowQuiz }) {
                                                 height={217}
                                                 width={267}
                                                 sizes="(max-width: 815px) 30vw"
-                                                className="m-1"
+                                                className="m-1 transition-opacity opacity-0 duration-[1s]"
+                                                onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                                                 alt="floor repair"
                                             />
                                             <Image
@@ -522,7 +523,8 @@ export default function QuizModal({ handleShowQuiz }) {
                                                 width={267}
                                                 height={217}
                                                 sizes="(max-width: 815px) 30vw"
-                                                className="m-1"
+                                                className="m-1 transition-opacity opacity-0 duration-[2s]"
+                                                onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                                                 alt="floor sander"
                                             />
                                             <Image
@@ -530,7 +532,8 @@ export default function QuizModal({ handleShowQuiz }) {
                                                 width={267}
                                                 height={217}
                                                 sizes="(max-width: 815px) 30vw"
-                                                className="m-1"
+                                                className="m-1 transition-opacity opacity-0 duration-[3s]"
+                                                onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                                                 alt="stained floor"
                                             />
                                         </div>

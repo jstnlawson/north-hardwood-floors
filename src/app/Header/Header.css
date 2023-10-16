@@ -3,13 +3,18 @@
 .header-image-container {
     display: flex;
     flex-direction: row;
-    position: absolute;
     align-items: center;
     width: 100vw;
+    max-width: 1440px;
+    height: auto;
     margin-right: 20px;
+    
+    background-color: var(--color-northBeige);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-links {
-    color: #334b5c;
-    margin-left: 95px;
+    color: var(--color-northBlue);
 }
