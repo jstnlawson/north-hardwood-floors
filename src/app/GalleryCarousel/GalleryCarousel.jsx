@@ -7,6 +7,12 @@ import Image from "next/image";
 import Refinish from "public/images/Refinish.jpeg";
 import weave from "public/images/weave.jpeg";
 import sand from "public/images/sand.jpeg";
+import oakFloor from 'public/images/oak-floor-2.jpeg'
+import stainedFloor from 'public/images/stainedFloor.jpeg'
+import stairsTwo from 'public/images/stairs-2.jpeg'
+import oakFloorStairs from 'public/images/oak-floor-stairs.jpeg'
+import topOfStairs from 'public/images/stairs-1.jpeg'
+import oakKitchen from 'public/images/oak-kitchen-remodel.jpeg'
 import "./GalleryCarousel.css";
 
 const GalleryCarousel = ({ handleShowGallery }) => {
@@ -15,16 +21,32 @@ const GalleryCarousel = ({ handleShowGallery }) => {
 
     const slides = [
         {
+            src: oakFloor,
+            alt: "oak flooring"
+        },
+        {
+            src: stainedFloor,
+            alt: "dark stained flooring"
+        },
+        {
+            src: stairsTwo,
+            alt: "custom stair treads"
+        },
+        {
+            src: oakFloorStairs,
+            alt: "oak floor and stairs"
+        },
+        {
             src: Refinish,
             alt: "walnut flooring"
         },
         {
-            src: weave,
-            alt: "walnut flooring"
+            src: topOfStairs,
+            alt: "top of stairs"
         },
         {
-            src: sand,
-            alt: "walnut flooring"
+            src: oakKitchen,
+            alt: "oak kitchen"
         }
     ];
 
@@ -54,11 +76,11 @@ const GalleryCarousel = ({ handleShowGallery }) => {
             onClick={handleShowGallery}/>
             </div>
             
-            <div className="mt-12 " style={{ maxWidth: "900px", margin: "0 auto" }}>
+            <div className="flex justify-center">
                 <Image 
                 src={slides[currentIndex].src} 
                 alt={slides[currentIndex].alt} 
-                className="w-full h-full rounded-2xl bg-center bg-cover  duration-500" />
+                className="gallery-photo-container rounded-2xl bg-center bg-cover  duration-500" />
             </div>
 
             <div className=" absolute  left-5 top-1/2 transform -translate-y-1/2  text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
