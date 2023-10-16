@@ -7,7 +7,7 @@ import weave from 'public/images/weave.jpeg';
 import squareStain from 'public/images/squareStain.jpeg';
 import "./QuizModal.css";
 import ContactForm from "../ContactForm/ContactForm";
-
+import { IoMdClose } from 'react-icons/io';
 
 
 export default function QuizModal({ handleShowQuiz }) {
@@ -126,10 +126,17 @@ export default function QuizModal({ handleShowQuiz }) {
     }
 
     return (
-        <div className="quiz-modal-overlay flex  sm:bg-black sm:bg-opacity-80 bg-northBeige">
-            <div className="questions-container flex flex-row overflow-hidden ">
+        <div className="modal-overlay-dark flex">
+
+            <div className="absolute right-5 top-10 cursor-pointer">
+                <IoMdClose
+                    size={30}
+                    onClick={handleShowQuiz} />
+            </div>
+
+            <div className="all-questions-container flex flex-row overflow-hidden items-center">
                 <div className={`quiz-step step-${step}`}>
-                    <div className="question-one-container bg-northBeige flex flex-col items-center justify-center sm:pb-20 sm:pt-20">
+                    <div className="question-container bg-northBeige flex flex-col items-center justify-center">
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             1 of 3
                         </span>
@@ -207,7 +214,7 @@ export default function QuizModal({ handleShowQuiz }) {
                 </div>
 
                 <div className={`quiz-step step-${step}`}>
-                    <div className="question-two-container bg-northBeige flex flex-col items-center justify-center sm:pb-20 sm:pt-20">
+                    <div className="question-container bg-northBeige flex flex-col items-center justify-center sm:pb-20 sm:pt-20">
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             2 of 3
                         </span>
@@ -303,7 +310,7 @@ export default function QuizModal({ handleShowQuiz }) {
                 </div>
 
                 <div className={`quiz-step step-${step}`}>
-                    <div className="question-two-container bg-northBeige flex flex-col items-center justify-center  sm:pb-20 sm:pt-20">
+                    <div className="question-container bg-northBeige flex flex-col items-center justify-center  sm:pb-20 sm:pt-20">
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             3 of 3
                         </span>
@@ -385,20 +392,20 @@ export default function QuizModal({ handleShowQuiz }) {
                                 <h1 className="text-northBlue text-center mb-4">Buff & Coat</h1>
                                 {showContactForm ? null : (
                                     <div className="flex flex-col items-center">
-                                <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
-                                <div className="">
-                                    <Image
-                                        src={buffer}
-                                        width={267}
-                                        height={217}
-                                        className="m-1"
-                                        alt="floor buffer"
-                                    />
-                                </div>
-                                </div>
+                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
+                                        <div className="">
+                                            <Image
+                                                src={buffer}
+                                                width={267}
+                                                height={217}
+                                                className="m-1"
+                                                alt="floor buffer"
+                                            />
+                                        </div>
+                                    </div>
                                 )}
                                 {showContactForm && (
-                                <ContactForm />
+                                    <ContactForm />
                                 )}
                             </div>
                         )}
@@ -409,20 +416,20 @@ export default function QuizModal({ handleShowQuiz }) {
                                 <h1 className="text-northBlue text-center mb-4">Sand & Finish</h1>
                                 {showContactForm ? null : (
                                     <div className="flex flex-col items-center">
-                                <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
-                                <div className="">
-                                    <Image
-                                        src={drumSander}
-                                        width={267}
-                                        height={217}
-                                        className="m-1"
-                                        alt="floor sander"
-                                    />
-                                </div>
-                                </div>
+                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
+                                        <div className="">
+                                            <Image
+                                                src={drumSander}
+                                                width={267}
+                                                height={217}
+                                                className="m-1"
+                                                alt="floor sander"
+                                            />
+                                        </div>
+                                    </div>
                                 )}
                                 {showContactForm && (
-                                <ContactForm />
+                                    <ContactForm />
                                 )}
                             </div>
                         )}
@@ -433,29 +440,29 @@ export default function QuizModal({ handleShowQuiz }) {
                                 <h1 className="text-northBlue text-center mb-4">Repair, sand, & finish</h1>
                                 {showContactForm ? null : (
                                     <div className="flex flex-col items-center">
-                                <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
-                                <div className="sm:h-56 flex mt-4">
-                                    <Image
-                                        src={weave}
-                                        width={267}
-                                        height={217}
-                                        sizes="(max-width: 640px) 40vw"
-                                        className="m-1"
-                                        alt="floor repair"
-                                    />
-                                    <Image
-                                        src={drumSander}
-                                        width={267}
-                                        height={217}
-                                        sizes="(max-width: 640px) 40vw"
-                                        className="m-1"
-                                        alt="floor sander"
-                                    />
-                                </div>
-                                </div>
+                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
+                                        <div className="sm:h-56 flex mt-4">
+                                            <Image
+                                                src={weave}
+                                                width={267}
+                                                height={217}
+                                                sizes="(max-width: 640px) 40vw"
+                                                className="m-1"
+                                                alt="floor repair"
+                                            />
+                                            <Image
+                                                src={drumSander}
+                                                width={267}
+                                                height={217}
+                                                sizes="(max-width: 640px) 40vw"
+                                                className="m-1"
+                                                alt="floor sander"
+                                            />
+                                        </div>
+                                    </div>
                                 )}
                                 {showContactForm && (
-                                <ContactForm />
+                                    <ContactForm />
                                 )}
                             </div>
                         )}
@@ -466,30 +473,30 @@ export default function QuizModal({ handleShowQuiz }) {
                                 <h1 className="text-northBlue text-center mb-4">Sand, stain, & finish</h1>
                                 {showContactForm ? null : (
                                     <div className="flex flex-col items-center">
-                                <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
-                                <div className="sm:h-56 flex mt-4">
-                                <Image
-                                        src={drumSander}
-                                        width={267}
-                                        height={217}
-                                        sizes="(max-width: 640px) 40vw"
-                                        className="m-1"
-                                        alt="floor sander"
-                                    />
-                                    <Image
-                                        src={squareStain}
-                                        width={267}
-                                        height={217}
-                                        sizes="(max-width: 640px) 40vw"
-                                        className="m-1"
-                                        alt="stained floor"
-                                    />
-                                    
-                                </div>
-                                </div>
+                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
+                                        <div className="sm:h-56 flex mt-4">
+                                            <Image
+                                                src={drumSander}
+                                                width={267}
+                                                height={217}
+                                                sizes="(max-width: 640px) 40vw"
+                                                className="m-1"
+                                                alt="floor sander"
+                                            />
+                                            <Image
+                                                src={squareStain}
+                                                width={267}
+                                                height={217}
+                                                sizes="(max-width: 640px) 40vw"
+                                                className="m-1"
+                                                alt="stained floor"
+                                            />
+
+                                        </div>
+                                    </div>
                                 )}
                                 {showContactForm && (
-                                <ContactForm />
+                                    <ContactForm />
                                 )}
                             </div>
                         )}
@@ -500,37 +507,37 @@ export default function QuizModal({ handleShowQuiz }) {
                                 <h1 className="text-northBlue text-center mb-4">Repair, sand, stain, & finish</h1>
                                 {showContactForm ? null : (
                                     <div className="flex flex-col items-center">
-                                <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
-                                <div className="sm:h-56 flex mt-4">
-                                    <Image
-                                        src={weave}
-                                        height={217}
-                                        width={267}
-                                        sizes="(max-width: 815px) 30vw"
-                                        className="m-1"
-                                        alt="floor repair"
-                                    />
-                                    <Image
-                                        src={drumSander}
-                                        width={267}
-                                        height={217}
-                                        sizes="(max-width: 815px) 30vw"
-                                        className="m-1"
-                                        alt="floor sander"
-                                    />
-                                    <Image
-                                        src={squareStain}
-                                        width={267}
-                                        height={217}
-                                        sizes="(max-width: 815px) 30vw"
-                                        className="m-1"
-                                        alt="stained floor"
-                                    />
-                                </div>    
-                                </div>
+                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
+                                        <div className="sm:h-56 flex mt-4">
+                                            <Image
+                                                src={weave}
+                                                height={217}
+                                                width={267}
+                                                sizes="(max-width: 815px) 30vw"
+                                                className="m-1"
+                                                alt="floor repair"
+                                            />
+                                            <Image
+                                                src={drumSander}
+                                                width={267}
+                                                height={217}
+                                                sizes="(max-width: 815px) 30vw"
+                                                className="m-1"
+                                                alt="floor sander"
+                                            />
+                                            <Image
+                                                src={squareStain}
+                                                width={267}
+                                                height={217}
+                                                sizes="(max-width: 815px) 30vw"
+                                                className="m-1"
+                                                alt="stained floor"
+                                            />
+                                        </div>
+                                    </div>
                                 )}
                                 {showContactForm && (
-                                <ContactForm />
+                                    <ContactForm />
                                 )}
                             </div>
                         )}
@@ -541,15 +548,15 @@ export default function QuizModal({ handleShowQuiz }) {
                                 <h1 className="text-northBlue">Contact Bart!</h1>
                                 {showContactForm ? null : (
                                     <div className="flex flex-col items-center">
-                                <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
-                                </div>
+                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
+                                    </div>
                                 )}
                                 {showContactForm && (
-                                <ContactForm />
+                                    <ContactForm />
                                 )}
                             </div>
                         )}
-                        
+
                     </div>
                 </div>
             </div>

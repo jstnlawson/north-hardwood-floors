@@ -8,7 +8,7 @@
     overflow: hidden;
   }
 
-.questions-container {
+.all-questions-container {
     transition: transform 0.5s ease; /* Apply a smooth transition for the horizontal movement */ 
     margin-top: auto;
     margin-bottom: auto;
@@ -35,4 +35,8 @@
 
   .step-4 {
     transform: translateX(-300%);
+  }
+
+  .question-container, .suggestions-container {
+    height: 80vh;
   }
