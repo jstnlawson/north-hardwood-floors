@@ -8,12 +8,12 @@ import "./ProcessModal.css"
 export default function DuringConstruction({ handleNextStep,handleShowProcess }) {
 
     return (
-        <div className="bg-northLightBlue flex flex-col justify-center items-center h-4/5">
-            <div className="absolute right-5 top-10 cursor-pointer">
+        <div className="bg-northLightBlue flex flex-col justify-center items-center w-screen h-4/5">
+            {/* <div className="absolute right-5 top-10 cursor-pointer">
                 <IoMdClose
                     size={30}
                     onClick={handleShowProcess} />
-            </div>
+            </div> */}
             <div>
                 <h2 className="contact-heading text-northBlue text-sm mt-4">STEP 2</h2>
                 <h1 className="text-northBlue mb-4">During Construction</h1>
@@ -24,8 +24,10 @@ export default function DuringConstruction({ handleNextStep,handleShowProcess })
                         src={isoHeadphones1}
                         width={350}
                         height={350}
-                        className="m-1 mr-4"
                         alt="Picture of person putting on headphones"
+                        className="m-1 mr-4 transition-opacity opacity-0 duration-[1s]"
+                        onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+
                     />
                 </div>
                 <div>
@@ -33,8 +35,9 @@ export default function DuringConstruction({ handleNextStep,handleShowProcess })
                         src={isoHeadphones2}
                         width={350}
                         height={350}
-                        className="m-1 ml-4"
                         alt="Picture of person with headphones on"
+                        className="m-1 mr-4 transition-opacity opacity-0 duration-[3s]"
+                        onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                     />
                 </div>
             </div>

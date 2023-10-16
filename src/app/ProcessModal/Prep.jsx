@@ -8,12 +8,12 @@ import "./ProcessModal.css"
 export default function Prep ({handleNextStep, handleShowProcess}) {
 
     return (
-        <div className="bg-northLightBlue flex flex-col justify-center items-center h-4/5 z-10">
-            <div className="absolute right-5 top-10 cursor-pointer">
+        <div className="bg-northLightBlue flex flex-col justify-center items-center h-4/5 w-screen">
+            {/* <div className="absolute right-5 top-10 cursor-pointer">
                 <IoMdClose
                     size={30}
                     onClick={handleShowProcess} />
-            </div>
+            </div> */}
             <div>
             <h2 className="contact-heading text-northBlue text-sm mt-4">STEP 1</h2>            
             <h1 className="text-northBlue mb-4">Preparation</h1>
@@ -24,7 +24,8 @@ export default function Prep ({handleNextStep, handleShowProcess}) {
                         src={emptyRoom}
                         width={300}
                         height={300}
-                        className="m-1 mr-4"
+                        className="m-1 mr-4 transition-opacity opacity-0 duration-[1s]"
+                        onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                         alt="Picture of empty closet"
                     />
                 </div>
@@ -33,7 +34,8 @@ export default function Prep ({handleNextStep, handleShowProcess}) {
                         src={dustContainment}
                         width={300}
                         height={300}
-                        className="m-1 ml-4"
+                        className="m-1 mr-4 transition-opacity opacity-0 duration-[3s]"
+                        onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                         alt="Picture of plastic sheet dust containment"
                     />
                 </div>

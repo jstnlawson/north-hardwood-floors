@@ -27,9 +27,20 @@ export default function ProcessModal({ handleShowProcess }) {
 
 
     return (
+
+
         <div className="modal-overlay-dark">
 
+            <div className="absolute right-5 top-10 cursor-pointer z-10" onClick={handleShowProcess}>
+                <IoMdClose
+                    size={30}
+                     />
+            </div>
+
             <div className="steps-container flex flex-row overflow-hidden">
+
+
+
                 <div className={`process-steps step-${step}`}>
                     <Prep
                         handleNextStep={handleNextStep}
