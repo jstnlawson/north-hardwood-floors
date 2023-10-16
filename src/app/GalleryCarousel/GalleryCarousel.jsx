@@ -5,8 +5,6 @@ import { RxDotFilled } from 'react-icons/rx';
 import { IoMdClose } from 'react-icons/io';
 import Image from "next/image";
 import Refinish from "public/images/Refinish.jpeg";
-import weave from "public/images/weave.jpeg";
-import sand from "public/images/sand.jpeg";
 import oakFloor from 'public/images/oak-floor-2.jpeg'
 import stainedFloor from 'public/images/stainedFloor.jpeg'
 import stairsTwo from 'public/images/stairs-2.jpeg'
@@ -70,7 +68,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
     return (
 
         <div className="modal-overlay-dark m-auto py-16 px-4 relative group">
-            <div  className="absolute right-5 top-10">
+            <div  className="absolute right-5 top-10 cursor-pointer">
             <IoMdClose 
             size={30}
             onClick={handleShowGallery}/>

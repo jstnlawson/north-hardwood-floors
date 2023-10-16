@@ -1,12 +1,13 @@
 'use client';
 import React, { useState } from "react";
+import { IoMdClose } from 'react-icons/io';
 import "./ProcessModal.css";
 import Prep from "./Prep";
 import DuringConstruction from "./DuringConstruction";
 import DryTime from "./DryTime";
 
 
-export default function ProcessModal ({handleShowProcess}) {
+export default function ProcessModal({ handleShowProcess }) {
 
     const [step, setStep] = useState(1);
 
@@ -23,20 +24,25 @@ export default function ProcessModal ({handleShowProcess}) {
         }
     };
 
-    
+
 
     return (
-        <div className="modal-overlay-dark flex ">
+        <div className="modal-overlay-dark">
+
             <div className="steps-container flex flex-row overflow-hidden">
-            <div className={`quiz-step step-${step}`}>
-                <Prep handleNextStep={handleNextStep}/>
-            </div>
-            <div className={`quiz-step step-${step}`}>
-                <DuringConstruction handleNextStep={handleNextStep}/>
-            </div>
-            <div className={`quiz-step step-${step}`}>
-                <DryTime handleShowProcess={handleShowProcess}/>
-            </div>
+                <div className={`process-steps step-${step}`}>
+                    <Prep
+                        handleNextStep={handleNextStep}
+                        handleShowProcess={handleShowProcess} />
+                </div>
+                <div className={`process-steps step-${step}`}>
+                    <DuringConstruction
+                        handleNextStep={handleNextStep}
+                        handleShowProcess={handleShowProcess} />
+                </div>
+                <div className={`process-steps step-${step}`}>
+                    <DryTime handleShowProcess={handleShowProcess} />
+                </div>
             </div>
         </div>
     )

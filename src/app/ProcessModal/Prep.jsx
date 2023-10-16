@@ -1,13 +1,19 @@
 import React from "react";
 import Image from "next/image";
+import { IoMdClose } from 'react-icons/io';
 import emptyRoom from 'public/images/emptyRoom.jpeg';
 import dustContainment from 'public/images/dustContainment2.png';
 import "./ProcessModal.css"
 
-export default function Prep ({handleNextStep}) {
+export default function Prep ({handleNextStep, handleShowProcess}) {
 
     return (
-        <div className="bg-northLightBlue flex flex-col justify-center items-center">
+        <div className="bg-northLightBlue flex flex-col justify-center items-center h-4/5 z-10">
+            <div className="absolute right-5 top-10 cursor-pointer">
+                <IoMdClose
+                    size={30}
+                    onClick={handleShowProcess} />
+            </div>
             <div>
             <h2 className="contact-heading text-northBlue text-sm mt-4">STEP 1</h2>            
             <h1 className="text-northBlue mb-4">Preparation</h1>
@@ -16,8 +22,8 @@ export default function Prep ({handleNextStep}) {
                 <div>
                     <Image
                         src={emptyRoom}
-                        width={500}
-                        height={500}
+                        width={300}
+                        height={300}
                         className="m-1 mr-4"
                         alt="Picture of empty closet"
                     />
@@ -25,8 +31,8 @@ export default function Prep ({handleNextStep}) {
                 <div>
                     <Image
                         src={dustContainment}
-                        width={500}
-                        height={500}
+                        width={300}
+                        height={300}
                         className="m-1 ml-4"
                         alt="Picture of plastic sheet dust containment"
                     />
