@@ -8,21 +8,22 @@ import weave from 'public/images/weave.jpeg';
 import "./Quiz.css"
 
 
-export default function Quiz() {
+export default function Quiz({ hideHeader, setHideHeader }) {
 
     const [showQuiz, setShowQuiz] = useState(false);
 
     const handleShowQuiz = () => {
         setShowQuiz(!showQuiz)
+        setHideHeader(!hideHeader)
     }
 
     return (
         <div id="quiz" className="quiz-container flex items-center justify-center p-10 bg-northBeige w-100">
-            <div className="flex flex-row">
+            <div className="flex flex-col md:flex-row items-center">
                 <div className="guidance-container flex justify-center items-center">
-                    <h2 className="text-northBlue text-center mb-36 ">TH<span className="the-guidance">E GUIDAN</span>CE</h2>
+                    <h2 className="text-northBlue text-center lg:text-2xl md:mb-36 mb-10">TH<span className="the-guidance">E GUIDAN</span>CE</h2>
                 </div>
-            <div className="images-text-container flex flex-col">
+            <div className="images-text-container flex flex-col items-center">
                 <div className="flex flex-row ">
                     <div>
                         <Image
@@ -30,7 +31,7 @@ export default function Quiz() {
                             // width={200}
                             // height={200}
                             alt='floor sander'
-                            className="m-1"
+                            className="md:m-1"
                         />
                     </div>
                     <div>
@@ -38,8 +39,17 @@ export default function Quiz() {
                             src={buffer}
                             // width={200}
                             // height={200}
+                            
                             alt='floor buffer'
-                            className="m-1"
+                            className="md:m-1"
+                        />
+                    </div>
+                    <div>
+                        <Image
+                            src={weave}
+                            height={217}
+                            alt='floor repair'
+                            className="md:m-1 md:hidden"
                         />
                     </div>
                 </div>
@@ -51,10 +61,10 @@ export default function Quiz() {
                             width={267}
                             height={217}
                             alt='floor repair'
-                            className="m-1"
+                            className="m-1 md:block hidden"
                         />
                     </div>
-                    <div className="quiz-text-container flex flex-col items-center ml-1 mt-1 p-6 bg-white">
+                    <div className="quiz-text-container flex flex-col items-center md:ml-1 md:mt-1 p-6 bg-white">
                         <h1 className="text-northBlue ">
                             Which service do I need?
                         </h1>

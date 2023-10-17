@@ -1,6 +1,6 @@
 .quiz-text-container {
-    height: 300px;
-    width: 330px;
+    height: auto;
+    width: 267px;
 }
 
 .the-guidance {
@@ -11,4 +11,22 @@
 
 .guidance-container{
     width: 40vw;
+}
+
+@media screen and (max-width: 815px) {
+    .bart-container {
+        left: 0;
+        min-width: none;
+    }
+    .images-text-container {
+        width: 90vw;
+        /* margin-left: auto;
+        margin-right: auto; */
+    }
+    .quiz-text-container {
+        max-height: auto;
+        min-width: 90vw;
+        right: 0;
+        max-height: none;
+    }
 }

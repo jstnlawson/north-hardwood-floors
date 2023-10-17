@@ -5,7 +5,7 @@ import uglyLogo from 'public/images/uglyLogo.svg';
 import "./Header.css";
 import Hamburger from '@/app/Hamburger/Hamburger';
 
-const Header = () => {
+const Header = ({ hideHeader }) => {
 
     const scrollToSection = (id) => {
       const element = document.getElementById(id);
@@ -13,16 +13,9 @@ const Header = () => {
         element.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     };
-  
-  // const scrollToSection = (id) => {
-  //   const element = document.getElementById(id);
-  //   if (element) {
-  //     element.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
 
   return (
-    <header id='header' className='sticky top-0 z-50'>
+    <header id='header' className={`sticky top-0 z-50 ${hideHeader ? 'hidden' : ''}`}>
       <div className="header-image-container ">
         <Image
           src={uglyLogo}

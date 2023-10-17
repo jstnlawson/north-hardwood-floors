@@ -35,8 +35,16 @@
     }
 
     .gallery-text-container {
+        max-height: none;
+        min-width: 0;
         width: 90vw;
         left: 0;
         order: 2;
     }
 }
+
+/* @media screen and (max-width: 640px) {
+    .gallery-text-container {
+        width: 80vw;
+    }
+} */

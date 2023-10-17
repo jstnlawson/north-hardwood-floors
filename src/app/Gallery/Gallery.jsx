@@ -7,12 +7,13 @@ import GalleryCarousel from "../GalleryCarousel/GalleryCarousel";
 
 
 
-export default function Gallery() {
+export default function Gallery({ hideHeader, setHideHeader }) {
 
     const [showGallery, setShowGallery] = useState(false);
 
     const handleShowGallery = () => {
         setShowGallery(!showGallery)
+        setHideHeader(!hideHeader)
     }
 
     return (

@@ -6,17 +6,18 @@ import "./Process.css"
 import ProcessModal from "../ProcessModal/ProcessModal";
 
 
-export default function About() {
+export default function About({ hideHeader, setHideHeader }) {
 
     const [showProcess, setShowProcess] = useState(false)
 
     const handleShowProcess = () => {
         setShowProcess(!showProcess)
+        setHideHeader(!hideHeader)
     }
 
     return (
         <>
-        <div id="process" className="flex bg-northLightBlue p-16 relative justify-center items-center overflow-hidden">
+        <div id="process" className="flex flex-col bg-northLightBlue p-16 relative justify-center items-center overflow-hidden md:flex-row">
 
             <div className="process-container ">
                 <Image
@@ -24,6 +25,7 @@ export default function About() {
                     alt="The Process"
                     quality={100}
                     layout="intrinsic"//not sure this works
+                    className="process-photo"
                 />
             </div>
             <div className="process-text-container bg-white relative p-2">

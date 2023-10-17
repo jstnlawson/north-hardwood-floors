@@ -1,4 +1,5 @@
-import React from 'react'
+'use client';
+import React, { useState } from 'react'
 import Footer from './Footer/Footer'
 import Intro from '@/app/Intro/Intro'
 import Services from './Sevices/Services'
@@ -11,15 +12,24 @@ import Header from './Header/Header'
 
 export default function Home() {
 
+  const [hideHeader, setHideHeader] = useState(false);
+
   return (
     <div>
-      <Header />
+      <Header
+        hideHeader={hideHeader} />
       <Intro />
       <Services />
       <About />
-      <Gallery />
-      <Process />
-      <Quiz />
+      <Gallery
+        hideHeader={hideHeader}
+        setHideHeader={setHideHeader} />
+      <Process
+        hideHeader={hideHeader}
+        setHideHeader={setHideHeader} />
+      <Quiz
+        hideHeader={hideHeader}
+        setHideHeader={setHideHeader} />
       <Footer />
     </div>
   )
