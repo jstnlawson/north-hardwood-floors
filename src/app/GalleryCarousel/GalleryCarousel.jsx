@@ -4,7 +4,6 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
 import { RxDotFilled } from 'react-icons/rx';
 import { IoMdClose } from 'react-icons/io';
 import Image from "next/image";
-import Refinish from "public/images/Refinish.jpeg";
 import oakFloor from 'public/images/oak-floor-2.jpeg'
 import stainedFloor from 'public/images/stainedFloor.jpeg'
 import stairsTwo from 'public/images/stairs-2.jpeg'
@@ -33,10 +32,6 @@ const GalleryCarousel = ({ handleShowGallery }) => {
         {
             src: oakFloorStairs,
             alt: "oak floor and stairs"
-        },
-        {
-            src: Refinish,
-            alt: "walnut flooring"
         },
         {
             src: topOfStairs,
@@ -74,7 +69,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
             onClick={handleShowGallery}/>
             </div>
             
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-8">
                 <Image 
                 src={slides[currentIndex].src} 
                 alt={slides[currentIndex].alt} 

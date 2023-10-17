@@ -31,6 +31,7 @@ export default function Gallery() {
                     alt="Gallery Cover Image"
                     quality={100}
                     layout="intrinsic"
+                    className="gallery-cover-photo"
                 />
             </div>
             {showGallery && 
