@@ -19,10 +19,10 @@ export default function Quiz({ hideHeader, setHideHeader }) {
 
     return (
         <div id="quiz" className="quiz-container flex items-center justify-center p-10 bg-northBeige w-100">
-            <div className="flex flex-col md:flex-row items-center">
-                <div className="guidance-container flex justify-center items-center">
-                    <h2 className="text-northBlue text-center lg:text-2xl md:mb-36 mb-10">TH<span className="the-guidance">E GUIDAN</span>CE</h2>
-                </div>
+            <div className="flex flex-col  items-center">
+                {/* <div className="guidance-container flex justify-center items-center">
+                    <h2 className="text-northBlue text-center mb-10">TH<span className="the-guidance">E GUIDAN</span>CE</h2>
+                </div> */}
             <div className="images-text-container flex flex-col items-center">
                 <div className="flex flex-row ">
                     <div>
@@ -49,30 +49,27 @@ export default function Quiz({ hideHeader, setHideHeader }) {
                             src={weave}
                             height={217}
                             alt='floor repair'
-                            className="md:m-1 md:hidden"
+                            className="md:m-1 "
                         />
                     </div>
                 </div>
 
                 <div className="flex flex-row ">
-                    <div>
-                        <Image
-                            src={weave}
-                            width={267}
-                            height={217}
-                            alt='floor repair'
-                            className="m-1 md:block hidden"
-                        />
-                    </div>
-                    <div className="quiz-text-container flex flex-col items-center md:ml-1 md:mt-1 p-6 bg-white">
+                    <div className="quiz-text-container flex flex-col items-center  p-6 bg-white">
                         <h1 className="text-northBlue ">
-                            Which service do I need?
+                            Unsure of what service you need?
                         </h1>
-                        <p className="text-northBlue text-xs mt-1 mb-1">
+                        <p className="text-northBlue text-center mt-1 mb-1">
                             Answer some questions about your floors to receive
+                            <br />
                             a personalized service suggestion.
+                            <br />
+                            
+                            <span className="text-sm">
                             An in-home consultation will be needed to know exactly what your
+                            <br />
                             floor requires but this may get you started (and, it's fun!).
+                            </span>
                         </p>
                         <button className="orange-button" onClick={handleShowQuiz}>service suggestion quiz →</button>
                     </div>

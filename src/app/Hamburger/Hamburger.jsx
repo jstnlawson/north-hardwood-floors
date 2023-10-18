@@ -15,7 +15,7 @@ export default function () {
     return (
         <>
             <div className="hamburger-container md:hidden">
-                <label className="hamburger-menu">
+                <label className="hamburger-menu mt-3">
                     <input type="checkbox" />
                 </label>
                 <aside className="sidebar">

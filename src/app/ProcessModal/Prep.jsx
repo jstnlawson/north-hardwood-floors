@@ -11,7 +11,7 @@ export default function Prep({ handleNextStep, handleShowProcess }) {
         
             <div className="bg-northLightBlue h-4/5 w-screen flex flex-col justify-center items-center">
                 <div>
-                    <h2 className="contact-heading text-northBlue text-sm sm:mt-4 mt-1">STEP 1</h2>
+                    <h2 className="contact-heading text-northBlue text-sm sm:mt-4">STEP 1</h2>
                     <h1 className="text-northBlue sm:mb-4">Preparation</h1>
                 </div>
                 <div className="flex flex-row justify-around">
@@ -20,7 +20,7 @@ export default function Prep({ handleNextStep, handleShowProcess }) {
                             src={emptyRoom}
                             width={300}
                             height={300}
-                            className="sm:m-1 sm:mr-4 pl-4 pr-2 sm:p-0 transition-opacity opacity-0 duration-[1s]"
+                            className="sm:m-1 sm:mr-4 pl-8 pr-4 sm:p-0 transition-opacity opacity-0 duration-[1s]"
                             onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                             alt="Picture of empty closet"
                         />
@@ -30,7 +30,7 @@ export default function Prep({ handleNextStep, handleShowProcess }) {
                             src={dustContainment}
                             width={300}
                             height={300}
-                            className="sm:m-1 sm:mr-4 pl-2 pr-4 sm:p-0 transition-opacity opacity-0 duration-[3s]"
+                            className="sm:m-1 sm:mr-4 pl-4 pr-8 sm:p-0 transition-opacity opacity-0 duration-[3s]"
                             onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                             alt="Picture of plastic sheet dust containment"
                         />
@@ -38,18 +38,25 @@ export default function Prep({ handleNextStep, handleShowProcess }) {
                 </div>
 
                 <div className="flex flex-col sm:flex-row justify-around">
-                    <div className="sm:w-1/2 p-1 sm:p-10">
+                    <div className="sm:w-1/2 p-2 sm:p-10">
                         <h2 className="text-northOrange">Homeowner:</h2>
-                        <div className="text-northBlue text-sm">
-                            <span>Make sure to clear all items and furniture off the floor. </span>
-                            <span>Remove any wall hangings or curtains that aren't too much trouble (things can always be worked around when needed).</span>
+                        <div className="text-northBlue text-sm sm:text-base">
+                            <span>
+                                • Make sure to clear all items and furniture off the floor. 
+                                <br /> 
+                                • Remove wall hangings that aren't too much trouble.
+                            </span>
                         </div>
                     </div>
-                    <div className="sm:w-1/2 p-1 sm:p-10">
-                        <h2 className="text-northOrange ">Bart:</h2>
-                        <div className="text-northBlue text-sm">
-                            <span>Isolate dusty work areas from the rest of the home.
-                            Isolate dusty work areas.
+                    <div className="sm:w-1/2 p-2 sm:p-10">
+                        <h2 className="text-northOrange ">North Hardwood Floors:</h2>
+                        <div className="text-northBlue text-sm sm:text-base">
+                            <span>
+                                • Isolate work areas from the rest of the home. 
+                                <br />
+                                • Cover cabinets with plastic sheeting.
+                                <br />
+                                • Painters tape on transitions and trimwork where necessary.
                             </span>
                         </div>
                     </div>

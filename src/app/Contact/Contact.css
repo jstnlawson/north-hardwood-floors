@@ -1,0 +1,59 @@
+.background-image {
+    background-image: url('/images/blueFlooring.png');
+    background-size: cover;
+    background-position: center;
+    width: 100vw; 
+    height: auto;
+    position: relative;
+    filter: grayscale(90%) brightness(100%);
+  }
+
+  .mainpage-contact-input {
+    border: solid 1px white;
+    margin: 8px;
+    width: 50vw;
+    height: 35px;
+  }
+
+  .contact-textarea {
+    border: solid 1px white;
+    margin: 8px;
+    width: 50vw;
+  }
+
+  .mainpage-contact-input::placeholder, .contact-textarea::placeholder {
+    color: white;
+    font-size: small;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .blue-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #005694aa;
+    /* filter: brightness(10%); */
+  }
+
+  @media screen and (max-width: 815px) {
+    .mainpage-contact-input {
+        width: 70vw;
+    }
+
+    .contact-textarea {
+        width: 70vw;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .mainpage-contact-input {
+        width: 90vw;
+    }
+
+    .contact-textarea {
+        width: 90vw;
+    }
+  }

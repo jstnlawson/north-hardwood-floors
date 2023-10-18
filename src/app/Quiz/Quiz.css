@@ -1,6 +1,13 @@
-.quiz-text-container {
+/* .quiz-text-container {
     height: auto;
     width: 267px;
+} */
+
+.images-text-container {
+    width: 90vw;
+}
+.quiz-text-container {
+    width: 790px;
 }
 
 .the-guidance {
@@ -14,19 +21,7 @@
 }
 
 @media screen and (max-width: 815px) {
-    .bart-container {
-        left: 0;
-        min-width: none;
-    }
-    .images-text-container {
-        width: 90vw;
-        /* margin-left: auto;
-        margin-right: auto; */
-    }
     .quiz-text-container {
-        max-height: auto;
-        min-width: 90vw;
-        right: 0;
-        max-height: none;
+        width: 90vw;
     }
 }

@@ -7,7 +7,7 @@ import './Footer.css';
 export default function Footer() {
     return (
         // <footer>
-        <div className="footer-container flex h-auto items-center text-northBlue bg-northLightBlue">
+        <div className="footer-container flex h-auto text-white bg-northBlue">
             {/* <div>
                 <Image
                     src={uglyLogo}
@@ -15,7 +15,7 @@ export default function Footer() {
                     className="w-34 ml-2 mr-2"
                 />
             </div> */}
-            <div className="flex flex-col ml-32 mr-4 p-2">
+            <div className="flex flex-col p-2">
                 <h2 className="text-xs leading-6">CONTACT</h2>
                     
                     <span className="small-texts text-xs">north@northhardfloors</span>
@@ -24,11 +24,9 @@ export default function Footer() {
                     
                  <span className="small-texts">    
                     5340 Bloomington Ave
+                    <br />
                     Minneapolis MN, 55417
                 </span>
-            </div>
-            <div className="ml-4">
-                <h2 className="text-xs">CONNECT</h2>
             </div>
         </div>
         // </footer>

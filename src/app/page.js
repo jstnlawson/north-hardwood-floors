@@ -8,6 +8,7 @@ import Quiz from './Quiz/Quiz'
 import About from './About/About'
 import Process from './Process/Process'
 import Header from './Header/Header'
+import Contact from './Contact/Contact';
 
 
 export default function Home() {
@@ -30,6 +31,7 @@ export default function Home() {
       <Quiz
         hideHeader={hideHeader}
         setHideHeader={setHideHeader} />
+        <Contact />
       <Footer />
     </div>
   )

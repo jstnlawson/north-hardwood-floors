@@ -8,8 +8,8 @@
     max-width: 1440px;
     height: auto;
     margin-right: 20px;
-    
-    background-color: var(--color-northBeige);
+    background-color: white;
+    /* background-color: var(--color-northBeige); */
     position: fixed;
     top: 0;
     z-index: 1000;
