@@ -7,14 +7,16 @@ import './Contact.css'
 export default function Contact() {
 
     return (
-        <div className="background-image">
+        <div id="contact" className="background-image">
             <div className="blue-overlay"></div>
             <div className="relative z-10 flex flex-col items-center justify-center h-full text-white">
                 <h1 className="mt-12 mb-2">Let's Get Started</h1>
                 <p className="text-sm text-center mb-2">
-                    Complete the form below and you will receive an email within 24
+                    Complete the form below and you will receive an 
                     <br />
-                    hours to schedule a free in-home estimate.
+                    email within 24 hours to schedule a free 
+                    <br />
+                    in-home estimate:
                 </p>
                 <form action="mailto:north@northhardwoodfloors.com" method="post" encType="text/plain" className="flex flex-col mb-12">
 

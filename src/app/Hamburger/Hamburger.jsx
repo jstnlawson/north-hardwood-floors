@@ -36,7 +36,7 @@ export default function () {
                             <span className=' cursor-pointer m-2' onClick={() => scrollToSection("quiz")}>Guide</span>
                         </div>
                         <div>
-                            <span className=' cursor-pointer m-2'>Contact</span>
+                            <span className=' cursor-pointer m-2' onClick={() => scrollToSection("contact")}>Contact</span>
                         </div>
                     </nav>
                 </aside>

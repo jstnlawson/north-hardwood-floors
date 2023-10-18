@@ -29,7 +29,7 @@ const Header = ({ hideHeader }) => {
         <span className='header-links cursor-pointer ml-14 lg:ml-20 xl:ml-24' onClick={() => scrollToSection("gallery")}>Gallery</span>
         <span className='header-links cursor-pointer ml-14 lg:ml-20 xl:ml-24' onClick={() => scrollToSection("process")}>Process</span>
         <span className='header-links cursor-pointer ml-14 lg:ml-20 xl:ml-24' onClick={() => scrollToSection("quiz")}>Guide</span>
-        <span className='header-links cursor-pointer ml-14 lg:ml-20 xl:ml-24'>Contact</span>
+        <span className='header-links cursor-pointer ml-14 lg:ml-20 xl:ml-24' onClick={() => scrollToSection("contact")}>Contact</span>
         </div>
         <div >
         <Hamburger />
