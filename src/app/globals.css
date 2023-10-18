@@ -58,7 +58,7 @@ li {
   align-items: center;
   background-color: #334b5c;
   margin: 1rem;
-  padding: 0.65rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   font-size: 17px;
   font-variant: small-caps;
@@ -83,7 +83,7 @@ li {
   align-items: center;
   background-color: #e59163;
   margin: 1rem;
-  padding: 0.65rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   font-size: 17px;
   font-variant: small-caps;
@@ -109,7 +109,7 @@ li {
   align-items: center;
   background-color: #f1e9e3;
   margin: 1rem;
-  padding: 0.55rem 1rem;
+  padding: 0.5rem 1rem;
   border: 1px solid #334b5c;
   border-radius: 0.75rem;
   font-size: 17px;

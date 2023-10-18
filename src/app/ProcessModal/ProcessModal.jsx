@@ -31,7 +31,7 @@ export default function ProcessModal({ handleShowProcess }) {
 
         <div className="modal-overlay-dark">
 
-            <div className="absolute right-5 top-10 cursor-pointer z-10" onClick={handleShowProcess}>
+            <div className="absolute right-5 top-15 mt-4 cursor-pointer z-10" onClick={handleShowProcess}>
                 <IoMdClose
                     size={30}
                      />

@@ -5,61 +5,57 @@ import emptyRoom from 'public/images/emptyRoom.jpeg';
 import dustContainment from 'public/images/dustContainment2.png';
 import "./ProcessModal.css"
 
-export default function Prep ({handleNextStep, handleShowProcess}) {
+export default function Prep({ handleNextStep, handleShowProcess }) {
 
     return (
-        <div className="bg-northLightBlue flex flex-col justify-center items-center h-4/5 w-screen">
-            {/* <div className="absolute right-5 top-10 cursor-pointer">
-                <IoMdClose
-                    size={30}
-                    onClick={handleShowProcess} />
-            </div> */}
-            <div>
-            <h2 className="contact-heading text-northBlue text-sm mt-4">STEP 1</h2>            
-            <h1 className="text-northBlue mb-4">Preparation</h1>
-            </div>
-            <div className="flex flex-row justify-around">
+        
+            <div className="bg-northLightBlue h-4/5 w-screen flex flex-col justify-center items-center">
                 <div>
-                    <Image
-                        src={emptyRoom}
-                        width={300}
-                        height={300}
-                        className="m-1 mr-4 transition-opacity opacity-0 duration-[1s]"
-                        onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-                        alt="Picture of empty closet"
-                    />
+                    <h2 className="contact-heading text-northBlue text-sm sm:mt-4 mt-1">STEP 1</h2>
+                    <h1 className="text-northBlue sm:mb-4">Preparation</h1>
                 </div>
-                <div>
-                    <Image
-                        src={dustContainment}
-                        width={300}
-                        height={300}
-                        className="m-1 mr-4 transition-opacity opacity-0 duration-[3s]"
-                        onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-                        alt="Picture of plastic sheet dust containment"
-                    />
+                <div className="flex flex-row justify-around">
+                    <div>
+                        <Image
+                            src={emptyRoom}
+                            width={300}
+                            height={300}
+                            className="sm:m-1 sm:mr-4 pl-4 pr-2 sm:p-0 transition-opacity opacity-0 duration-[1s]"
+                            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+                            alt="Picture of empty closet"
+                        />
+                    </div>
+                    <div>
+                        <Image
+                            src={dustContainment}
+                            width={300}
+                            height={300}
+                            className="sm:m-1 sm:mr-4 pl-2 pr-4 sm:p-0 transition-opacity opacity-0 duration-[3s]"
+                            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+                            alt="Picture of plastic sheet dust containment"
+                        />
+                    </div>
                 </div>
-            </div>
 
-            <div className="flex flex-row justify-around">
-                <div className="w-1/2 p-10">
-                    <h2 className="text-northOrange">Homeowner:</h2>
-                    <ul className="text-northBlue">
-                        <li>Make sure to clear all items and furniture off the floor.</li>
-                        <li>Remove any wall hangings or curtains that aren't too much trouble (things can always be worked around when needed).</li>
-                        <li>Window shades can simply be pulled up.</li>
-                    </ul>
+                <div className="flex flex-col sm:flex-row justify-around">
+                    <div className="sm:w-1/2 p-1 sm:p-10">
+                        <h2 className="text-northOrange">Homeowner:</h2>
+                        <div className="text-northBlue text-sm">
+                            <span>Make sure to clear all items and furniture off the floor. </span>
+                            <span>Remove any wall hangings or curtains that aren't too much trouble (things can always be worked around when needed).</span>
+                        </div>
+                    </div>
+                    <div className="sm:w-1/2 p-1 sm:p-10">
+                        <h2 className="text-northOrange ">Bart:</h2>
+                        <div className="text-northBlue text-sm">
+                            <span>Isolate dusty work areas from the rest of the home.
+                            Isolate dusty work areas.
+                            </span>
+                        </div>
+                    </div>
                 </div>
-                <div className="w-1/2 p-10">
-                    <h2 className="text-northOrange">North Hardwood Floors:</h2>
-                    <ul className="text-northBlue">
-                        <li>Isolate dusty work areas from the rest of the home.</li>
-                        <li>Seal off cabinets with plastic sheeting and painters tape.</li>
-                        <li>Use tarps and extra footwear for snowy or wet conditions.</li>
-                    </ul>
-                </div>
+                <button className="orange-button" onClick={handleNextStep}>next →</button>
             </div>
-            <button className="orange-button" onClick={handleNextStep}>next →</button>
-        </div>
+       
     )
 }
