@@ -22,11 +22,11 @@ export default function QuizModal({ handleShowQuiz }) {
     const answer1c = "Unsure";
     const answer1d = "Finish is dull";
     const answer1e = "There are gray areas on the floors";
-    const answer2a = "I see some 'cupping' - curling up at the edges of boards";
+    const answer2a = "I see 'cupping' - curling up at the edges of boards";
     const answer2b = "There are some broken boards";
     const answer2c = "Not sure";
-    const answer2d = "There is some dark discoloration (stains) in areas";
-    const answer2e = "There are some deep gouges or dents in some boards";
+    const answer2d = "There is discoloration (stains) in areas";
+    const answer2e = "There are deep gouges or dents in some boards";
     const answer2f = "The integrity of the boards seems intact";
     const answer3a = "I'd like to bring out the natural color of the wood";
     const answer3b = "I'm unsure of what color I want my floors to be";
@@ -128,7 +128,7 @@ export default function QuizModal({ handleShowQuiz }) {
     return (
         <div className="modal-overlay-dark flex">
 
-            <div className="absolute right-5 top-10 cursor-pointer">
+            <div className="absolute right-5 top-6 cursor-pointer">
                 <IoMdClose
                     size={30}
                     onClick={handleShowQuiz} />
@@ -140,9 +140,8 @@ export default function QuizModal({ handleShowQuiz }) {
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             1 of 3
                         </span>
-                        <h1 className="text-northBlue text-center">
+                        <h1 className="text-northBlue text-center ml-1 mr-1">
                             How would you describe your
-                            <br />
                             floor's finish (the surface)?
                         </h1>
                         <span className="text-xs text-northBlue text-center m-4">
@@ -218,10 +217,10 @@ export default function QuizModal({ handleShowQuiz }) {
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             2 of 3
                         </span>
-                        <h1 className="text-northBlue text-center">
-                            How is the condition of the floor
-                            <br />
-                            boards (beyond the surface)?
+                        <h1 className="text-northBlue text-center ml-1 mr-1">
+                            How is the floor
+                            
+                            board condition (beyond the surface)?
                         </h1>
                         <span className="text-xs text-northBlue text-center m-4">
                             click all that apply
@@ -300,7 +299,7 @@ export default function QuizModal({ handleShowQuiz }) {
                         </div>
                         <div className="quiz-button-container flex flex-row">
                             <button className="quiz-button" onClick={handlePreviousStep}>
-                                ← previous question
+                                ← last question
                             </button>
                             <button className="quiz-button" onClick={handleNextStep}>
                                 next question →
@@ -314,9 +313,9 @@ export default function QuizModal({ handleShowQuiz }) {
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             3 of 3
                         </span>
-                        <h1 className="text-northBlue text-center">
+                        <h1 className="text-northBlue text-center p-1">
                             What are your thoughts on the
-                            <br />
+                            
                             color of your floor?
                         </h1>
                         <span className="text-xs text-northBlue text-center m-4">
@@ -374,7 +373,7 @@ export default function QuizModal({ handleShowQuiz }) {
                         </div>
                         <div className="quiz-button-container flex flex-row">
                             <button className="quiz-button" onClick={handlePreviousStep}>
-                                ← previous question
+                                ← last question
                             </button>
                             <button className="orange-button" onClick={handleSuggestService}>
                                 see your service suggestion →

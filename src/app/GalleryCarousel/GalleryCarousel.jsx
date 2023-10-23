@@ -69,7 +69,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
             onClick={handleShowGallery}/>
             </div>
             
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-6">
                 <Image 
                 src={slides[currentIndex].src} 
                 alt={slides[currentIndex].alt} 

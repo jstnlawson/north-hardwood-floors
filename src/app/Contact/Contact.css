@@ -2,7 +2,7 @@
     background-image: url('/images/blueFlooring.png');
     background-size: cover;
     background-position: center;
-    width: 100vw; 
+    width: 100%; 
     height: auto;
     position: relative;
     filter: grayscale(90%) brightness(100%);
@@ -11,21 +11,22 @@
   .mainpage-contact-input {
     border: solid 1px white;
     margin: 8px;
-    width: 50vw;
+    width: 600px;
     height: 35px;
+    padding: 10px;
   }
 
   .contact-textarea {
     border: solid 1px white;
     margin: 8px;
-    width: 50vw;
+    width: 600px;
+    padding: 10px;
   }
 
   .mainpage-contact-input::placeholder, .contact-textarea::placeholder {
     color: white;
     font-size: small;
-    padding: 10px;
-    margin: 10px;
+    
   }
 
   .blue-overlay {

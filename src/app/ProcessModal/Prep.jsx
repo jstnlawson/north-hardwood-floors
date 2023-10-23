@@ -18,8 +18,8 @@ export default function Prep({ handleNextStep, handleShowProcess }) {
                     <div>
                         <Image
                             src={emptyRoom}
-                            width={300}
-                            height={300}
+                            width={250}
+                            height={250}
                             className="sm:m-1 sm:mr-4 pl-8 pr-4 sm:p-0 transition-opacity opacity-0 duration-[1s]"
                             onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                             alt="Picture of empty closet"
@@ -28,8 +28,8 @@ export default function Prep({ handleNextStep, handleShowProcess }) {
                     <div>
                         <Image
                             src={dustContainment}
-                            width={300}
-                            height={300}
+                            width={250}
+                            height={250}
                             className="sm:m-1 sm:mr-4 pl-4 pr-8 sm:p-0 transition-opacity opacity-0 duration-[3s]"
                             onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                             alt="Picture of plastic sheet dust containment"

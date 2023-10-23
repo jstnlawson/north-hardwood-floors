@@ -75,7 +75,7 @@
     padding-top: calc(var(--hamburger-height) + 2rem);
     background-color: var(--foreground);
     color: var(--background);
-    width: 10rem;
+    width: 50vw;
     min-height: 100vh;
 }
 
