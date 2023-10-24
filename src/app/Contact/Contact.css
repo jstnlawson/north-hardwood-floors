@@ -8,6 +8,15 @@
     filter: grayscale(90%) brightness(100%);
   }
 
+  .blue-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #005694aa;
+  }
+
   .mainpage-contact-input {
     border: solid 1px white;
     margin: 8px;
@@ -29,15 +38,7 @@
     
   }
 
-  .blue-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #005694aa;
-    /* filter: brightness(10%); */
-  }
+  
 
   @media screen and (max-width: 815px) {
     .mainpage-contact-input {

@@ -27,7 +27,7 @@
     width: max-content;
     position: absolute;
     top: var(--hamburger-margin);
-    right: var(--hamburger-margin);
+    left: var(--hamburger-margin);
     z-index: 2;
     cursor: pointer;
 }
@@ -65,11 +65,11 @@
 .sidebar {
     transition: translate var(--animation-timing);
     /* translate: -100%; */
-    transform: translateX(100%);
+    transform: translateX(-100%);
 
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
 
     padding: 0.5rem 1rem;
     padding-top: calc(var(--hamburger-height) + 2rem);
@@ -80,9 +80,9 @@
 }
 
 .hamburger-menu:has(input:checked)+.sidebar {
-    /* translate: 0; */
     transform: translateX(0);
 }
+
 
 /* has selector basically doing some conditional logic here */
 .hamburger-menu:has(input:checked)::before {

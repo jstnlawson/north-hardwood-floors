@@ -14,29 +14,29 @@ export default function () {
 
     return (
         <>
-            <div className="hamburger-container md:hidden">
-                <label className="hamburger-menu mt-3">
+            <div className="hamburger-container  md:hidden">
+                <label className="hamburger-menu ml-2 mt-3">
                     <input type="checkbox" />
                 </label>
                 <aside className="sidebar">
                     <nav>
-                        <div>
-                            <span className='cursor-pointer m-2' onClick={() => scrollToSection("services")}>Services</span>
+                        <div className="mt-4">
+                            <span className='cursor-pointer hover:underline' onClick={() => scrollToSection("services")}>Services</span>
                         </div>
-                        <div>
-                            <span className=' cursor-pointer m-2' onClick={() => scrollToSection("about")}>About</span>
+                        <div className="mt-4">
+                            <span className=' cursor-pointer hover:underline' onClick={() => scrollToSection("about")}>About</span>
                         </div>
-                        <div>
-                            <span className=' cursor-pointer m-2' onClick={() => scrollToSection("gallery")}>Gallery</span>
+                        <div className="mt-4">
+                            <span className=' cursor-pointer hover:underline' onClick={() => scrollToSection("gallery")}>Gallery</span>
                         </div>
-                        <div>
-                            <span className=' cursor-pointer m-2' onClick={() => scrollToSection("process")}>Process</span>
+                        <div className="mt-4">
+                            <span className=' cursor-pointer hover:underline' onClick={() => scrollToSection("process")}>Process</span>
                         </div>
-                        <div>
-                            <span className=' cursor-pointer m-2' onClick={() => scrollToSection("quiz")}>Guide</span>
+                        <div className="mt-4">
+                            <span className=' cursor-pointer hover:underline' onClick={() => scrollToSection("quiz")}>Guide</span>
                         </div>
-                        <div>
-                            <span className=' cursor-pointer m-2' onClick={() => scrollToSection("contact")}>Contact</span>
+                        <div className="mt-4">
+                            <span className=' cursor-pointer hover:underline' onClick={() => scrollToSection("contact")}>Contact</span>
                         </div>
                     </nav>
                 </aside>

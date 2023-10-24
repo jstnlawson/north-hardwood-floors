@@ -5,13 +5,13 @@ import './ContactForm.css'
 export default function ContactForm() {
 
     return (
-        <div className="contact-container bg-white p-2 flex flex-col">
-            <h2 className="contact-heading text-black text-sm mt-2 pb-2">CONTACT</h2>
-            <h1 className="text-black">Get in touch</h1>
-            <div className="contact-instruction pt-1 pb-2">
+        <div className="contact-container bg-white p-2 flex flex-col justify-center items-center">
+            <h2 className="contact-heading text-black text-sm mt-2 pb-2 ">CONTACT</h2>
+            <h1 className="text-black ">Get in touch</h1>
+            <div className="contact-instruction pt-1 pb-2 ">
             <p className="text-black text-xs">Complete the form below and you will receive an email within 24 hours to schedule a free in-home estimate.</p>
             </div>
-            <form action="mailto:north@northhardwoodfloors.com" method="post" encType="text/plain" className="flex flex-col">
+            <form action="mailto:north@northhardwoodfloors.com" method="post" encType="text/plain" className="flex flex-col  items-center">
                 
                 <input type="text" id="name" name="name" placeholder="Name" className="contact-input sm:py-1" required />
 

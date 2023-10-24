@@ -55,6 +55,7 @@ li {
 }
 .blue-button {
   display: flex;
+  color: white;
   align-items: center;
   background-color: #334b5c;
   margin: 1rem;

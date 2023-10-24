@@ -14,13 +14,13 @@ export default function Footer() {
                 <h2 className="text-xs leading-6">CONTACT</h2>
                     
                     <span className="small-texts text-xs">north@northhardfloors</span>
-                    <span className="small-texts text-xs leading-6">612-246-0052</span>
+                    <span className="small-texts text-xs leading-6">(612) 685-5200</span>
 
                     
                  <span className="small-texts">    
-                    5340 Bloomington Ave
+                    310 W 48th St 
                     <br />
-                    Minneapolis MN, 55417
+                    Minneapolis, MN 55419
                 </span>
                 </div>
                 

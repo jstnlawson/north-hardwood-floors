@@ -63,7 +63,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
     return (
 
         <div className="modal-overlay-dark m-auto py-16 px-4 relative group">
-            <div  className="absolute right-5 top-10 cursor-pointer">
+            <div  className="absolute right-5 top-10 cursor-pointer text-white">
             <IoMdClose 
             size={30}
             onClick={handleShowGallery}/>
