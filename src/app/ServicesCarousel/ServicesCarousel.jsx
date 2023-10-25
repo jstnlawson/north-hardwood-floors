@@ -34,7 +34,7 @@ const ServicesCarousel = () => {
                 navigation="true"
                 pagination="true"
             >
-                <swiper-slide>
+                <swiper-slide className="white-swiper" >
                     <div className="small-service-container ">
                         <div className="small-logo-containers bg-northBeige" >
                             <Image
@@ -79,7 +79,7 @@ const ServicesCarousel = () => {
                         </p>
                     </div>
                 </swiper-slide>
-                ...
+                
             </swiper-container>
         </div>
     )

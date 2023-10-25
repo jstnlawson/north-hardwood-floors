@@ -11,7 +11,7 @@
     --foreground: #334b5c;
     --background: #e1d9d3;
     --hamburger-margin: 8px;
-    --animation-timing: 200ms ease-in-out;
+    --animation-timing: 300ms ease-in-out;
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
@@ -75,7 +75,7 @@
     padding-top: calc(var(--hamburger-height) + 2rem);
     background-color: var(--foreground);
     color: var(--background);
-    width: 50vw;
+    width: 30vw;
     min-height: 100vh;
 }
 

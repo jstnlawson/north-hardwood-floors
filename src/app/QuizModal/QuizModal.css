@@ -12,6 +12,7 @@
     transition: transform 0.5s ease; /* Apply a smooth transition for the horizontal movement */ 
     margin-top: auto;
     margin-bottom: auto;
+    max-height: 80%;
 }
 
 .quiz-step {

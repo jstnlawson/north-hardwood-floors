@@ -10,6 +10,10 @@
   --color-northBlue: #334b5c;
   --color-northBeige: #f1e9e3;
   --color-northLightBlue: #eaf1f5;
+  --swiper-navigation-color: white;
+  --swiper-pagination-color: white;
+  --swiper-theme-color: white;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -156,4 +160,5 @@ li {
   z-index: 5; 
   overflow: hidden;
 }
+
 

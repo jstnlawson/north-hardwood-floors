@@ -22,12 +22,12 @@ export default function QuizModal({ handleShowQuiz }) {
     const answer1c = "Unsure";
     const answer1d = "Finish is dull";
     const answer1e = "There are gray areas on the floors";
-    const answer2a = "I see 'cupping' - curling up at the edges of boards";
+    const answer2a = "I see 'cupping' - curling at the edges of boards";
     const answer2b = "There are some broken boards";
     const answer2c = "Not sure";
-    const answer2d = "There is discoloration (stains) in areas";
-    const answer2e = "There are deep gouges or dents in some boards";
-    const answer2f = "The integrity of the boards seems intact";
+    const answer2d = "There is some discoloration (stains)";
+    const answer2e = "There are deep gouges or dents";
+    const answer2f = "The integrity of the boards is intact";
     const answer3a = "I'd like to bring out the natural color of the wood";
     const answer3b = "I'm unsure of what color I want my floors to be";
     const answer3c = "I am interested in a specific color for my floors";
@@ -128,7 +128,7 @@ export default function QuizModal({ handleShowQuiz }) {
     return (
         <div className="modal-overlay-dark flex">
 
-            <div className="absolute right-5 top-6 cursor-pointer">
+            <div className="absolute right-5 top-6 cursor-pointer text-white">
                 <IoMdClose
                     size={30}
                     onClick={handleShowQuiz} />
@@ -144,7 +144,7 @@ export default function QuizModal({ handleShowQuiz }) {
                             How would you describe your
                             floor's finish (the surface)?
                         </h1>
-                        <span className="text-xs text-northBlue text-center m-4">
+                        <span className="text-xs sm:text-northBlue text-black text-center m-4">
                             click all that apply
                         </span>
                         <div className="flex flex-row ">
@@ -156,7 +156,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer1a} // Set the value to the corresponding answer
                                         checked={selectedAnswers.includes(answer1a)} // Check if the answer is already selected
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer1a}
                                     </span>
                                 </div>
@@ -167,7 +167,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer1b}
                                         checked={selectedAnswers.includes(answer1b)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer1b}
                                     </span>
                                 </div>
@@ -178,7 +178,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer1c}
                                         checked={selectedAnswers.includes(answer1c)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer1c}
                                     </span>
                                 </div>
@@ -191,7 +191,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer1d}
                                         checked={selectedAnswers.includes(answer1d)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer1d}
                                     </span>
                                 </div>
@@ -202,7 +202,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer1e}
                                         checked={selectedAnswers.includes(answer1e)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer1e}
                                     </span>
                                 </div>

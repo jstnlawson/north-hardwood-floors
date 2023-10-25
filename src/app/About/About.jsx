@@ -23,7 +23,7 @@ export default function About() {
                 <h1 className="text-northBlue">About North Hardwood Floors</h1>
                 <p className="text-northBlue">
                     Owned and operated by Bart Boutwell, a hardwood flooring professional with over 15 years 
-                    experience. A craftsperson by nature, he loves to work with clients to help make thier 
+                    experience. A craftsperson by nature, he loves to work with clients to help make their 
                     homes as beautiful as they can be.
                 </p>
             </div>
