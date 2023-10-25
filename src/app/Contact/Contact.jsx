@@ -1,5 +1,6 @@
 import React from "react";
 import './Contact.css'
+import EmailForm from "./EmailForm";
 
 
 
@@ -18,21 +19,7 @@ export default function Contact() {
                     <br />
                     in-home estimate:
                 </p>
-                <form action="mailto:north@northhardwoodfloors.com" method="post" encType="text/plain" className="flex flex-col mb-12">
-
-                    <input type="text" id="name" name="name" placeholder="Name" className="mainpage-contact-input bg-transparent" required />
-
-
-                    <input type="email" id="email" name="email" placeholder="Email" className="mainpage-contact-input bg-transparent" required />
-
-                    <input type="text" id="city" name="city" placeholder="City" className="mainpage-contact-input bg-transparent" required />
-
-                    <textarea id="message" name="message" rows="4" cols="50" placeholder="Briefly explain your project. If you took 
-                the Service Suggestion Quiz, include your results here." className="contact-textarea bg-transparent" required></textarea>
-                    <div className="flex flex-row justify-end">
-                        <input type="submit" value="SUBMIT" className=" bg-gray-300 hover:bg-gray-200 text-gray-500 font-bold py-2 mt-2 mr-2 rounded w-24 text-sm " />
-                    </div>
-                </form>
+                <EmailForm />
             </div>
         </div>
     )

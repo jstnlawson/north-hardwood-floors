@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@react-email/components": "^0.0.7",
+    "dotenv": "^16.3.1",
     "expo": "^49.0.16",
     "formik": "^2.4.5",
     "next": "^13.5.4",
+    "node": "^21.1.0",
     "nodemailer": "^6.9.7",
     "nodemailer-smtp-transport": "^2.7.4",
     "react": "latest",
