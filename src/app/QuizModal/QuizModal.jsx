@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import buffer from 'public/images/buffer.png';
 import drumSander from 'public/images/drumSander.png';
@@ -15,7 +15,8 @@ export default function QuizModal({ handleShowQuiz }) {
     const [step, setStep] = useState(1);
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     const [suggestedService, setSuggestedService] = useState("");
-    const [showContactForm, setShowContactForm] = useState(false);
+    const [suggestedServiceText, setSuggestedServiceText] = useState("");
+    
 
     const answer1a = "Light wear patterns";
     const answer1b = "Lots of noticeable scratches";
@@ -34,7 +35,7 @@ export default function QuizModal({ handleShowQuiz }) {
     const answer3d = "I don't want to change the color of my floors";
 
     const handleNextStep = () => {
-        if (step < 4) {
+        if (step < 5) {
             setStep(step + 1);
         }
     };
@@ -79,16 +80,10 @@ export default function QuizModal({ handleShowQuiz }) {
         const isSandTrueSelected = sandTrue.some((option) =>
             selectedAnswers.includes(option)
         );
-        // const isSandFalseSelected = sandFalse.some((option) =>
-        //     selectedAnswers.includes(option)
-        // );
 
         const isRepairTrueSelected = repairTrue.some((option) =>
             selectedAnswers.includes(option)
         );
-        // const isRepairFalseSelected = repairFalse.some((option) =>
-        //     selectedAnswers.includes(option)
-        // );
 
         const isStainTrueSelected = stainTrue.some((option) =>
             selectedAnswers.includes(option)
@@ -100,37 +95,43 @@ export default function QuizModal({ handleShowQuiz }) {
 
         if (isSandTrueSelected && isRepairTrueSelected && isStainTrueSelected) {
             setSuggestedService("Repair, sand, stain, & finish")
+            setSuggestedServiceText("Repair, sand, stain, & finish")
         }
         else if (isSandTrueSelected && isRepairTrueSelected) {
             setSuggestedService("Repair, sand, & finish")
+            setSuggestedServiceText("Repair, sand, & finish")
         }
         else if (isBuffTrueSelected && !isBuffFalseSelected) {
             setSuggestedService("Buff & Coat");
+            setSuggestedServiceText("Buff & Coat");
         }
         else if (isSandTrueSelected && isStainTrueSelected) {
             setSuggestedService("Sand, stain, & finish")
+            setSuggestedServiceText("Sand, stain, & finish")
         }
         else if (isUnsureTrueSelected) {
             setSuggestedService("Contact Bart to find out what your floor needs!");
+            setSuggestedServiceText("Contact Bart to find out what your floor needs!");
         }
         else if (isSandTrueSelected) {
             setSuggestedService("Sand & Finish")
+            setSuggestedServiceText("Sand & Finish")
         }
-        else { setSuggestedService("Contact Bart to find out what your floor needs!") }
+        else { 
+            setSuggestedService("Contact Bart to find out what your floor needs!")
+            setSuggestedServiceText("Help me Obart Wan Kenobi, you're my only hope!")
+        }
 
         handleNextStep()
-    }
-
-    const handleContactForm = () => {
-        setShowContactForm(!showContactForm)
+        
     }
 
     return (
         <div className="modal-overlay-dark flex">
 
-            <div className="absolute right-5 top-6 cursor-pointer text-white">
+            <div className="absolute sm:right-5 sm:top-5 top-3 cursor-pointer text-white">
                 <IoMdClose
-                    size={30}
+                    size={40}
                     onClick={handleShowQuiz} />
             </div>
 
@@ -140,11 +141,11 @@ export default function QuizModal({ handleShowQuiz }) {
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             1 of 3
                         </span>
-                        <h1 className="text-northBlue text-center ml-1 mr-1">
+                        <h1 className="text-northBlue text-center leading-tight sm:leading-normal mx-1">
                             How would you describe your
                             floor's finish (the surface)?
                         </h1>
-                        <span className="text-xs sm:text-northBlue text-black text-center m-4">
+                        <span className="text-xs sm:text-northBlue text-black text-center sm:m-4 m-0">
                             click all that apply
                         </span>
                         <div className="flex flex-row ">
@@ -217,12 +218,10 @@ export default function QuizModal({ handleShowQuiz }) {
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             2 of 3
                         </span>
-                        <h1 className="text-northBlue text-center ml-1 mr-1">
-                            How is the floor
-                            
-                            board condition (beyond the surface)?
+                        <h1 className="text-northBlue text-center mx-1 leading-tight sm:leading-normal">
+                            How is the floor board condition?
                         </h1>
-                        <span className="text-xs text-northBlue text-center m-4">
+                        <span className="text-xs sm:text-northBlue text-black  text-center sm:m-4 m-0">
                             click all that apply
                         </span>
                         <div className="flex flex-row">
@@ -234,7 +233,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer2a}
                                         checked={selectedAnswers.includes(answer2a)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black  w-28">
                                         {answer2a}
                                     </span>
                                 </div>
@@ -245,7 +244,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer2b}
                                         checked={selectedAnswers.includes(answer2b)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black  w-28">
                                         {answer2b}
                                     </span>
                                 </div>
@@ -256,7 +255,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer2c}
                                         checked={selectedAnswers.includes(answer2c)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer2c}
                                     </span>
                                 </div>
@@ -269,7 +268,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer2d}
                                         checked={selectedAnswers.includes(answer2d)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer2d}
                                     </span>
                                 </div>
@@ -280,7 +279,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer2e}
                                         checked={selectedAnswers.includes(answer2e)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer2e}
                                     </span>
                                 </div>
@@ -291,7 +290,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer2f}
                                         checked={selectedAnswers.includes(answer2f)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer2f}
                                     </span>
                                 </div>
@@ -313,12 +312,12 @@ export default function QuizModal({ handleShowQuiz }) {
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             3 of 3
                         </span>
-                        <h1 className="text-northBlue text-center p-1">
+                        <h1 className="text-northBlue text-center leading-tight sm:leading-normal mx-1">
                             What are your thoughts on the
                             
                             color of your floor?
                         </h1>
-                        <span className="text-xs text-northBlue text-center m-4">
+                        <span className="text-xs sm:text-northBlue text-black text-center sm:m-4 m-0">
                             choose one
                         </span>
                         <div className="flex flex-row">
@@ -330,7 +329,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer3a}
                                         checked={selectedAnswers.includes(answer3a)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer3a}
                                     </span>
                                 </div>
@@ -341,7 +340,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer3b}
                                         checked={selectedAnswers.includes(answer3b)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer3b}
                                     </span>
                                 </div>
@@ -354,7 +353,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer3c}
                                         checked={selectedAnswers.includes(answer3c)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer3c}
                                     </span>
                                 </div>
@@ -365,7 +364,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                         value={answer3d}
                                         checked={selectedAnswers.includes(answer3d)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs text-northBlue w-28">
+                                    <span className="text-xs sm:text-northBlue text-black w-28">
                                         {answer3d}
                                     </span>
                                 </div>
@@ -389,9 +388,9 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-buff flex flex-col justify-center items-center">
                                 <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Buff & Coat</h1>
-                                {showContactForm ? null : (
+                                
                                     <div className="flex flex-col items-center">
-                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
+                                        <button className="orange-button" onClick={handleNextStep}>set up an estimate</button>
                                         <div className="">
                                             <Image
                                                 src={buffer}
@@ -402,10 +401,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                             />
                                         </div>
                                     </div>
-                                )}
-                                {showContactForm && (
-                                    <ContactForm />
-                                )}
+                                
                             </div>
                         )}
 
@@ -413,9 +409,9 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-sand flex flex-col justify-center items-center">
                                 <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Sand & Finish</h1>
-                                {showContactForm ? null : (
+                                
                                     <div className="flex flex-col items-center">
-                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
+                                        <button className="orange-button" onClick={handleNextStep}>set up an estimate</button>
                                         <div className="">
                                             <Image
                                                 src={drumSander}
@@ -426,10 +422,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                             />
                                         </div>
                                     </div>
-                                )}
-                                {showContactForm && (
-                                    <ContactForm />
-                                )}
+                                
                             </div>
                         )}
 
@@ -437,9 +430,9 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-repair-sand flex flex-col justify-center items-center">
                                 <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Repair, sand, & finish</h1>
-                                {showContactForm ? null : (
+                                
                                     <div className="flex flex-col items-center">
-                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
+                                        <button className="orange-button" onClick={handleNextStep}>set up an estimate →</button>
                                         <div className="sm:h-56 flex mt-4">
                                             <Image
                                                 src={weave}
@@ -459,10 +452,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                             />
                                         </div>
                                     </div>
-                                )}
-                                {showContactForm && (
-                                    <ContactForm />
-                                )}
+                                
                             </div>
                         )}
 
@@ -470,9 +460,9 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-sand-stain flex flex-col justify-center items-center">
                                 <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Sand, stain, & finish</h1>
-                                {showContactForm ? null : (
+                                
                                     <div className="flex flex-col items-center">
-                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
+                                        <button className="orange-button" onClick={handleNextStep}>set up an estimate →</button>
                                         <div className="sm:h-56 flex mt-4">
                                             <Image
                                                 src={drumSander}
@@ -493,10 +483,7 @@ export default function QuizModal({ handleShowQuiz }) {
 
                                         </div>
                                     </div>
-                                )}
-                                {showContactForm && (
-                                    <ContactForm />
-                                )}
+                                
                             </div>
                         )}
 
@@ -504,9 +491,9 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-repair-sand-stain flex flex-col justify-center items-center">
                                 <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Repair, sand, stain, & finish</h1>
-                                {showContactForm ? null : (
+                                
                                     <div className="flex flex-col items-center">
-                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate →</button>
+                                        <button className="orange-button" onClick={handleNextStep}>set up an estimate →</button>
                                         <div className="sm:h-56 flex mt-4">
                                             <Image
                                                 src={weave}
@@ -537,10 +524,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                             />
                                         </div>
                                     </div>
-                                )}
-                                {showContactForm && (
-                                    <ContactForm />
-                                )}
+                                
                             </div>
                         )}
 
@@ -548,18 +532,21 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-unsure">
                                 <h1 className="text-northOrange">Suggested service is:</h1>
                                 <h1 className="text-northBlue">Contact Bart!</h1>
-                                {showContactForm ? null : (
+                                
                                     <div className="flex flex-col items-center">
-                                        <button className="orange-button" onClick={handleContactForm}>set up an estimate</button>
+                                        <button className="orange-button" onClick={handleNextStep}>set up an estimate</button>
                                     </div>
-                                )}
-                                {showContactForm && (
-                                    <ContactForm />
-                                )}
+                                
                             </div>
                         )}
 
                     </div>
+                </div>
+                <div className={`quiz-step step-${step}`}>
+                    <ContactForm
+                        suggestedServiceText={suggestedServiceText} 
+                        handlePreviousStep={handlePreviousStep}
+                    />
                 </div>
             </div>
 

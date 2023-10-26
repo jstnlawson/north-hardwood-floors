@@ -20,7 +20,7 @@ export default function Gallery({ hideHeader, setHideHeader }) {
         <div id="gallery" className="gallery-container flex bg-northBeige p-16 relative justify-center items-center overflow-hidden">
             <div className="gallery-text-container bg-white relative p-2">
                 <h1 className="text-northBlue">Have a Look</h1>
-                <p className="text-northBlue">
+                <p className="text-northBlue paragraph-wrap">
                     North Harwood Floors completes every project with a skillful blend of
                     professional service and true craftsmanship.
                 </p>

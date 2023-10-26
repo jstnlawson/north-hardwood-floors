@@ -13,16 +13,17 @@
   --swiper-navigation-color: white;
   --swiper-pagination-color: white;
   --swiper-theme-color: white;
+  /* --swiper-navigation-size: 30px; */
   
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -161,4 +162,6 @@ li {
   overflow: hidden;
 }
 
-
+.paragraph-wrap{
+  text-wrap: balance;
+}

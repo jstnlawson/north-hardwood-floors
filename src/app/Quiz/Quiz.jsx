@@ -56,18 +56,21 @@ export default function Quiz({ hideHeader, setHideHeader }) {
 
                 <div className="flex flex-row ">
                     <div className="quiz-text-container flex flex-col items-center  p-6 bg-white">
-                        <h1 className="text-northBlue ">
+                        <h1 className="text-northBlue text-center">
                             Unsure of what service you need?
                         </h1>
                         <p className="text-northBlue text-center mt-1 mb-1">
                             Answer some questions about your floors to receive
-                            <br />
+                            
+                            
                             a personalized service suggestion.
+                            
                             <br />
                             
                             <span className="text-sm">
                             An in-home consultation will be needed to know exactly what your
-                            <br />
+                            
+                            
                             floor requires but this may get you started (and, it's fun!).
                             </span>
                         </p>

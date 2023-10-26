@@ -55,7 +55,7 @@ const EmailForm = () => {
                     <ErrorMessage
                         name="name"
                         component="div"
-                        className='text-red-500'
+                        className='error-message'
                     />
 
                     <Field
@@ -68,7 +68,7 @@ const EmailForm = () => {
                     <ErrorMessage
                         name="email"
                         component="div"
-                        className='text-red-500'
+                        // className='text-red-500'
                     />
                     <Field
                         type="text"
@@ -80,7 +80,7 @@ const EmailForm = () => {
                     <ErrorMessage
                         name="city"
                         component="div"
-                        className='text-red-500'
+                        // className='text-red-500'
                     />
                     <Field
                         id="message"
@@ -93,7 +93,7 @@ const EmailForm = () => {
                     <ErrorMessage
                         name="message"
                         component="div"
-                        className='text-red-500'
+                        // className='text-red-500'
                     />
                     <div className="flex flex-row justify-end">
                         <Field id="submit-btn" type="submit" value="SUBMIT" className=" bg-gray-300 hover:bg-gray-200 text-gray-500 font-bold py-2 mt-2 mr-2 rounded w-24 text-sm " />

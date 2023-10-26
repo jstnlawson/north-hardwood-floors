@@ -31,10 +31,10 @@ export default function () {
     return (
         <div id="services" className="services-container bg-northBlue">
             {!display && (
-            <div className="large-services-container ">
-                <h1 className="text-center pt-4 text-white">Services</h1>
+            <div className="large-services-container text-white ">
+                <h1 className="text-center pt-4 ">Services</h1>
                 <div className="large-grid-container">
-                    <div className="sanding-container ml-10">
+                    <div className="sanding-container ml-10 ">
                         <div className="services-logo-containers" >
                             <Image
                                 src={sandingLogo}
@@ -43,7 +43,7 @@ export default function () {
                             />
                         </div>
                         <h2 className="mt-4">SANDING & REFINISHING</h2>
-                        <p>Sanding off the old finish and applying new-to reveal beautiful, smooth floors.
+                        <p className="paragraph-wrap">Sanding off the old finish and applying new-to reveal beautiful, smooth floors.
                             Stain can also be applied at this stage to give your floors the color you want.
                         </p>
                     </div>
@@ -56,7 +56,7 @@ export default function () {
                             />
                         </div>
                         <h2 className="mt-4">INSTALLATION & REPAIRS</h2>
-                        <p>Wether you want to start fresh, add to your current floor, or repair a damaged area, 
+                        <p className="paragraph-wrap">Wether you want to start fresh, add to your current floor, or repair a damaged area, 
                             a seamless solution is available.</p>
                     </div>
                     <div className="buff-container mr-10">
@@ -68,7 +68,7 @@ export default function () {
                             />
                         </div>
                         <h2 className="mt-4">BUFF & COAT</h2>
-                        <p>Seeing light wear patterns on your floors? Or need a little shine in your life? A
+                        <p className="paragraph-wrap">Seeing light wear patterns on your floors? Or need a little shine in your life? A
                             quick buff and a new layer of finish will shine it right up!
                         </p>
                     </div>

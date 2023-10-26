@@ -1,9 +1,8 @@
 "use client";
-import React, { useRef, useState } from "react";
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
-import { RxDotFilled } from 'react-icons/rx';
+import React, { useRef, useEffect } from "react";
 import { IoMdClose } from 'react-icons/io';
 import Image from "next/image";
+import { register } from 'swiper/element/bundle';
 import oakFloor from 'public/images/oak-floor-2.jpeg'
 import stainedFloor from 'public/images/stainedFloor.jpeg'
 import stairsTwo from 'public/images/stairs-2.jpeg'
@@ -12,65 +11,86 @@ import topOfStairs from 'public/images/stairs-1.jpeg'
 import oakKitchen from 'public/images/oak-kitchen-remodel.jpeg'
 import "./GalleryCarousel.css";
 
+register();
+
 const GalleryCarousel = ({ handleShowGallery }) => {
-    
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const imageRef = useRef(null);
 
-    const slides = [
-        {
-            src: oakFloor,
-            alt: "oak flooring"
-        },
-        {
-            src: stainedFloor,
-            alt: "dark stained flooring"
-        },
-        {
-            src: stairsTwo,
-            alt: "custom stair treads"
-        },
-        {
-            src: oakFloorStairs,
-            alt: "oak floor and stairs"
-        },
-        {
-            src: topOfStairs,
-            alt: "top of stairs"
-        },
-        {
-            src: oakKitchen,
-            alt: "oak kitchen"
-        }
-    ];
+    const swiperElRef = useRef(null);
 
-    const prevSlide = () => {
-        const isFirstSlide = currentIndex === 0;
-        const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-        console.log('Current index:', currentIndex);
-        setCurrentIndex(newIndex);
-    }
+    useEffect(() => {
+        // listen for Swiper events using addEventListener
+        swiperElRef.current.addEventListener('progress', (e) => {
+            const [swiper, progress] = e.detail;
+            console.log(progress);
+        });
 
-    const nextSlide = () => {
-        const isLastSlide = currentIndex == slides.length - 1;
-        const newIndex = isLastSlide ? 0 : currentIndex + 1;
-        setCurrentIndex(newIndex);
-    }
-
-    const goToSlide = (slideIndex) => {
-        setCurrentIndex(slideIndex);
-    };
+        swiperElRef.current.addEventListener('slidechange', (e) => {
+            console.log('slide changed');
+        });
+    }, []);
 
     return (
 
         <div className="modal-overlay-dark m-auto py-16 px-4 relative group">
-            <div  className="absolute sm:right-5 top-10 cursor-pointer text-white">
+            <div  className="absolute sm:right-5 top-8 cursor-pointer text-white">
             <IoMdClose 
-            size={30}
-            onClick={handleShowGallery}/>
+            size={45}
+            onClick={handleShowGallery}
+            className="close-modal-button"/>
             </div>
+
+            <div className="gallery-carousel-container text-white">
+            <swiper-container
+                ref={swiperElRef}
+                slidesPerView="1"
+                navigation="true"
+                pagination="true"
+                style={{"--swiper-navigation-size": "35px"}}
+            >
+                
+                    <swiper-slide className="white-swiper" >
+                        <div className="gallery-photo-container">
+                        
+                            <Image
+                                    src={oakFloor}
+                                    
+                                    alt="sanding logo"
+                                    className="p-3 mt-5"
+                                />
+                        
+                        </div>
+                    </swiper-slide>
+                
+
+                <swiper-slide>
+                <div className="gallery-photo-container">
+                        
+                        
+                            <Image
+                                src={stainedFloor}
+                                alt="repair logo"
+                                className="p-3 mt-5"
+                            />
+                        
+                    </div>
+                </swiper-slide>
+                <swiper-slide>
+                <div className="gallery-photo-container">
+                        
+                        
+                            <Image
+                                src={stairsTwo}
+                                alt="sanding logo"
+                                className="p-3 mt-5"
+                            />
+                        
+                    </div>
+                </swiper-slide>
+                
+            </swiper-container>
+        </div>
             
-            <div className="flex justify-center mt-6">
+            {/* <div className="flex justify-center mt-6">
                 <Image 
                 src={slides[currentIndex].src} 
                 alt={slides[currentIndex].alt} 
@@ -98,7 +118,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
                         )}
                     </div>
                 ))}
-            </div>
+            </div> */}
         </div>
     )
 }

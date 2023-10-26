@@ -1,30 +1,120 @@
-import React from "react";
+'use client'
+import React, { useState } from 'react'
+import { validationSchema } from '@/utils/validations'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
+import { toFormikValidationSchema } from 'zod-formik-adapter'
 import './ContactForm.css'
 
+const initialValues = {
+    name: '',
+    email: '',
+    city: '',
+    message: ''
+}
 
-export default function ContactForm() {
+export default function ContactForm({ suggestedServiceText, handlePreviousStep }) {
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [message, setMessage] = useState(suggestedServiceText);
+
+    const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+        try {
+            await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ ...values, suggestedServiceText }),
+            });
+            resetForm();
+            console.log("Email sent successfully!");
+        } catch (error) {
+            console.error("Failed to send email:", error);
+        } finally {
+            setSubmitting(false);
+        }
+    };
 
     return (
-        <div className="contact-container bg-white p-2 flex flex-col justify-center items-center">
-            <h2 className="contact-heading text-black text-sm mt-2 pb-2 ">CONTACT</h2>
-            <h1 className="text-black ">Get in touch</h1>
-            <div className="contact-instruction pt-1 pb-2 ">
-            <p className="text-black text-xs">Complete the form below and you will receive an email within 24 hours to schedule a free in-home estimate.</p>
+        <div className="contact-container h-[80vh] bg-northBlue p-2 flex flex-col justify-center items-center text-white">
+            <div className='flex flex-col items-center w-[500px]'>
+            {/* <h1 className="contact-heading text-northBeige my-2">CONTACT</h1> */}
+            <h1 className='text-northBeige my-2'>Let's Get Started</h1>
+            <p className='text-center text-sm  mb-2'>
+                Your service suggestion has already been filled 
+                <br />out but feel free to provide more details. 
+                <br />
+                Bart will email you within 24 hours 
+                <br />to schedule a free estimate.
+            </p>
             </div>
-            <form action="mailto:north@northhardwoodfloors.com" method="post" encType="text/plain" className="flex flex-col  items-center">
-                
-                <input type="text" id="name" name="name" placeholder="Name" className="contact-input sm:py-1" required />
+            <Formik
+                initialValues={initialValues}
+                validationSchema={toFormikValidationSchema (validationSchema)}
+                onSubmit={handleSubmit}
+            >
+                <Form className="flex flex-col mb-12 text-white">
+                    {/* <form action="mailto:north@northhardwoodfloors.com" method="post" encType="text/plain" className="flex flex-col mb-12"> */}
 
-                
-                <input type="email" id="email" name="email" placeholder="Email" className="contact-input sm:py-1" required />
+                    <Field
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Name"
+                        className="mainpage-contact-input bg-transparent"
+                    />
+                    <ErrorMessage
+                        name="name"
+                        component="div"
+                        className='text-red-500'
+                    />
 
-                <input type="text" id="city" name="city" placeholder="City" className="contact-input sm:py-1" required />
-
-                <textarea id="message" name="message" rows="4" cols="50" placeholder="Briefly explain your project. If you took 
-                the Service Suggestion Quiz, include your results here." className="contact-input py-1" required></textarea>
-
-                <input type="submit" value="SUBMIT" className=" bg-gray-300 hover:bg-gray-200 text-gray-500 font-bold py-1 py-2 px-4 rounded w-24 text-sm mt-4"/>
-            </form>
+                    <Field
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Email"
+                        className="mainpage-contact-input bg-transparent"
+                    />
+                    <ErrorMessage
+                        name="email"
+                        component="div"
+                        className='text-red-500'
+                    />
+                    <Field
+                        type="text"
+                        id="city" 
+                        name="city"
+                        placeholder="City"
+                        className="mainpage-contact-input bg-transparent"
+                    />
+                    <ErrorMessage
+                        name="city"
+                        component="div"
+                        className='text-red-500'
+                    />
+                    <Field
+                        id="message"
+                        name="message"
+                        as="textarea"
+                        rows="4" cols="50"
+                        // placeholder="Briefly explain your project. If you took the Service Suggestion Quiz, include your results here."
+                        className="contact-textarea bg-transparent"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                    />
+                    <ErrorMessage
+                        name="message"
+                        component="div"
+                        className='text-red-500'
+                    />
+                    <div className="flex flex-row justify-between">
+                        <button className='orange-button ' onClick={handlePreviousStep}>← quiz</button>
+                        <Field id="submit-btn" type="submit" value="submit" className="orange-button" />
+                    </div>
+                    {/* </form> */}
+                </Form>
+            </Formik>
         </div>
     )
 }

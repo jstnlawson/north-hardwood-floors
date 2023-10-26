@@ -33,6 +33,7 @@ const ServicesCarousel = () => {
                 slidesPerView="1"
                 navigation="true"
                 pagination="true"
+                style={{"--swiper-navigation-size": "25px"}}
             >
                 <swiper-slide className="white-swiper" >
                     <div className="small-service-container ">
