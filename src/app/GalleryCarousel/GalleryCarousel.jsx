@@ -15,6 +15,7 @@ import "./GalleryCarousel.css";
 const GalleryCarousel = ({ handleShowGallery }) => {
     
     const [currentIndex, setCurrentIndex] = useState(0)
+    const imageRef = useRef(null);
 
     const slides = [
         {
@@ -63,7 +64,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
     return (
 
         <div className="modal-overlay-dark m-auto py-16 px-4 relative group">
-            <div  className="absolute right-5 top-10 cursor-pointer text-white">
+            <div  className="absolute sm:right-5 top-10 cursor-pointer text-white">
             <IoMdClose 
             size={30}
             onClick={handleShowGallery}/>
@@ -75,6 +76,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
                 alt={slides[currentIndex].alt} 
                 className="gallery-photo-container rounded-2xl bg-center bg-cover  duration-500" />
             </div>
+
 
             <div className=" absolute  left-5 top-1/2 transform -translate-y-1/2  text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
                 <BsChevronCompactLeft onClick={prevSlide} size={30} />

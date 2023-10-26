@@ -56,7 +56,7 @@
     height: var(--bar-height);
     background-color: var(--foreground);
     border-radius: 9999px;
-    transform-origin: right center;
+    transform-origin: left center; /*changed from right */
     transition: opacity var(--animation-timing), width var(--animation-timing),
         rotate var(--animation-timing), translate var(--animation-timing),
         background-color var(--animation-timing), ;
@@ -64,13 +64,10 @@
 
 .sidebar {
     transition: translate var(--animation-timing);
-    /* translate: -100%; */
     transform: translateX(-100%);
-
     position: fixed;
     top: 0;
     left: 0;
-
     padding: 0.5rem 1rem;
     padding-top: calc(var(--hamburger-height) + 2rem);
     background-color: var(--foreground);
@@ -86,14 +83,14 @@
 
 /* has selector basically doing some conditional logic here */
 .hamburger-menu:has(input:checked)::before {
-    rotate: -45deg;
+    rotate: 45deg;
     width: var(--x-width);
     /* adjusting the bar height */
     translate: 0 calc(var(--bar-height) / -2);
 }
 
 .hamburger-menu:has(input:checked)::after {
-    rotate: 45deg;
+    rotate: -45deg;
     width: var(--x-width);
     translate: 0 calc(var(--bar-height) / 2);
 }
@@ -110,3 +107,24 @@
     opacity: 0;
     width: 0;
 }
+
+.service-links {
+    position: relative;
+  }
+  
+  .service-links::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-northOrange); /* Change this to your desired color */
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+  
+  .service-links:hover::after {
+    transform: scaleX(1);
+  }
+

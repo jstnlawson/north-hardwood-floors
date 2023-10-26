@@ -42,7 +42,7 @@ const EmailForm = () => {
                 validationSchema={toFormikValidationSchema (validationSchema)}
                 onSubmit={handleSubmit}
             >
-                <Form>
+                <Form className="flex flex-col mb-12">
                     {/* <form action="mailto:north@northhardwoodfloors.com" method="post" encType="text/plain" className="flex flex-col mb-12"> */}
 
                     <Field
