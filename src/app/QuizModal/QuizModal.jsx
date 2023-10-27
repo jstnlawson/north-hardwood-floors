@@ -129,7 +129,7 @@ export default function QuizModal({ handleShowQuiz }) {
     return (
         <div className="modal-overlay-dark flex">
 
-            <div className="absolute sm:right-5 sm:top-5 top-3 cursor-pointer text-white">
+            <div className="absolute  top-5 ml-5 sm:right-5 cursor-pointer sm:text-white text-northBlue z-10">
                 <IoMdClose
                     size={40}
                     onClick={handleShowQuiz} />
@@ -137,15 +137,15 @@ export default function QuizModal({ handleShowQuiz }) {
 
             <div className="all-questions-container flex flex-row overflow-hidden items-center">
                 <div className={`quiz-step step-${step}`}>
-                    <div className="question-container bg-northBeige flex flex-col items-center justify-center">
+                    <div className="question-container bg-northBeige flex flex-col items-center justify-center sm:h-[80vh] h-[100vh] p-3">
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             1 of 3
                         </span>
-                        <h1 className="text-northBlue text-center leading-tight sm:leading-normal mx-1">
+                        <h1 className="text-northBlue text-center mx-1">
                             How would you describe your
                             floor's finish (the surface)?
                         </h1>
-                        <span className="text-xs sm:text-northBlue text-black text-center sm:m-4 m-0">
+                        <span className="text-xs sm:text-northBlue text-black text-center m-4 ">
                             click all that apply
                         </span>
                         <div className="flex flex-row ">
@@ -214,14 +214,14 @@ export default function QuizModal({ handleShowQuiz }) {
                 </div>
 
                 <div className={`quiz-step step-${step}`}>
-                    <div className="question-container bg-northBeige flex flex-col items-center justify-center sm:pb-20 sm:pt-20">
+                    <div className="question-container bg-northBeige flex flex-col items-center justify-center sm:h-[80vh] h-[100vh] p-3">
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             2 of 3
                         </span>
-                        <h1 className="text-northBlue text-center mx-1 leading-tight sm:leading-normal">
-                            How is the floor board condition?
+                        <h1 className="text-northBlue text-center mx-1 ">
+                            How is the floor board condition (beneath the surface)?
                         </h1>
-                        <span className="text-xs sm:text-northBlue text-black  text-center sm:m-4 m-0">
+                        <span className="text-xs sm:text-northBlue text-black  text-center m-4">
                             click all that apply
                         </span>
                         <div className="flex flex-row">
@@ -308,16 +308,16 @@ export default function QuizModal({ handleShowQuiz }) {
                 </div>
 
                 <div className={`quiz-step step-${step}`}>
-                    <div className="question-container bg-northBeige flex flex-col items-center justify-center  sm:pb-20 sm:pt-20">
+                    <div className="question-container bg-northBeige flex flex-col items-center justify-center sm:h-[80vh] h-[100vh] p-3">
                         <span className="uppercase font-bold text-xs text-northBlue text-center">
                             3 of 3
                         </span>
-                        <h1 className="text-northBlue text-center leading-tight sm:leading-normal mx-1">
+                        <h1 className="text-northBlue text-center mx-1">
                             What are your thoughts on the
                             
                             color of your floor?
                         </h1>
-                        <span className="text-xs sm:text-northBlue text-black text-center sm:m-4 m-0">
+                        <span className="text-xs sm:text-northBlue text-black text-center  m-4">
                             choose one
                         </span>
                         <div className="flex flex-row">
@@ -382,7 +382,7 @@ export default function QuizModal({ handleShowQuiz }) {
                 </div>
 
                 <div className={`quiz-step step-${step}`}>
-                    <div className="suggestions-container bg-northLightBlue flex flex-col items-center justify-center sm:pb-20 sm:pt-20">
+                    <div className="suggestions-container bg-northLightBlue flex flex-col items-center justify-center sm:h-[80vh] h-[100vh] p-3">
 
                         {suggestedService === "Buff & Coat" && (
                             <div className="suggest-buff flex flex-col justify-center items-center">
@@ -489,7 +489,7 @@ export default function QuizModal({ handleShowQuiz }) {
 
                         {suggestedService === "Repair, sand, stain, & finish" && (
                             <div className="suggest-repair-sand-stain flex flex-col justify-center items-center">
-                                <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
+                                <h1 className="text-northOrange text-center mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Repair, sand, stain, & finish</h1>
                                 
                                     <div className="flex flex-col items-center">
@@ -518,7 +518,7 @@ export default function QuizModal({ handleShowQuiz }) {
                                                 width={267}
                                                 height={217}
                                                 sizes="(max-width: 815px) 30vw"
-                                                className="m-1 transition-opacity opacity-0 duration-[3s]"
+                                                className="m-1 transition-opacity opacity-0 duration-[3s] "
                                                 onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                                                 alt="stained floor"
                                             />
@@ -545,6 +545,7 @@ export default function QuizModal({ handleShowQuiz }) {
                 <div className={`quiz-step step-${step}`}>
                     <ContactForm
                         suggestedServiceText={suggestedServiceText} 
+                        setSuggestedServiceText={setSuggestedServiceText}
                         handlePreviousStep={handlePreviousStep}
                     />
                 </div>

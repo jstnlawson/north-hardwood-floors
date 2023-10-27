@@ -26,7 +26,7 @@ const Header = ({ hideHeader }) => {
           src={uglyLogo}
           alt="ugly logo"
           onClick={() => scrollToSection("header")}
-          className="h-20 w-24  md:h-24 md:w-28 lg:h-32 lg:w-36  mx-5 header-logo cursor-pointer"
+          className="h-14 w-16  md:h-20 md:w-24 lg:h-28 lg:w-36  mx-5 header-logo cursor-pointer"
         />
         <div className="md:block hidden">
           <span

@@ -26,7 +26,7 @@ export async function POST(req,res) {
     try {
         // Send email using the transporter
         await transporter.sendMail(options);
-        console.log("option:", options)
+        
         res.status(200).send("OK"); // Send "OK" response to the client
     } catch (error) {
         console.error("Failed to send email:", error);

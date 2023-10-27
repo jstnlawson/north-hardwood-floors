@@ -9,14 +9,13 @@ const initialValues = {
     name: '',
     email: '',
     city: '',
-    message: ''
+    message: '',
 }
 
-export default function ContactForm({ suggestedServiceText, handlePreviousStep }) {
+export default function ContactForm({ suggestedServiceText, setSuggestedServiceText, handlePreviousStep }) {
 
     const [isLoading, setIsLoading] = useState(false);
-    const [message, setMessage] = useState(suggestedServiceText);
-
+    
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
         try {
             await fetch("/api/contact", {
@@ -36,10 +35,10 @@ export default function ContactForm({ suggestedServiceText, handlePreviousStep }
     };
 
     return (
-        <div className="contact-container h-[80vh] bg-northBlue p-2 flex flex-col justify-center items-center text-white">
+        <div className="contact-container h-[100vh] bg-northLightBlue p-2 flex flex-col justify-center items-center text-northBlue">
             <div className='flex flex-col items-center w-[500px]'>
             {/* <h1 className="contact-heading text-northBeige my-2">CONTACT</h1> */}
-            <h1 className='text-northBeige my-2'>Let's Get Started</h1>
+            <h1 className='text-northBlue my-2'>Let's Get Started</h1>
             <p className='text-center text-sm  mb-2'>
                 Your service suggestion has already been filled 
                 <br />out but feel free to provide more details. 
@@ -53,15 +52,14 @@ export default function ContactForm({ suggestedServiceText, handlePreviousStep }
                 validationSchema={toFormikValidationSchema (validationSchema)}
                 onSubmit={handleSubmit}
             >
-                <Form className="flex flex-col mb-12 text-white">
-                    {/* <form action="mailto:north@northhardwoodfloors.com" method="post" encType="text/plain" className="flex flex-col mb-12"> */}
+                <Form className="flex flex-col mb-12 text-northBlue">
 
                     <Field
                         type="text"
                         id="name"
                         name="name"
                         placeholder="Name"
-                        className="mainpage-contact-input bg-transparent"
+                        className="quiz-contact-input bg-transparent"
                     />
                     <ErrorMessage
                         name="name"
@@ -74,7 +72,7 @@ export default function ContactForm({ suggestedServiceText, handlePreviousStep }
                         id="email"
                         name="email"
                         placeholder="Email"
-                        className="mainpage-contact-input bg-transparent"
+                        className="quiz-contact-input bg-transparent"
                     />
                     <ErrorMessage
                         name="email"
@@ -86,7 +84,7 @@ export default function ContactForm({ suggestedServiceText, handlePreviousStep }
                         id="city" 
                         name="city"
                         placeholder="City"
-                        className="mainpage-contact-input bg-transparent"
+                        className="quiz-contact-input bg-transparent"
                     />
                     <ErrorMessage
                         name="city"
@@ -98,10 +96,11 @@ export default function ContactForm({ suggestedServiceText, handlePreviousStep }
                         name="message"
                         as="textarea"
                         rows="4" cols="50"
+                        style={{ color: 'var(--color--northBlue)' }} 
                         // placeholder="Briefly explain your project. If you took the Service Suggestion Quiz, include your results here."
-                        className="contact-textarea bg-transparent"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
+                        className="quiz-contact-textarea bg-transparent"
+                        value={suggestedServiceText}
+                        onChange={(e) => setSuggestedServiceText(e.target.value)}
                     />
                     <ErrorMessage
                         name="message"
@@ -112,7 +111,7 @@ export default function ContactForm({ suggestedServiceText, handlePreviousStep }
                         <button className='orange-button ' onClick={handlePreviousStep}>← quiz</button>
                         <Field id="submit-btn" type="submit" value="submit" className="orange-button" />
                     </div>
-                    {/* </form> */}
+                    
                 </Form>
             </Formik>
         </div>

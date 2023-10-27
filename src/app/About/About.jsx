@@ -19,7 +19,7 @@ export default function About() {
                     layout="intrinsic"//not sure this works
                 />
             </div>
-            <div className="about-text-container bg-white relative p-2 ">
+            <div className="about-text-container bg-white relative p-4 ">
                 <h1 className="text-northBlue">About North Hardwood Floors</h1>
                 <p className="text-northBlue paragraph-wrap">
                     Owned and operated by Bart Boutwell, a hardwood flooring professional with over 15 years 

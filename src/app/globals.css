@@ -13,6 +13,7 @@
   --swiper-navigation-color: white;
   --swiper-pagination-color: white;
   --swiper-theme-color: white;
+  --swiper-pagination-fraction-color: white;
   /* --swiper-navigation-size: 30px; */
   
 }
@@ -157,7 +158,7 @@ li {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 9); 
+  background-color: rgba(0, 0, 0, 1); 
   z-index: 5; 
   overflow: hidden;
 }

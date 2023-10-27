@@ -21,3 +21,24 @@
 .contact-input::placeholder {
     font-size: small;
 }
+
+.quiz-contact-input {
+    border: solid 1px var(--color-northBlue);
+    margin: 8px;
+    width: 80vw;
+    height: 35px;
+    padding: 10px;
+  }
+
+  .quiz-contact-textarea {
+    border: solid 1px var(--color-northBlue);
+    margin: 8px;
+    width: 80vw;
+    padding: 10px;
+  }
+
+  .quiz-contact-input::placeholder, .quiz-contact-textarea::placeholder {
+    color: #334b56c6;
+    font-size: small;
+    
+  }

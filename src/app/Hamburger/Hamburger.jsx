@@ -56,7 +56,7 @@ export default function Hamburger() {
     <>
       <div className="hamburger-container md:hidden" ref={sidebarRef}>
         <label
-          className="hamburger-menu ml-2 mt-3"
+          className="hamburger-menu ml-2 mt-1"
           onMouseUp={handleMouseUp}
           htmlFor="hamburger-checkbox"
         >
