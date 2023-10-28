@@ -119,7 +119,7 @@ export default function QuizModal({ handleShowQuiz }) {
         }
         else { 
             setSuggestedService("Contact Bart to find out what your floor needs!")
-            setSuggestedServiceText("Help me Obart Wan Kenobi, you're my only hope!")
+            setSuggestedServiceText("Contact Bart.")
         }
 
         handleNextStep()

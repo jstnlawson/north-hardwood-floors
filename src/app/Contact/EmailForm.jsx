@@ -5,6 +5,9 @@ import { validationSchema } from '@/utils/validations'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { toFormikValidationSchema } from 'zod-formik-adapter'
 
+import { ToastContainer, toast } from 'react-toastify'
+// import Confetti from 'react-confetti'
+
 const initialValues = {
     name: '',
     email: '',
@@ -12,10 +15,11 @@ const initialValues = {
     message: ''
 }
 
- 
+
 
 const EmailForm = () => {
-    const [isLoading, setIsLoading] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
+    // const [showConfetti, setShowConfetti] = useState(false);
 
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
         try {
@@ -32,6 +36,8 @@ const EmailForm = () => {
             console.error("Failed to send email:", error);
         } finally {
             setSubmitting(false);
+            toast.success('Email sent successfully!')
+            // setShowConfetti(true)
         }
     };
 
@@ -39,7 +45,7 @@ const EmailForm = () => {
         <>
             <Formik
                 initialValues={initialValues}
-                validationSchema={toFormikValidationSchema (validationSchema)}
+                validationSchema={toFormikValidationSchema(validationSchema)}
                 onSubmit={handleSubmit}
             >
                 <Form className="flex flex-col mb-12">
@@ -68,11 +74,11 @@ const EmailForm = () => {
                     <ErrorMessage
                         name="email"
                         component="div"
-                        // className='text-red-500'
+                    // className='text-red-500'
                     />
                     <Field
                         type="text"
-                        id="city" 
+                        id="city"
                         name="city"
                         placeholder="City"
                         className="mainpage-contact-input bg-transparent"
@@ -80,7 +86,7 @@ const EmailForm = () => {
                     <ErrorMessage
                         name="city"
                         component="div"
-                        // className='text-red-500'
+                    // className='text-red-500'
                     />
                     <Field
                         id="message"
@@ -93,7 +99,7 @@ const EmailForm = () => {
                     <ErrorMessage
                         name="message"
                         component="div"
-                        // className='text-red-500'
+                    // className='text-red-500'
                     />
                     <div className="flex flex-row justify-end">
                         <Field id="submit-btn" type="submit" value="SUBMIT" className=" bg-gray-300 hover:bg-gray-200 text-gray-500 font-bold py-2 mt-2 mr-2 rounded w-24 text-sm " />
@@ -101,6 +107,28 @@ const EmailForm = () => {
                     {/* </form> */}
                 </Form>
             </Formik>
+            <ToastContainer
+                position='top-center'
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme='light'
+                
+            />
+
+            {/* {showConfetti && (
+                <Confetti
+                    width={window.innerWidth}
+                    height={window.innerHeight}
+                    recycle={false}
+                    
+                />
+            )} */}
         </>
     )
 }

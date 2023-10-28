@@ -10,7 +10,7 @@ export const validationSchema = z.object({
     city: z.string({
         required_error: "City is required!",
     }),
-    message: z.string({
-        required_error: "Message is required!",
-    }),
+    // message: z.string({
+    //     required_error: "Message is required!",
+    // }),
 });

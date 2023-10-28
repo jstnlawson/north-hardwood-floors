@@ -1,7 +1,7 @@
 
-  .intro-container {
-    position: relative; /* Add this to make sure absolute positioning is relative to this container */
-  }
+  /* .intro-container {
+    position: relative; 
+  } */
   
   .intro-text-container {
     position: absolute; /* Position the text container absolutely */
@@ -10,7 +10,7 @@
     background-color: transparent;
     color: #334b5c;
     z-index: 1; /* Ensure the text is above the image */
-    width: 30vw;
+    width: 25vw;
     margin-left: 5vw;
     max-width: 450px;
   }

@@ -31,7 +31,7 @@ export default function ProcessModal({ handleShowProcess }) {
 
         <div className="modal-overlay-dark">
 
-            <div className="absolute right-5 top-15 mt-4 cursor-pointer z-10 text-white" onClick={handleShowProcess}>
+            <div className="absolute  top-4 ml-5 sm:right-5 cursor-pointer sm:text-white text-northBlue z-10" onClick={handleShowProcess}>
                 <IoMdClose
                     size={30}
                      />
@@ -49,10 +49,13 @@ export default function ProcessModal({ handleShowProcess }) {
                 <div className={`process-steps step-${step}`}>
                     <DuringConstruction
                         handleNextStep={handleNextStep}
+                        handlePreviousStep={handlePreviousStep}
                         handleShowProcess={handleShowProcess} />
                 </div>
                 <div className={`process-steps step-${step}`}>
-                    <DryTime handleShowProcess={handleShowProcess} />
+                    <DryTime 
+                    handlePreviousStep={handlePreviousStep}
+                    handleShowProcess={handleShowProcess} />
                 </div>
             </div>
         </div>

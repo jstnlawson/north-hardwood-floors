@@ -3,15 +3,13 @@ import { render } from "@react-email/components";
 import { transporter, smptEmail, smptPassword } from "@/utils/nodemailer";
 import { Email } from "@/app/Contact/Email";
 
+
 export async function POST(req,res) {
     const body = await req.json();
-    const { name, email, city, message } = body;
-
-    console.log('SMTP Email:', smptEmail);
-    console.log('SMTP Password:', smptPassword);
+    const { name, email, city, serviceSuggestion, message } = body;
 
     const emailHtml = render(
-        <Email name={name} email={email} city={city} message={message} />
+        <Email name={name} email={email} city={city} serviceSuggestion={serviceSuggestion} message={message} />
     );
 
     const options = {

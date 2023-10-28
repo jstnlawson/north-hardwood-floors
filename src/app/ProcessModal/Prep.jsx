@@ -9,10 +9,10 @@ export default function Prep({ handleNextStep, handleShowProcess }) {
 
     return (
         
-            <div className="bg-northLightBlue h-4/5 w-screen flex flex-col justify-center items-center">
+            <div className="bg-northLightBlue w-screen flex flex-col justify-center items-center sm:h-[80vh] h-[100vh] p-3">
                 <div>
-                    <h2 className="contact-heading text-northBlue text-sm sm:mt-4">STEP 1</h2>
-                    <h1 className="text-northBlue sm:mb-4">Preparation</h1>
+                    <h2 className="contact-heading text-northBlue text-sm mt-4">STEP 1</h2>
+                    <h1 className="text-northBlue mb-4">Preparation</h1>
                 </div>
                 <div className="flex flex-row justify-around">
                     <div>
@@ -20,7 +20,7 @@ export default function Prep({ handleNextStep, handleShowProcess }) {
                             src={emptyRoom}
                             width={250}
                             height={250}
-                            className="sm:m-1 sm:mr-4 pl-8 pr-4 sm:p-0 transition-opacity opacity-0 duration-[1s]"
+                            className="m-1 mr-4 pl-8 pr-4  transition-opacity opacity-0 duration-[1s]"
                             onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                             alt="Picture of empty closet"
                         />
@@ -30,7 +30,7 @@ export default function Prep({ handleNextStep, handleShowProcess }) {
                             src={dustContainment}
                             width={250}
                             height={250}
-                            className="sm:m-1 sm:mr-4 pl-4 pr-8 sm:p-0 transition-opacity opacity-0 duration-[3s]"
+                            className="m-1 mr-4 pl-4 pr-8  transition-opacity opacity-0 duration-[3s]"
                             onLoadingComplete={(image) => image.classList.remove("opacity-0")}
                             alt="Picture of plastic sheet dust containment"
                         />
@@ -61,7 +61,9 @@ export default function Prep({ handleNextStep, handleShowProcess }) {
                         </div>
                     </div>
                 </div>
+                <div className="mb-14">
                 <button className="orange-button" onClick={handleNextStep}>next →</button>
+                </div>
             </div>
        
     )

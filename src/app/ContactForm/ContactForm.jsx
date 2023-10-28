@@ -3,33 +3,49 @@ import React, { useState } from 'react'
 import { validationSchema } from '@/utils/validations'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { toFormikValidationSchema } from 'zod-formik-adapter'
+import { ToastContainer, toast } from 'react-toastify'
 import './ContactForm.css'
 
-const initialValues = {
-    name: '',
-    email: '',
-    city: '',
-    message: '',
-}
+
+
+// const initialValues = {
+//     name: '',
+//     email: '',
+//     city: '',
+//     serviceSuggestion: '',
+//     message: '',
+// }
 
 export default function ContactForm({ suggestedServiceText, setSuggestedServiceText, handlePreviousStep }) {
 
-    const [isLoading, setIsLoading] = useState(false);
+    const initialValues = {
+        name: '',
+        email: '',
+        city: '',
+        serviceSuggestion: suggestedServiceText,
+        message: '',
+    };
+    console.log('initialValues: ', initialValues)
+
+    //const [isLoading, setIsLoading] = useState(false);
     
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+        values.serviceSuggestion = suggestedServiceText;
         try {
+            console.log("Form values:", values);
             await fetch("/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ ...values, suggestedServiceText }),
+                body: JSON.stringify(values),
             });
             resetForm();
             console.log("Email sent successfully!");
         } catch (error) {
             console.error("Failed to send email:", error);
         } finally {
+            toast.success('Email sent successfully!')
             setSubmitting(false);
         }
     };
@@ -91,16 +107,24 @@ export default function ContactForm({ suggestedServiceText, setSuggestedServiceT
                         component="div"
                         className='text-red-500'
                     />
+                    <label htmlFor="serviceSuggestion" className='ml-2 text-xs'>Service Suggestion:</label>
+                    <Field
+                        type="text"
+                        id="serviceSuggestion" 
+                        name="serviceSuggestion"
+                        // value={serviceSuggestion}
+                        //value={initialValues.serviceSuggestion}
+                        value={suggestedServiceText}
+                        className="quiz-contact-input bg-transparent"
+                    />
+                    <label htmlFor="serviceSuggestion" className='ml-2 text-xs'>Additional Details:</label>
                     <Field
                         id="message"
                         name="message"
                         as="textarea"
                         rows="4" cols="50"
                         style={{ color: 'var(--color--northBlue)' }} 
-                        // placeholder="Briefly explain your project. If you took the Service Suggestion Quiz, include your results here."
-                        className="quiz-contact-textarea bg-transparent"
-                        value={suggestedServiceText}
-                        onChange={(e) => setSuggestedServiceText(e.target.value)}
+                        className="quiz-contact-textarea bg-transparent h-[50px]"
                     />
                     <ErrorMessage
                         name="message"
@@ -114,6 +138,19 @@ export default function ContactForm({ suggestedServiceText, setSuggestedServiceT
                     
                 </Form>
             </Formik>
+            <ToastContainer
+                position='top-center'
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme='light'
+                
+            />
         </div>
     )
 }
