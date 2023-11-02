@@ -24,7 +24,6 @@ export default function About({ hideHeader, setHideHeader }) {
                     src={process}
                     alt="The Process"
                     quality={100}
-                    layout="intrinsic"//not sure this works
                     className="process-photo"
                 />
             </div>

@@ -31,7 +31,6 @@ export default function Gallery({ hideHeader, setHideHeader }) {
                     src={galleryCover}
                     alt="Gallery Cover Image"
                     quality={100}
-                    layout="intrinsic"
                     className="gallery-cover-photo"
                 />
             </div>

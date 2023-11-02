@@ -25,8 +25,8 @@ const ServicesCarousel = () => {
     }, []);
 
     return (
-        <div className="carousel-container text-white">
-            <h1 className="text-center pt-4">Services</h1>
+        <div className="carousel-container text-white py-8">
+            <h1 className="text-center">Services</h1>
             <swiper-container
                 ref={swiperElRef}
                 slidesPerView="1"
@@ -44,7 +44,7 @@ const ServicesCarousel = () => {
                             />
                         </div>
                         <h2 className="mt-4 mb-4">SANDING & REFINISHING</h2>
-                        <p className="mb-8 max-w-[90vw]">Sanding off the old finish and applying new-to reveal beautiful, smooth floors.
+                        <p className="mb-8 paragraph-wrap">Sanding off the old finish and applying new-to reveal beautiful, smooth floors.
                             Stain can also be applied at this stage to give your floors the color you want.
                         </p>
                     </div>
@@ -59,7 +59,7 @@ const ServicesCarousel = () => {
                             />
                         </div>
                         <h2 className="mt-4 mb-4">INSTALLATION & REPAIRS</h2>
-                        <p className="mb-8 max-w-[90vw]">Wether you want to start fresh, add to your current floor, or repair a damaged area, 
+                        <p className="mb-8 paragraph-wrap">Wether you want to start fresh, replace worn out stair treads, add to your current floor, or repair a damaged area, 
                             a seamless solution is available.
                         </p>
                     </div>
@@ -74,7 +74,7 @@ const ServicesCarousel = () => {
                             />
                         </div>
                         <h2 className="mt-4 mb-4">BUFF & COAT</h2>
-                        <p className="mb-8 max-w-[90vw]">Seeing light wear patterns on your floors? Or need a little shine in your life? A
+                        <p className="mb-8 paragraph-wrap">Seeing light wear patterns on your floors? Or need a little shine in your life? A
                             quick buff and a new layer of finish will shine it right up!
                         </p>
                     </div>

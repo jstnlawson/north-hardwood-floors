@@ -29,54 +29,58 @@ export default function () {
     }, []);
 
     return (
-        <div id="services" className="services-container bg-northBlue flex justify-center items-center">
+        <div id="services">
             {!display && (
-            <div className="large-services-container text-white pb-5 max-w-[1440px]">
-                <h1 className="text-center p-5 ">Services</h1>
-                <div className="large-grid-container">
-                    <div className="sanding-container ml-28 ">
-                        <div className="services-logo-containers" >
-                            <Image
-                                src={sandingLogo}
-                                alt="sanding logo"
-                                className="h-auto w-auto"
-                            />
+            <div  className="services-container bg-northBlue flex justify-center items-center">
+                <div className="large-services-container text-white p-[10vh]">
+                    <h1 className="text-center mb-8">Services</h1>
+                    <div className="large-grid-container">
+                        <div className="sanding-container ml-6">
+                            <div className="services-logo-containers" >
+                                <Image
+                                    src={sandingLogo}
+                                    alt="sanding logo"
+                                    className="h-auto w-auto"
+                                />
+                            </div>
+                            <h2 className="my-4">SANDING & REFINISHING</h2>
+                            <p className="paragraph-wrap">Sanding off the old finish and applying new-to reveal beautiful, smooth floors.
+                                Stain can also be applied at this stage to give your floors the color you want.
+                            </p>
                         </div>
-                        <h2 className="my-4">SANDING & REFINISHING</h2>
-                        <p className="paragraph-wrap">Sanding off the old finish and applying new-to reveal beautiful, smooth floors.
-                            Stain can also be applied at this stage to give your floors the color you want.
-                        </p>
-                    </div>
-                    <div className="repairs-container mx-14">
-                        <div className="services-logo-containers" >
-                            <Image
-                                src={repairLogo}
-                                alt="repair logo"
-                                
-                            />
+                        <div className="repairs-container mx-4">
+                            <div className="services-logo-containers" >
+                                <Image
+                                    src={repairLogo}
+                                    alt="repair logo"
+                                    
+                                />
+                            </div>
+                            <h2 className="my-4">INSTALLATION & REPAIRS</h2>
+                            <p className="paragraph-wrap">Wether you want to start fresh, replace worn out stair treads, add to your current floor, or repair a damaged area, 
+                                a seamless solution is available.</p>
                         </div>
-                        <h2 className="my-4">INSTALLATION & REPAIRS</h2>
-                        <p className="paragraph-wrap">Wether you want to start fresh, add to your current floor, or repair a damaged area, 
-                            a seamless solution is available.</p>
-                    </div>
-                    <div className="buff-container mr-28">
-                        <div className="services-logo-containers" >
-                            <Image
-                                src={buffLogo}
-                                alt="buff logo"
-                                
-                            />
+                        <div className="buff-container mr-6">
+                            <div className="services-logo-containers" >
+                                <Image
+                                    src={buffLogo}
+                                    alt="buff logo"
+                                    
+                                />
+                            </div>
+                            <h2 className="my-4">BUFF & COAT</h2>
+                            <p className="paragraph-wrap">Seeing light wear patterns on your floors? Or need a little shine in your life? A
+                                quick buff and a new layer of finish will shine it right up!
+                            </p>
                         </div>
-                        <h2 className="my-4">BUFF & COAT</h2>
-                        <p className="paragraph-wrap">Seeing light wear patterns on your floors? Or need a little shine in your life? A
-                            quick buff and a new layer of finish will shine it right up!
-                        </p>
                     </div>
                 </div>
-            </div>
-            )}
-
+                </div>
+                )}
+        
+         <div>
             {display && <ServicesCarousel />}
+        </div>
         </div>
     )
 }

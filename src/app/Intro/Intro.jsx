@@ -13,7 +13,7 @@ export default function Intro() {
     return (
         <>
         <div className="bg-northLightBlue h-[10vh]"></div>
-        <div className="p-16 bg-northLightBlue flex justify-center items-center flex-col md:flex-row">
+        <div className=" pb-[1vh]  md:p-0 md:bg-[#eae2d9] bg-northLightBlue flex justify-center items-center flex-col md:flex-row h-[90vh] sm:h-auto">
             
             <div className="flex relative intro-container  max-w-[1440px]">
                 <section className="flex-grow flex justify-center items-center">
@@ -28,7 +28,7 @@ export default function Intro() {
                             </div>
                         </div>
                     </div>
-                    <div className="intro-image-container w-[90vw] max-w-[1280px]">
+                    <div className="intro-image-container w-[90vw] md:w-[100vw]">
                         <Image
                             src={tallerMainFloor}
                             alt="Main Image"

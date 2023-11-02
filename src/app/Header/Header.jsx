@@ -15,8 +15,8 @@ const Header = ({ hideHeader }) => {
   };
 
   return (
-    <header id='header' className={`sticky top-0 z-50 ${hideHeader ? 'hidden' : ''}`}>
-      <div className="bg-northLightBlue fixed w-[100vw] flex items-center justify-between md:justify-normal">
+    <header id='header' className={`sticky top-0 z-10 ${hideHeader ? 'hidden' : ''}`}>
+      <div className="bg-northBlue fixed w-[100vw] flex items-center justify-between md:justify-normal p-2">
         <div >
           <Hamburger />
         </div>
@@ -25,7 +25,7 @@ const Header = ({ hideHeader }) => {
           src={uglyLogo}
           alt="ugly logo"
           onClick={() => scrollToSection("header")}
-          className="h-14 w-16  md:h-20 md:w-24 lg:h-28 lg:w-36 header-logo cursor-pointer p-1 mx-2 xl:mx-24 md:mx-14"
+          className=" bg-northBeige rounded-full h-14 w-16  md:h-20 md:w-24 lg:h-28 lg:w-36 header-logo cursor-pointer py-2 mx-2 xl:mx-24 md:mx-14"
         />
         <div className="md:block hidden">
           <span

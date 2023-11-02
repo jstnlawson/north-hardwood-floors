@@ -34,6 +34,14 @@ const GalleryCarousel = ({ handleShowGallery }) => {
             src: oakFloorStairs,
             alt: "Picture of oak floor and stairs"
         },
+        {
+            src: topOfStairs,
+            alt: "Picture of stairs from above"
+        },
+        {
+            src: oakKitchen,
+            alt: "Picture of oak floor in kitchen"
+        },
     ]
 
     const swiperElRef = useRef(null);
@@ -64,7 +72,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
                 navigation="true"
                 pagination="true"
                 // className="max-h-[80vh] md:w-[600px] w-[90vw] rounded-lg"
-                style={{"--swiper-navigation-size": "30px" , 'margin-top': '10vh'} }
+                style={{"--swiper-navigation-size": "30px" } }
             >
                
                     {images.map((image, index) => (
@@ -73,7 +81,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
                                 <Image
                                 src={image.src}
                                 alt={image.alt}
-                                className="max-h-[80vh] md:w-[600px] w-[85vw] rounded-lg"
+                                className="max-h-[80vh] md:w-[600px] w-[90vw] rounded-lg mt-[5vh]"
 
                                 />
                             </div>

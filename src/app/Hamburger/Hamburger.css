@@ -23,7 +23,9 @@
     display: flex;
     flex-direction: column;
     gap: var(--hamburger-gap);
-    color: var(--foreground);
+    
+    
+    
     width: max-content;
     position: absolute;
     top: var(--hamburger-margin);
@@ -33,18 +35,18 @@
 }
 
 /* switching color scheme on click */
-.hamburger-menu:has(input:checked) {
+/* .hamburger-menu:has(input:checked) {
     --foreground: #e1d9d3;
     --background: #334b5c;
-}
+} */
 
 /* accessibility focus that isn't working */
-.hamburger-menu:has(input:focus-visible)::before,
+/* .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
 .hamburger-menu input:focus-visible {
     border: 1px solid var(--background);
     box-shadow: 0 0 0 1px var(--foreground);
-}
+} */
 
 
 
@@ -54,7 +56,8 @@
     content: "";
     width: var(--bar-width);
     height: var(--bar-height);
-    background-color: var(--foreground);
+    /* background-color: var(--foreground); */
+    background-color: var(--background);
     border-radius: 9999px;
     transform-origin: left center; /*changed from right */
     transition: opacity var(--animation-timing), width var(--animation-timing),
@@ -73,7 +76,7 @@
     padding-top: calc(var(--hamburger-height) + 2rem);
     background-color: var(--foreground);
     color: var(--background);
-    width: 40vw;
+    width: 50vw;
     min-height: 100vh;
 }
 

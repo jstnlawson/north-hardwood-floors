@@ -1,8 +1,4 @@
 
-  /* .intro-container {
-    position: relative; 
-  } */
-  
   .intro-text-container {
     position: absolute; /* Position the text container absolutely */
     top: 1; /* Align it to the top of the parent container */
@@ -13,11 +9,5 @@
     width: 25vw;
     margin-left: 3vw;
     max-width: 450px;
-  }
-
-  
-  
-  .intro-headline{
-    text-wrap: balance;
   }
 

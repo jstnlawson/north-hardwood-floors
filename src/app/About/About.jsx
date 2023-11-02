@@ -16,7 +16,6 @@ export default function About() {
                     alt="About Bart"
                     className="bart-photo"
                     quality={100}
-                    layout="intrinsic"//not sure this works
                 />
             </div>
             <div className="about-text-container bg-white relative p-5 max-w-[500px]">
