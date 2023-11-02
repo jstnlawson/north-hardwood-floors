@@ -14,7 +14,6 @@ const ServicesCarousel = () => {
     const swiperElRef = useRef(null);
 
     useEffect(() => {
-        // listen for Swiper events using addEventListener
         swiperElRef.current.addEventListener('progress', (e) => {
             const [swiper, progress] = e.detail;
             console.log(progress);

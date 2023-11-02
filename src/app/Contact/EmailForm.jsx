@@ -37,9 +37,11 @@ const EmailForm = () => {
         } finally {
             setSubmitting(false);
             toast.success('Email sent successfully!')
-            // setShowConfetti(true)
+            
         }
     };
+
+    
 
     return (
         <>
