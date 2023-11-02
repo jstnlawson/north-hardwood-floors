@@ -18,13 +18,3 @@
     width: 140px;
     border-radius: 70px;
 }
-
-.white-swiper {
-    color: white;
-    background-color: white;
-}
-
-.swiper-button-next::before, 
-.swiper-button-prev::before {
-    color: white !important;
-}

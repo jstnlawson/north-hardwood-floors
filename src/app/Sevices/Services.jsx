@@ -29,9 +29,9 @@ export default function () {
     }, []);
 
     return (
-        <div id="services" className="services-container bg-northBlue">
+        <div id="services" className="services-container bg-northBlue flex justify-center items-center">
             {!display && (
-            <div className="large-services-container text-white pb-5">
+            <div className="large-services-container text-white pb-5 max-w-[1440px]">
                 <h1 className="text-center p-5 ">Services</h1>
                 <div className="large-grid-container">
                     <div className="sanding-container ml-28 ">

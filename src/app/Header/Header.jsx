@@ -16,8 +16,7 @@ const Header = ({ hideHeader }) => {
 
   return (
     <header id='header' className={`sticky top-0 z-50 ${hideHeader ? 'hidden' : ''}`}>
-      <div className="header-image-container">
-
+      <div className="bg-northLightBlue fixed w-[100vw] flex items-center justify-between md:justify-normal">
         <div >
           <Hamburger />
         </div>
@@ -26,36 +25,36 @@ const Header = ({ hideHeader }) => {
           src={uglyLogo}
           alt="ugly logo"
           onClick={() => scrollToSection("header")}
-          className="h-14 w-16  md:h-20 md:w-24 lg:h-28 lg:w-36  mx-5 header-logo cursor-pointer"
+          className="h-14 w-16  md:h-20 md:w-24 lg:h-28 lg:w-36 header-logo cursor-pointer p-1 mx-2 xl:mx-24 md:mx-14"
         />
         <div className="md:block hidden">
           <span
-            className='header-links cursor-pointer ml-14 lg:ml-20 xl:ml-24'
+            className='header-links cursor-pointer xl:mx-[4vw] lg:mx-[3vw] md:mx-[2vw]'
             onClick={() => scrollToSection("services")}>
             Services
           </span>
           <span
-            className='header-links cursor-pointer ml-14 lg:ml-20 xl:ml-24'
+            className='header-links cursor-pointer xl:mx-[4vw] lg:mx-[3vw] md:mx-[2vw] mx-[5vw]'
             onClick={() => scrollToSection("about")}>
             About
           </span>
           <span 
-            className='header-links cursor-pointer ml-14 lg:ml-20 xl:ml-24' 
+            className='header-links cursor-pointer xl:mx-[4vw] lg:mx-[3vw] md:mx-[2vw] mx-[5vw]' 
             onClick={() => scrollToSection("gallery")}>
               Gallery
           </span>
           <span 
-            className='header-links cursor-pointer ml-14 lg:ml-20 xl:ml-24' 
+            className='header-links cursor-pointer xl:mx-[4vw] lg:mx-[3vw] md:mx-[2vw] mx-[5vw]' 
             onClick={() => scrollToSection("process")}>
               Process
           </span>
           <span 
-            className='header-links cursor-pointer ml-14 lg:ml-20 xl:ml-24' 
+            className='header-links cursor-pointer xl:mx-[4vw] lg:mx-[3vw] md:mx-[2vw] mx-[5vw]' 
             onClick={() => scrollToSection("quiz")}>
               Guide
           </span>
           <span 
-            className='header-links cursor-pointer mr-14 ml-14 lg:ml-20 xl:ml-24 ' 
+            className='header-links cursor-pointer xl:mx-[4vw] lg:mx-[3vw] md:mx-[2vw] mx-[5vw]' 
             onClick={() => scrollToSection("contact")}>
               Contact
           </span>

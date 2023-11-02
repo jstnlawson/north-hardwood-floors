@@ -36,8 +36,7 @@
 
     .gallery-text-container {
         max-height: none;
-        min-width: 0;
-        width: 90vw;
+        min-width: 90vw;
         left: 0;
         order: 2;
     }
