@@ -10,7 +10,7 @@ export default function About() {
     return (
         <div id="about" className="flex flex-col bg-northLightBlue p-16 relative justify-center items-center overflow-hidden md:flex-row">
 
-            <div className="bart-container">
+            <div className="bart-container max-w-[900px]">
                 <Image
                     src={meetBart}
                     alt="About Bart"
@@ -19,7 +19,7 @@ export default function About() {
                     layout="intrinsic"//not sure this works
                 />
             </div>
-            <div className="about-text-container bg-white relative p-4 ">
+            <div className="about-text-container bg-white relative p-5 max-w-[500px]">
                 <h1 className="text-northBlue">About North Hardwood Floors</h1>
                 <p className="text-northBlue paragraph-wrap">
                     Owned and operated by Bart Boutwell, a hardwood flooring professional with over 15 years 

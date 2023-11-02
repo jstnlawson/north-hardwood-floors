@@ -1,10 +1,8 @@
-
 "use client";
 import React from "react";
 import Image from "next/image";
 import "./intro.css";
 import tallerMainFloor from 'public/images/tallerMainFloor.png'
-import Header from "@/app/Header/Header";
 import Paragraph from "../Paragraph/Paragraph";
 
 
@@ -13,11 +11,12 @@ import Paragraph from "../Paragraph/Paragraph";
 
 export default function Intro() {
     return (
-        <div className="p-16 bg-northLightBlue">
-            <div className="flex relative intro-container mt-10 md:mt-20 justify-center">
-                {/* <Header /> */}
+        <>
+        <div className="bg-northLightBlue h-[10vh]"></div>
+        <div className="p-16 bg-northLightBlue flex justify-center items-center flex-col md:flex-row">
+            
+            <div className="flex relative intro-container  max-w-[1440px]">
                 <section className="flex-grow flex justify-center items-center">
-
                     <div className="intro-text-container">
                         <div className="floating-container">
                             <div className="center-text-container">
@@ -29,9 +28,7 @@ export default function Intro() {
                             </div>
                         </div>
                     </div>
-
-                    <div className="intro-image-container w-[90vw]">
-
+                    <div className="intro-image-container w-[90vw] max-w-[1280px]">
                         <Image
                             src={tallerMainFloor}
                             alt="Main Image"
@@ -41,12 +38,11 @@ export default function Intro() {
                         />
                     </div>
                 </section>
-                
-
             </div>
-        <div className="">
-        <Paragraph />
+            <div className="">
+                <Paragraph />
+            </div>
         </div>
-        </div>
+        </>
     )
 }

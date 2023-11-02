@@ -14,7 +14,8 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} max-w-1440 min-w-320 mx-auto`}>
+      {/* <body className={`${inter.className} max-w-1440 min-w-320 mx-auto`}> */}
+      <body className={`${inter.className} min-w-320`}>
       {children}
       </body>
     </html>

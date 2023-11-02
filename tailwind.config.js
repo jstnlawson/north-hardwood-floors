@@ -13,9 +13,9 @@ module.exports = {
         'lg': '1024px',   
         'xl': '1280px',   
       },
-      maxWidth: {
-        '1440': '1440px',
-      },
+      // maxWidth: {
+      //   '1440': '1440px',
+      // },
       minWidth: {
         '320': '320px',
       },

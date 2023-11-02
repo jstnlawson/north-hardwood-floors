@@ -3,16 +3,18 @@
 .large-grid-container{
     display: grid;
             grid-template-columns: 1fr 1fr 1fr; 
-            gap: 16px; 
-            padding: 10px;
+            /* gap: 16px; 
+            padding: 20px; */
             height: fit-content;
             justify-content: center;
+            
 }
 
 .services-logo-containers{
     background-color: #f1e9e3;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 140px;
     width: 140px;
     border-radius: 70px;
