@@ -30,7 +30,7 @@ export default function DryTime({ handleShowProcess, handlePreviousStep }) {
                     <h2 className="text-northOrange">Time before foot traffic:</h2>
                     <div className="text-northBlue text-sm">
                         <p className="paragraph-wrap">
-                            Water based finishes can handle light foot traffic (sox) as soon 4 hours and oil based finishes 
+                            Water based finishes can handle light foot traffic (socks) as soon 4 hours and oil based finishes 
                             take about 12 hours. The finish is extra vulnerable to damage for the first couple days so step lightly.
                         </p>
                     </div>

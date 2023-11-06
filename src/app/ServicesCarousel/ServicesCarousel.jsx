@@ -59,7 +59,7 @@ const ServicesCarousel = () => {
                             />
                         </div>
                         <h2 className="mt-4 mb-4">INSTALLATION & REPAIRS</h2>
-                        <p className="mb-8 paragraph-wrap">Wether you want to start fresh, replace worn out stair treads, add to your current floor, or repair a damaged area, 
+                        <p className="mb-8 paragraph-wrap">Whether you want to start fresh, replace worn out stair treads, add to your current floor, or repair a damaged area, 
                             a seamless solution is available.
                         </p>
                     </div>

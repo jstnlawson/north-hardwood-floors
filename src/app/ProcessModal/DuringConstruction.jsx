@@ -61,7 +61,7 @@ export default function DuringConstruction({ handleNextStep, handlePreviousStep,
                     <div className="text-northBlue text-sm">
                         <p className="paragraph-wrap">
                             Between coats no one can be on the floors for 4 to 12 hours. Bart will
-                            give you an outline of the coating schedule and keep you up to date as he goes. Typical timeline 2-3 days.
+                            give you an outline of the coating schedule and keep you up to date as it goes. Typical timeline 2-3 days.
                         </p>
                     </div>
                 </div>

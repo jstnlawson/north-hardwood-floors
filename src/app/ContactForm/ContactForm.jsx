@@ -51,7 +51,7 @@ export default function ContactForm({ suggestedServiceText, setSuggestedServiceT
     };
 
     return (
-        <div className="contact-container h-[100vh] bg-northLightBlue p-2 flex flex-col justify-center items-center text-northBlue">
+        <div className="contact-container sm:h-[80vh] h-[100vh] bg-northLightBlue p-2 flex flex-col justify-center items-center text-northBlue">
             <div className='flex flex-col items-center w-[500px]'>
             {/* <h1 className="contact-heading text-northBeige my-2">CONTACT</h1> */}
             <h1 className='text-northBlue my-2'>Let's Get Started</h1>
@@ -149,7 +149,7 @@ export default function ContactForm({ suggestedServiceText, setSuggestedServiceT
                 draggable
                 pauseOnHover
                 theme='light'
-                
+                z-index='9999'
             />
         </div>
     )

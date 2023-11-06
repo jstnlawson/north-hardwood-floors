@@ -13,7 +13,7 @@ export default function Intro() {
     return (
         <>
         <div className="bg-northLightBlue h-[10vh]"></div>
-        <div className=" pb-[1vh]  md:p-0 md:bg-[#eae2d9] bg-northLightBlue flex justify-center items-center flex-col md:flex-row h-[90vh] sm:h-auto">
+        <div className="md:p-0 md:bg-[#eae2d9] bg-northLightBlue flex justify-center items-center flex-col md:flex-row h-[90vh] sm:h-auto">
             
             <div className="flex relative intro-container  max-w-[1440px]">
                 <section className="flex-grow flex justify-center items-center">

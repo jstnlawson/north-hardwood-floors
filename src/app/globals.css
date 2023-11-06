@@ -39,14 +39,23 @@ body {
     min-width: 320px;
     overflow-x:hidden;
 }
+/* @apply is a way to use tailwind here but tailwind does not reccomend */
+@layer base { 
+  h1 {
+    line-height: 1.25;
+    font-size: 2.25rem;
+    /* @apply leading-tight text-4xl; */
+  }
+}
 
 html {
   overflow-x:hidden;
 }
 
-h1 {
+/* h1 {
   font-size: xx-large;
-}
+  @apply leading-tight
+} */
 
 h2 {
   font-size: large;
@@ -65,7 +74,7 @@ li {
   color: white;
   align-items: center;
   background-color: #334b5c;
-  margin: 1rem;
+  @apply my-2;
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   font-size: 17px;
@@ -90,7 +99,7 @@ li {
   display: flex;
   align-items: center;
   background-color: #e59163;
-  margin: 1rem;
+  @apply my-2;
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
   font-size: 17px;

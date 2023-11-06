@@ -120,7 +120,7 @@ const EmailForm = () => {
                 draggable
                 pauseOnHover
                 theme='light'
-                
+                z-index={9999}
             />
 
             {/* {showConfetti && (

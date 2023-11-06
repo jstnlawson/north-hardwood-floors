@@ -57,7 +57,7 @@ export default function () {
                                 />
                             </div>
                             <h2 className="my-4">INSTALLATION & REPAIRS</h2>
-                            <p className="paragraph-wrap">Wether you want to start fresh, replace worn out stair treads, add to your current floor, or repair a damaged area, 
+                            <p className="paragraph-wrap">Whether you want to start fresh, replace worn out stair treads, add to your current floor, or repair a damaged area, 
                                 a seamless solution is available.</p>
                         </div>
                         <div className="buff-container mr-6">
