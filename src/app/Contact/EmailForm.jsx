@@ -6,7 +6,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { toFormikValidationSchema } from 'zod-formik-adapter'
 
 import { ToastContainer, toast } from 'react-toastify'
-// import Confetti from 'react-confetti'
+
 
 const initialValues = {
     name: '',
@@ -18,26 +18,41 @@ const initialValues = {
 
 
 const EmailForm = () => {
-    // const [isLoading, setIsLoading] = useState(false);
-    // const [showConfetti, setShowConfetti] = useState(false);
 
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
         try {
-            await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(values),
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(async () => {
+                    try {
+                        await fetch("/api/contact", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(values),
+                        });
+                        resolve();
+                    } catch (error) {
+                        reject(error);
+                    }
+                }, 2000);
             });
+    
+            toast.promise(
+                promise,
+                {
+                    pending: 'Sending email...',
+                    success: 'Email sent successfully!',
+                    error: 'Failed to send email',
+                }
+            );
+    
             resetForm();
             console.log("Email sent successfully!");
         } catch (error) {
             console.error("Failed to send email:", error);
         } finally {
             setSubmitting(false);
-            toast.success('Email sent successfully!')
-            
         }
     };
 
@@ -110,8 +125,8 @@ const EmailForm = () => {
                 </Form>
             </Formik>
             <ToastContainer
-                position='top-center'
-                autoClose={3000}
+                position='bottom-center'
+                autoClose={2000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick
@@ -120,17 +135,9 @@ const EmailForm = () => {
                 draggable
                 pauseOnHover
                 theme='light'
-                z-index={9999}
+                //z-index={9999}
+                zIndex={9999}
             />
-
-            {/* {showConfetti && (
-                <Confetti
-                    width={window.innerWidth}
-                    height={window.innerHeight}
-                    recycle={false}
-                    
-                />
-            )} */}
         </>
     )
 }

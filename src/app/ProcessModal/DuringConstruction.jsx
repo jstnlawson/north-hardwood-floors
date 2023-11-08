@@ -67,8 +67,8 @@ export default function DuringConstruction({ handleNextStep, handlePreviousStep,
                 </div>
             </div>
             <div className=" flex mb-6">
-            <button className="orange-button" onClick={handlePreviousStep}>← back</button>
-            <button className="orange-button" onClick={handleNextStep}>next →</button>
+            <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
+            <button className="orange-button ml-8" onClick={handleNextStep}>next →</button>
             </div>
         </div>
     )

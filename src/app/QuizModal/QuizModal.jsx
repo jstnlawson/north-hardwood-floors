@@ -16,7 +16,11 @@ export default function QuizModal({ handleShowQuiz }) {
     const [selectedAnswers, setSelectedAnswers] = useState([]);
     const [suggestedService, setSuggestedService] = useState("");
     const [suggestedServiceText, setSuggestedServiceText] = useState("");
-    
+    const [selectedAnswersStep1, setSelectedAnswersStep1] = useState([]);
+    const [selectedAnswersStep2, setSelectedAnswersStep2] = useState([]);
+    const [selectedAnswersStep3, setSelectedAnswersStep3] = useState([]);
+
+
 
     const answer1a = "Light wear patterns";
     const answer1b = "Lots of noticeable scratches";
@@ -36,6 +40,16 @@ export default function QuizModal({ handleShowQuiz }) {
 
     const handleNextStep = () => {
         if (step < 5) {
+            if (step === 1 && selectedAnswersStep1.length === 0) {
+                alert('Please select at least one option in Step 1.');
+                return;
+            } else if (step === 2 && selectedAnswersStep2.length === 0) {
+                alert('Please select at least one option in Step 2.');
+                return;
+            } else if (step === 3 && selectedAnswersStep3.length !== 1) {
+                alert('Please select exactly one option in Step 3.');
+                return;
+            }
             setStep(step + 1);
         }
     };
@@ -49,14 +63,33 @@ export default function QuizModal({ handleShowQuiz }) {
     const handleCheckboxChange = (event) => {
         const selectedOption = event.target.value; // Get the value of the selected option
 
-        // Check if the selected option is already in selectedAnswers
         if (selectedAnswers.includes(selectedOption)) {
-            // If it is, remove it from the selectedAnswers array
             setSelectedAnswers(selectedAnswers.filter((option) => option !== selectedOption));
         } else {
-            // If it's not, add it to the selectedAnswers array
             setSelectedAnswers([...selectedAnswers, selectedOption]);
         }
+
+        if (step === 1) {
+            if (selectedAnswersStep1.includes(selectedOption)) {
+                setSelectedAnswersStep1(selectedAnswersStep1.filter((option) => option !== selectedOption));
+            } else {
+                setSelectedAnswersStep1([...selectedAnswersStep1, selectedOption]);
+            }
+        } else if (step === 2) {
+            if (selectedAnswersStep2.includes(selectedOption)) {
+                setSelectedAnswersStep2(selectedAnswersStep2.filter((option) => option !== selectedOption));
+            } else {
+                setSelectedAnswersStep2([...selectedAnswersStep2, selectedOption]);
+            }
+        } else if (step === 3) {
+            if (selectedAnswersStep3.includes(selectedOption)) {
+                setSelectedAnswersStep3(selectedAnswersStep3.filter((option) => option !== selectedOption));
+            } else {
+                // Make sure you only allow selecting one checkbox for step 3
+                setSelectedAnswersStep3([selectedOption]);
+            }
+        }
+
     };
 
     const handleSuggestService = () => {
@@ -117,13 +150,13 @@ export default function QuizModal({ handleShowQuiz }) {
             setSuggestedService("Sand & Finish")
             setSuggestedServiceText("Sand & Finish")
         }
-        else { 
+        else {
             setSuggestedService("Contact Bart to find out what your floor needs!")
             setSuggestedServiceText("Contact Bart.")
         }
 
         handleNextStep()
-        
+
     }
 
     return (
@@ -135,7 +168,7 @@ export default function QuizModal({ handleShowQuiz }) {
                     onClick={handleShowQuiz} />
             </div>
 
-            <div className="absolute top-5 ml-5 cursor-pointer sm:hidden text-northBlue  z-10">
+            <div className="absolute top-2 ml-2 cursor-pointer sm:hidden text-northBlue  z-10">
                 <IoMdClose
                     size={30}
                     onClick={handleShowQuiz} />
@@ -320,7 +353,7 @@ export default function QuizModal({ handleShowQuiz }) {
                         </span>
                         <h1 className="text-northBlue text-center mx-1">
                             What are your thoughts on the
-                            
+
                             color of your floor?
                         </h1>
                         <span className="text-xs sm:text-northBlue text-black text-center  m-4">
@@ -394,23 +427,24 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-buff flex flex-col justify-center items-center">
                                 <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Buff & Coat</h1>
-                                
-                                    <div className="flex items-center">
+
+                                <div className="flex flex-col items-center">
+                                    
+                                    <div className="">
+                                        <Image
+                                            src={buffer}
+                                            width={267}
+                                            height={217}
+                                            className="m-1"
+                                            alt="floor buffer"
+                                        />
+                                    </div>
                                     <div className="flex items-center ">
-                                    <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
-                                    <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
+                                        <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
+                                        <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
                                     </div>
-                                        <div className="">
-                                            <Image
-                                                src={buffer}
-                                                width={267}
-                                                height={217}
-                                                className="m-1"
-                                                alt="floor buffer"
-                                            />
-                                        </div>
-                                    </div>
-                                
+                                </div>
+
                             </div>
                         )}
 
@@ -418,23 +452,24 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-sand flex flex-col justify-center items-center">
                                 <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Sand & Finish</h1>
-                                
-                                    <div className="flex flex-col items-center">
+
+                                <div className="flex flex-col items-center">
+                                    
+                                    <div className="">
+                                        <Image
+                                            src={drumSander}
+                                            width={267}
+                                            height={217}
+                                            className="m-1"
+                                            alt="floor sander"
+                                        />
+                                    </div>
                                     <div className="flex items-center ">
-                                    <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
-                                    <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
+                                        <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
+                                        <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
                                     </div>
-                                        <div className="">
-                                            <Image
-                                                src={drumSander}
-                                                width={267}
-                                                height={217}
-                                                className="m-1"
-                                                alt="floor sander"
-                                            />
-                                        </div>
-                                    </div>
-                                
+                                </div>
+
                             </div>
                         )}
 
@@ -442,32 +477,33 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-repair-sand flex flex-col justify-center items-center">
                                 <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Repair, sand, & finish</h1>
-                                
-                                    <div className="flex flex-col items-center">
+
+                                <div className="flex flex-col items-center">
+                                    
+                                    <div className="sm:h-56 flex mt-4">
+                                        <Image
+                                            src={weave}
+                                            width={267}
+                                            height={217}
+                                            sizes="(max-width: 640px) 40vw"
+                                            className="m-1"
+                                            alt="floor repair"
+                                        />
+                                        <Image
+                                            src={drumSander}
+                                            width={267}
+                                            height={217}
+                                            sizes="(max-width: 640px) 40vw"
+                                            className="m-1"
+                                            alt="floor sander"
+                                        />
+                                    </div>
                                     <div className="flex items-center ">
-                                    <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
-                                    <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
+                                        <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
+                                        <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
                                     </div>
-                                        <div className="sm:h-56 flex mt-4">
-                                            <Image
-                                                src={weave}
-                                                width={267}
-                                                height={217}
-                                                sizes="(max-width: 640px) 40vw"
-                                                className="m-1"
-                                                alt="floor repair"
-                                            />
-                                            <Image
-                                                src={drumSander}
-                                                width={267}
-                                                height={217}
-                                                sizes="(max-width: 640px) 40vw"
-                                                className="m-1"
-                                                alt="floor sander"
-                                            />
-                                        </div>
-                                    </div>
-                                
+                                </div>
+
                             </div>
                         )}
 
@@ -475,33 +511,34 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-sand-stain flex flex-col justify-center items-center">
                                 <h1 className="text-northOrange text-center sm:mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Sand, stain, & finish</h1>
-                                
-                                    <div className="flex flex-col items-center">
-                                    <div className="flex items-center ">
-                                    <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
-                                    <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
-                                    </div>
-                                        <div className="sm:h-56 flex mt-4">
-                                            <Image
-                                                src={drumSander}
-                                                width={267}
-                                                height={217}
-                                                sizes="(max-width: 640px) 40vw"
-                                                className="m-1"
-                                                alt="floor sander"
-                                            />
-                                            <Image
-                                                src={squareStain}
-                                                width={267}
-                                                height={217}
-                                                sizes="(max-width: 640px) 40vw"
-                                                className="m-1"
-                                                alt="stained floor"
-                                            />
 
-                                        </div>
+                                <div className="flex flex-col items-center">
+
+                                    <div className="sm:h-56 flex mt-4">
+                                        <Image
+                                            src={drumSander}
+                                            width={267}
+                                            height={217}
+                                            sizes="(max-width: 640px) 40vw"
+                                            className="m-1"
+                                            alt="floor sander"
+                                        />
+                                        <Image
+                                            src={squareStain}
+                                            width={267}
+                                            height={217}
+                                            sizes="(max-width: 640px) 40vw"
+                                            className="m-1"
+                                            alt="stained floor"
+                                        />
+
                                     </div>
-                                
+                                    <div className="flex items-center ">
+                                        <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
+                                        <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
+                                    </div>
+                                </div>
+
                             </div>
                         )}
 
@@ -509,43 +546,43 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-repair-sand-stain flex flex-col justify-center items-center">
                                 <h1 className="text-northOrange text-center mb-2">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center mb-4">Repair, sand, stain, & finish</h1>
+
+                                <div className="flex flex-col items-center">
+
+                                    <div className="sm:h-56 flex mt-4">
+                                        <Image
+                                            src={weave}
+                                            height={217}
+                                            width={267}
+                                            sizes="(max-width: 815px) 30vw"
+                                            className="m-1 transition-opacity opacity-0 duration-[1s]"
+                                            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+                                            alt="floor repair"
+                                        />
+                                        <Image
+                                            src={drumSander}
+                                            width={267}
+                                            height={217}
+                                            sizes="(max-width: 815px) 30vw"
+                                            className="m-1 transition-opacity opacity-0 duration-[2s]"
+                                            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+                                            alt="floor sander"
+                                        />
+                                        <Image
+                                            src={squareStain}
+                                            width={267}
+                                            height={217}
+                                            sizes="(max-width: 815px) 30vw"
+                                            className="m-1 transition-opacity opacity-0 duration-[3s] "
+                                            onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+                                            alt="stained floor"
+                                        />
+                                    </div>
+                                </div>
                                 <div className="flex items-center ">
                                     <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
                                     <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
-                                    </div>
-                                    <div className="flex flex-col items-center">
-                                    
-                                        <div className="sm:h-56 flex mt-4">
-                                            <Image
-                                                src={weave}
-                                                height={217}
-                                                width={267}
-                                                sizes="(max-width: 815px) 30vw"
-                                                className="m-1 transition-opacity opacity-0 duration-[1s]"
-                                                onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-                                                alt="floor repair"
-                                            />
-                                            <Image
-                                                src={drumSander}
-                                                width={267}
-                                                height={217}
-                                                sizes="(max-width: 815px) 30vw"
-                                                className="m-1 transition-opacity opacity-0 duration-[2s]"
-                                                onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-                                                alt="floor sander"
-                                            />
-                                            <Image
-                                                src={squareStain}
-                                                width={267}
-                                                height={217}
-                                                sizes="(max-width: 815px) 30vw"
-                                                className="m-1 transition-opacity opacity-0 duration-[3s] "
-                                                onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-                                                alt="stained floor"
-                                            />
-                                        </div>
-                                    </div>
-                                
+                                </div>
                             </div>
                         )}
 
@@ -553,13 +590,13 @@ export default function QuizModal({ handleShowQuiz }) {
                             <div className="suggest-unsure p-5">
                                 <h1 className="text-northOrange">Suggested service is:</h1>
                                 <h1 className="text-northBlue text-center my-4">Contact Bart!</h1>
-                                
-                                    <div className="flex items-center justify-center">
+
+                                <div className="flex items-center justify-center">
                                     <button className="orange-button mr-8" onClick={handlePreviousStep}>← back</button>
 
-                                        <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
-                                    </div>
-                                
+                                    <button className="orange-button ml-8" onClick={handleNextStep}>set up estimate →</button>
+                                </div>
+
                             </div>
                         )}
 
@@ -567,7 +604,8 @@ export default function QuizModal({ handleShowQuiz }) {
                 </div>
                 <div className={`quiz-step step-${step}`}>
                     <ContactForm
-                        suggestedServiceText={suggestedServiceText} 
+                        handleShowQuiz={handleShowQuiz}
+                        suggestedServiceText={suggestedServiceText}
                         setSuggestedServiceText={setSuggestedServiceText}
                         handlePreviousStep={handlePreviousStep}
                     />

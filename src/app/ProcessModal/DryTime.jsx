@@ -47,7 +47,7 @@ export default function DryTime({ handleShowProcess, handlePreviousStep }) {
                 </div>
             </div>
             <div className="flex">
-            <button className="orange-button" onClick={handlePreviousStep}>← back</button>
+            <button className="orange-button mr-16" onClick={handlePreviousStep}>← back</button>
             <button className="blue-button" onClick={handleShowProcess}>close</button>
             </div>
         </div>

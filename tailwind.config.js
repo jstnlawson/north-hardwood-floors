@@ -11,11 +11,10 @@ module.exports = {
         'sm': '640px',    
         'md': '815px',    
         'lg': '1024px',   
-        'xl': '1280px',   
+        'xl': '1280px', 
+        '2xl': '1536px',  
       },
-      // maxWidth: {
-      //   '1440': '1440px',
-      // },
+    
       minWidth: {
         '320': '320px',
       },

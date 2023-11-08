@@ -1,31 +1,10 @@
-.contact-container {
-    max-width: 1440px;
-}
 
-.contact-heading::before {
-    content: '\2014\2014'; 
-    margin-right: 10px; 
-    color: var(--color-northOrange); 
-}
-
-.contact-input{
-    width: 80%;
-    border-bottom: solid 1px black;
-    /* margin: 1rem 0; */
-    color: black;
-}
-.contact-instruction{
-    width: 58%;
-}
-
-.contact-input::placeholder {
-    font-size: small;
-}
 
 .quiz-contact-input {
     border: solid 1px var(--color-northBlue);
     margin: 8px;
     width: 80vw;
+    max-width: 600px;
     height: 35px;
     padding: 10px;
   }
@@ -34,6 +13,7 @@
     border: solid 1px var(--color-northBlue);
     margin: 8px;
     width: 80vw;
+    max-width: 600px;
     padding: 10px;
   }
 

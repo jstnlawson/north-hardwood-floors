@@ -13,9 +13,7 @@
   --swiper-navigation-color: white;
   --swiper-pagination-color: white;
   --swiper-theme-color: white;
-  --swiper-pagination-fraction-color: white;
-  /* --swiper-navigation-size: 30px; */
-  
+  --swiper-pagination-fraction-color: white; 
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -39,7 +37,7 @@ body {
     min-width: 320px;
     overflow-x:hidden;
 }
-/* @apply is a way to use tailwind here but tailwind does not reccomend */
+/* @apply is a way to use tailwind here but tailwind does not recommend */
 @layer base { 
   h1 {
     line-height: 1.25;

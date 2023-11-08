@@ -13,13 +13,13 @@ export default function Intro() {
     return (
         <>
         <div className="bg-northLightBlue h-[10vh]"></div>
-        <div className="md:p-0 md:bg-[#eae2d9] bg-northLightBlue flex justify-center items-center flex-col md:flex-row h-[90vh] sm:h-auto">
+        <div className="md:p-0 md:bg-gradient-to-r from-[#eae2d9] to-white md:bg-[#eae2d9] bg-northLightBlue flex justify-center items-center flex-col md:flex-row h-[90vh] md:h-auto">
             
             <div className="flex relative intro-container  max-w-[1440px]">
                 <section className="flex-grow flex justify-center items-center">
                     <div className="intro-text-container">
                         <div className="floating-container">
-                            <div className="center-text-container">
+                            <div className="center-text-container p-5 ml-[5vw] lg:ml-[6vw]  2xl:ml-[1vw]">
                                 <h1 className="intro-headline md:block hidden paragraph-wrap">Floors above the rest</h1>
                                 <p className="paragraph-wrap md:block hidden">Hardwood floor sanding and repair services based on sound knowledge, quality craftsmanship,
                                     and a level of care that goes beyond expectations. Working and living in the Twin Cities
@@ -28,7 +28,7 @@ export default function Intro() {
                             </div>
                         </div>
                     </div>
-                    <div className="intro-image-container w-[90vw] md:w-[100vw]">
+                    <div className="intro-image-container w-[90vw] md:w-[100vw] ">
                         <Image
                             src={tallerMainFloor}
                             alt="Main Image"

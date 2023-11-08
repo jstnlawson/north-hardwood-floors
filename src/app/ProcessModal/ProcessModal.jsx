@@ -31,10 +31,18 @@ export default function ProcessModal({ handleShowProcess }) {
 
         <div className="modal-overlay-dark">
 
-            <div className="absolute  top-4 ml-5 sm:right-5 cursor-pointer sm:text-white text-northBlue z-10" onClick={handleShowProcess}>
+            <div className="absolute  top-5 ml-5 right-5 cursor-pointer  text-white z-10 hidden sm:block" >
+                <IoMdClose
+                    size={40}
+                    onClick={handleShowProcess}
+                />
+            </div>
+
+            <div className="absolute top-2 ml-2 cursor-pointer sm:hidden text-northBlue  z-10">
                 <IoMdClose
                     size={30}
-                     />
+                    onClick={handleShowProcess} 
+                />
             </div>
 
             <div className="steps-container flex flex-row overflow-hidden">

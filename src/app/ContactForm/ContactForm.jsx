@@ -6,17 +6,7 @@ import { toFormikValidationSchema } from 'zod-formik-adapter'
 import { ToastContainer, toast } from 'react-toastify'
 import './ContactForm.css'
 
-
-
-// const initialValues = {
-//     name: '',
-//     email: '',
-//     city: '',
-//     serviceSuggestion: '',
-//     message: '',
-// }
-
-export default function ContactForm({ suggestedServiceText, setSuggestedServiceText, handlePreviousStep }) {
+export default function ContactForm({ suggestedServiceText, setSuggestedServiceText, handlePreviousStep, handleShowQuiz }) {
 
     const initialValues = {
         name: '',
@@ -25,35 +15,50 @@ export default function ContactForm({ suggestedServiceText, setSuggestedServiceT
         serviceSuggestion: suggestedServiceText,
         message: '',
     };
-    console.log('initialValues: ', initialValues)
 
-    //const [isLoading, setIsLoading] = useState(false);
-    
     const handleSubmit = async (values, { setSubmitting, resetForm }) => {
-        values.serviceSuggestion = suggestedServiceText;
         try {
-            console.log("Form values:", values);
-            await fetch("/api/contact", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(values),
+            const promise = new Promise((resolve, reject) => {
+                setTimeout(async () => {
+                    try {
+                        await fetch("/api/contact", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(values),
+                        });
+                        resolve();
+                    } catch (error) {
+                        reject(error);
+                    }
+                }, 2000);
             });
+    
+            toast.promise(
+                promise,
+                {
+                    pending: 'Sending email...',
+                    success: 'Email sent successfully!',
+                    error: 'Failed to send email',
+                }
+            ).then(() => {
+                handleShowQuiz(); 
+            });
+    
             resetForm();
             console.log("Email sent successfully!");
         } catch (error) {
             console.error("Failed to send email:", error);
         } finally {
-            toast.success('Email sent successfully!')
             setSubmitting(false);
+            
         }
     };
 
     return (
         <div className="contact-container sm:h-[80vh] h-[100vh] bg-northLightBlue p-2 flex flex-col justify-center items-center text-northBlue">
             <div className='flex flex-col items-center w-[500px]'>
-            {/* <h1 className="contact-heading text-northBeige my-2">CONTACT</h1> */}
             <h1 className='text-northBlue my-2'>Let's Get Started</h1>
             <p className='text-center text-sm  mb-2'>
                 Your service suggestion has already been filled 
@@ -112,8 +117,6 @@ export default function ContactForm({ suggestedServiceText, setSuggestedServiceT
                         type="text"
                         id="serviceSuggestion" 
                         name="serviceSuggestion"
-                        // value={serviceSuggestion}
-                        //value={initialValues.serviceSuggestion}
                         value={suggestedServiceText}
                         className="quiz-contact-input bg-transparent"
                     />
@@ -139,8 +142,8 @@ export default function ContactForm({ suggestedServiceText, setSuggestedServiceT
                 </Form>
             </Formik>
             <ToastContainer
-                position='top-center'
-                autoClose={3000}
+                position='bottom-center'
+                autoClose={2000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick

@@ -60,12 +60,20 @@ const GalleryCarousel = ({ handleShowGallery }) => {
     return (
 
         <div className="modal-overlay-dark m-auto py-16 px-4 relative group h-screen">
-            <div  className="absolute sm:right-5 top-8 cursor-pointer text-white">
-            <IoMdClose 
-            size={45}
-            onClick={handleShowGallery}
-            className="close-modal-button"/>
-                </div>            
+            <div  className="absolute right-5 top-8 cursor-pointer text-white hidden sm:block">
+                <IoMdClose 
+                    size={40}
+                    onClick={handleShowGallery}
+                    className="close-modal-button"
+                />
+            </div> 
+            <div  className="absolute top-8 cursor-pointer text-white sm:hidden">
+                <IoMdClose 
+                    size={30}
+                    onClick={handleShowGallery}
+                    className="close-modal-button"
+                />
+            </div>            
                 <swiper-container
                 ref={swiperElRef}
                 slidesPerView="1"
