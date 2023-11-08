@@ -2,7 +2,7 @@
 import { render } from "@react-email/components";
 import { transporter, smptEmail, smptPassword } from "@/utils/nodemailer";
 // import { Email } from "@/app/Contact/Email";
-import { Email } from "src/app/Contact/Email.jsx";
+import { Email } from "../Contact/Email.jsx";
 
 
 
