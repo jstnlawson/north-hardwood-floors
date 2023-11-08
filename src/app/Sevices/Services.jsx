@@ -10,7 +10,7 @@ import ServicesCarousel from "../ServicesCarousel/ServicesCarousel";
 
 
 
-export default function () {
+export default function Services () {
 
     const [display, setDisplay] = useState(false);
 
