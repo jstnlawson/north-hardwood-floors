@@ -59,13 +59,13 @@ export default function Quiz({ hideHeader, setHideHeader }) {
                         <h1 className="text-northBlue text-center">
                             Unsure of what service you need?
                         </h1>
-                        <p className="text-northBlue text-center mt-1 mb-1 paragraph-wrap">
+                        <p className="text-northBlue text-center mt-[14px] mb-1 paragraph-wrap">
                             Answer some questions about your floors to receive a personalized 
                             service suggestion. An in-home consultation will be needed to know 
                             exactly what your floor requires but this may get you started 
                             (and, it's fun!).  
                         </p>
-                        <button className="orange-button" onClick={handleShowQuiz}>service suggestion quiz →</button>
+                        <button className="orange-button" onClick={handleShowQuiz}>service suggestion quiz</button>
                     </div>
                 </div>
             </div>

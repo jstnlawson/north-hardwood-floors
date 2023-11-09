@@ -10,167 +10,130 @@
   --color-northBlue: #334b5c;
   --color-northBeige: #f1e9e3;
   --color-northLightBlue: #eaf1f5;
+  --color-northDarkBlue: #253847; 
   --swiper-navigation-color: white;
   --swiper-pagination-color: white;
   --swiper-theme-color: white;
   --swiper-pagination-fraction-color: white; 
+  --swiper-pagination-bullet-inactive: #f1e9e3;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
 
-body {
-  background-color: black;
-  color: rgb(var(--foreground-rgb));
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
-    /* max-width: 1440px; */
+
+@layer base { 
+  body {
+    background-color: var(--color-northDarkBlue);
+    color: rgb(var(--foreground-rgb));
     min-width: 320px;
     overflow-x:hidden;
+    /* font-style: ; */
 }
-/* @apply is a way to use tailwind here but tailwind does not recommend */
-@layer base { 
   h1 {
-    line-height: 1.25;
+    line-height: 1.1;
     font-size: 2.25rem;
-    /* @apply leading-tight text-4xl; */
+  }
+  html {
+    overflow-x:hidden;
+  }
+  h2 {
+    font-size: large;
+    font-weight: 500;
+  }
+  ul {
+    margin: 0.5rem;
+  }
+  li {
+    margin: 0.5rem;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-transform: capitalize;
+    margin: 0.5rem 0;
+    font-weight: 600;
   }
 }
 
-html {
-  overflow-x:hidden;
-}
-
-/* h1 {
-  font-size: xx-large;
-  @apply leading-tight
-} */
-
-h2 {
-  font-size: large;
-  font-weight: 500;
-}
-
-ul {
-  margin: 0.5rem;
-}
-
-li {
-  margin: 0.5rem;
-}
-.blue-button {
-  display: flex;
-  color: white;
-  align-items: center;
-  background-color: #334b5c;
-  @apply my-2;
-  padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
-  font-size: 17px;
-  font-variant: small-caps;
-}
-
-.blue-button:active {
-  background-color: #334b5cb0; 
-}
-
-.blue-button:focus {
-  background-color: #334b5cee;
-  outline-offset: 2px;
-  outline: 1px solid #334b5c;
-}
-
-.blue-button:hover {
-  background-color: #334b5cee;
-}
-
-.orange-button {
-  display: flex;
-  align-items: center;
-  background-color: #e59163;
-  @apply my-2;
-  padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
-  font-size: 17px;
-  font-variant: small-caps;
-  color: black;
-}
-
-.orange-button:active {
-  background-color: #e59063b4; 
-}
-
-.orange-button:focus {
-  background-color: #e59063db;
-  outline-offset: 2px;
-  outline: 1px solid #e59163;
-}
-
-.orange-button:hover {
-  background-color: #e59063db;
-}
-
-.quiz-button {
-  display: flex;
-  align-items: center;
-  background-color: #f1e9e3;
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  border: 1px solid #334b5c;
-  border-radius: 0.75rem;
-  font-size: 17px;
-  font-variant: small-caps;
-  color: #334b5c;
-}
-
-.quiz-button:focus {
-  background-color: #f9f1ea;
-  outline-offset: 2px;
-  outline: 1px solid #1f2e38;
-}
-
-.quiz-button:hover {
-  background-color: #f9f1ea;
+@layer components { 
+  .orange-button {
+    background-color: var(--color-northOrange);
+    /* font-weight: 600; */
+    color: var(--color-northDarkBlue); 
+  }
+  .orange-button:active {
+    /* background-color: #e59063b4;  */
+    @apply bg-northOrange/50;
+  }
+  .orange-button:focus {
+    @apply bg-northOrange/50;
+    outline-offset: 2px;
+    outline: 1px solid var(--color-northOrange);
+  } 
+  .orange-button:hover {
+    @apply bg-northOrange/90;  
+  }
   
-}
+  .blue-button {
+    color: var(--color-northBeige);
+    background-color: var(--color-northBlue);
+  } 
+  .blue-button:active {
+    @apply bg-northBlue/50; 
+  } 
+  .blue-button:focus {
+    @apply bg-northBlue/50;
+    outline-offset: 2px;
+    outline: 1px solid var(--color-northBlue);
+  }
+  .blue-button:hover {
+    @apply bg-northBlue/90; 
+  }
 
-.quiz-checkbox {
-  width: 1em;
-    height: 1em;
-    background-color: transparent;
-    border-radius: 50%;
-    vertical-align: middle;
-    outline-offset: 1px;
-    outline: 1px solid #e59163;
-    appearance: none;
-    cursor: pointer;
-    margin-right: 15px;
-}
+  .quiz-button {
+    background-color: var(--color-northBeige);
+    border: 1px solid var(--color-northBlue);
+    color: var(--color-northBlue);
+  }
+  .quiz-button:focus {
+    background-color: #fff6ef;
+    outline-offset: 2px;
+    outline: 1px solid var(--color-northBlue);
+  }
+  .quiz-button:hover {
+    background-color: #fff6ef; 
+  }
 
-.quiz-checkbox:checked {
-  background-color: #e59163;
-}
-
-.modal-overlay-dark {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 1); 
-  z-index: 5; 
-  overflow: hidden;
-}
-
-.paragraph-wrap{
-  text-wrap: balance;
+  .quiz-checkbox {
+    width: 1em;
+      height: 1em;
+      background-color: transparent;
+      border-radius: 50%;
+      vertical-align: middle;
+      outline-offset: 1px;
+      outline: 1px solid var(--color-northOrange);
+      appearance: none;
+      cursor: pointer;
+      margin-right: 15px;
+  }
+  
+  .quiz-checkbox:checked {
+    background-color: var(--color-northOrange);
+  }
+  .modal-overlay-dark {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1); 
+    z-index: 5; 
+    overflow: hidden;
+  }
+  .paragraph-wrap{
+    text-wrap: balance;
+  }
 }

@@ -10,7 +10,7 @@ export default function DryTime({ handleShowProcess, handlePreviousStep }) {
         <div className="bg-northLightBlue flex flex-col justify-center items-center w-screen sm:h-[80vh] h-[100vh] p-3">
             <div>
                 <h2 className="contact-heading text-northBlue text-sm sm:mt-4">FINAL STEP</h2>
-                <h1 className="text-northBlue sm:mb-4">Dry Time</h1>
+                <h1 className="text-northBlue mb-4">Dry Time</h1>
             </div>
             <div className="flex flex-row justify-around">
                 <div>

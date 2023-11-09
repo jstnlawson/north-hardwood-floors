@@ -20,11 +20,11 @@ export default function Gallery({ hideHeader, setHideHeader }) {
         <div id="gallery" className="gallery-container flex bg-northBeige p-16 relative justify-center items-center overflow-hidden">
             <div className="gallery-text-container bg-white relative p-5 max-w-[500px]">
                 <h1 className="text-northBlue">Have a Look</h1>
-                <p className="text-northBlue paragraph-wrap">
+                <p className="text-northBlue paragraph-wrap mt-[14px]">
                     North Harwood Floors completes every project with a skillful blend of
                     professional service and true craftsmanship.
                 </p>
-                <button className="blue-button" onClick={handleShowGallery}>view the gallery →</button>
+                <button className="blue-button" onClick={handleShowGallery}>view the gallery</button>
             </div>
             <div className="gallery-cover-image-container max-w-[900px]">
                 <Image

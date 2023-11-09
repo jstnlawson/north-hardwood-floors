@@ -18,7 +18,7 @@
 
 .header-links {
     position: relative;
-    color: white;
+    color: var(--color-northBeige);
   }
   
   .header-links::after {

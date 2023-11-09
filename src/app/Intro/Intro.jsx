@@ -21,8 +21,8 @@ export default function Intro() {
                         <div className="floating-container">
                             <div className="center-text-container p-5 ml-[5vw] lg:ml-[6vw]  2xl:ml-[1vw]">
                                 <h1 className="intro-headline md:block hidden paragraph-wrap">Floors above the rest</h1>
-                                <p className="paragraph-wrap md:block hidden">Hardwood floor sanding and repair services based on sound knowledge, quality craftsmanship,
-                                    and a level of care that goes beyond expectations. Working and living in the Twin Cities
+                                <p className="paragraph-wrap md:block hidden mt-[14px]">Hardwood floor sanding and repair services based on sound knowledge, quality craftsmanship,
+                                    and a level of care that goes beyond expectations. Living and working in Minneapolis and Saint Paul
                                     since 2003.
                                 </p>
                             </div>

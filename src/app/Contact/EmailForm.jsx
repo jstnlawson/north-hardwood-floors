@@ -119,7 +119,7 @@ const EmailForm = () => {
                     // className='text-red-500'
                     />
                     <div className="flex flex-row justify-end">
-                        <Field id="submit-btn" type="submit" value="SUBMIT" className=" bg-gray-300 hover:bg-gray-200 text-gray-500 font-bold py-2 mt-2 mr-2 rounded w-24 text-sm " />
+                        <Field id="submit-btn" type="submit" value="Submit" className=" bg-gray-300 hover:bg-gray-200 text-gray-500 font-bold py-2 px-4 mt-2 mr-2 rounded w-24 text-sm " />
                     </div>
                     {/* </form> */}
                 </Form>

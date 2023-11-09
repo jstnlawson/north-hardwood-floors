@@ -336,10 +336,10 @@ export default function QuizModal({ handleShowQuiz }) {
                             </div>
                         </div>
                         <div className="quiz-button-container flex flex-row">
-                            <button className="quiz-button" onClick={handlePreviousStep}>
+                            <button className="quiz-button mr-8" onClick={handlePreviousStep}>
                                 ← back
                             </button>
-                            <button className="quiz-button" onClick={handleNextStep}>
+                            <button className="quiz-button ml-8" onClick={handleNextStep}>
                                 next →
                             </button>
                         </div>
@@ -410,10 +410,10 @@ export default function QuizModal({ handleShowQuiz }) {
                             </div>
                         </div>
                         <div className="quiz-button-container flex flex-row">
-                            <button className="quiz-button" onClick={handlePreviousStep}>
+                            <button className="quiz-button mr-8" onClick={handlePreviousStep}>
                                 ← back
                             </button>
-                            <button className="quiz-button" onClick={handleSuggestService}>
+                            <button className="quiz-button ml-8" onClick={handleSuggestService}>
                                 service suggestion →
                             </button>
                         </div>

@@ -27,7 +27,8 @@ module.exports = {
         'northBlue': '#334b5c',
         'northBeige': '#f1e9e3',
         'northOrange': '#e59163',
-        'northLightBlue': '#eaf1f5'
+        'northLightBlue': '#eaf1f5',
+        'northDarkBlue': '#253847',
       },
     },
   },
