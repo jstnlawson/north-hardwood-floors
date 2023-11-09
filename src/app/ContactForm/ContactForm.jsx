@@ -135,8 +135,8 @@ export default function ContactForm({ suggestedServiceText, setSuggestedServiceT
                         className='text-red-500'
                     />
                     <div className="flex flex-row justify-between">
-                        <button className='orange-button ' onClick={handlePreviousStep}>← quiz</button>
-                        <Field id="submit-btn" type="submit" value="submit" className="orange-button" />
+                        <button className='quiz-button bg-northLightBlue' onClick={handlePreviousStep}>← quiz</button>
+                        <Field id="submit-btn" type="Submit" value="Submit" className="bg-northOrange hover:bg-northOrange/90 rounded-lg px-4 py-2 h-[38px] mt-2 text-sm font-bold text-northDarkBlue" />
                     </div>
                     
                 </Form>
