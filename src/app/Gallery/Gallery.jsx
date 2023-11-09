@@ -21,7 +21,7 @@ export default function Gallery({ hideHeader, setHideHeader }) {
             <div className="gallery-text-container bg-white relative p-5 max-w-[500px]">
                 <h1 className="text-northBlue">Have a Look</h1>
                 <p className="text-northBlue paragraph-wrap mt-[14px]">
-                    North Harwood Floors completes every project with a skillful blend of
+                    North Hardwood Floors completes every project with a skillful blend of
                     professional service and true craftsmanship.
                 </p>
                 <button className="blue-button" onClick={handleShowGallery}>view the gallery</button>
