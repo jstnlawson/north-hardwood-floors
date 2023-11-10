@@ -1,26 +1,3 @@
-// import React from "react";
-// import "./Hamburger.css"
-
-
-
-// export default function () {
-
-//     const scrollToSection = (id) => {
-//         const element = document.getElementById(id);
-//         if (element) {
-//             element.scrollIntoView({ behavior: "smooth", block: 'center' });
-//         }
-//     };
-
-//     return (
-//         <>
-//             <div className="hamburger-container  md:hidden">
-//                 <label className="hamburger-menu ml-2 mt-3">
-//                     <input type="checkbox" />
-//                 </label>
-//                 <aside className="sidebar">
-// import React, { useEffect, useState } from "react";
-// import "./Hamburger.css";
 import React, { useEffect, useState, useRef } from "react";
 import "./Hamburger.css";
 

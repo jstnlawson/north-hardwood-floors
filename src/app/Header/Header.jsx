@@ -4,6 +4,7 @@ import Image from 'next/image';
 import uglyLogo from 'public/images/uglyLogo.svg';
 import "./Header.css";
 import Hamburger from '@/app/Hamburger/Hamburger';
+import JsHamburger from '../JsHamburger/JsHamburber';
 
 const Header = ({ hideHeader }) => {
 
@@ -18,8 +19,12 @@ const Header = ({ hideHeader }) => {
     <header id='header' className={`sticky top-0 z-10 ${hideHeader ? 'hidden' : ''}`}>
       <div className="bg-northBlue fixed w-full flex items-center justify-between  p-2">
         
-        <div >
+        {/* <div >
           <Hamburger />
+        </div> */}
+
+        <div>
+          <JsHamburger />
         </div>
         
         <div className='w-full md:hidden'></div>
