@@ -10,13 +10,13 @@ const Header = ({ hideHeader }) => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'center'});
     }
   };
 
   return (
     <header id='header' className={`sticky top-0 z-10 ${hideHeader ? 'hidden' : ''}`}>
-      <div className="bg-northBlue fixed w-full flex items-center justify-between  p-2">
+      <div className="bg-northBlue fixed w-full h-[10vh] flex items-center justify-between  p-2">
 
         <div>
           <JsHamburger />
@@ -27,7 +27,7 @@ const Header = ({ hideHeader }) => {
           src={uglyLogo}
           alt="ugly logo"
           onClick={() => scrollToSection("header")}
-          className=" bg-northBeige rounded-full h-14 w-16 mr-2 md:mr-0 md:h-20 md:w-24 lg:h-28 lg:w-36 header-logo cursor-pointer py-[9px]"
+          className=" bg-northBeige rounded-full h-[50px] w-[80px] mr-2 md:mr-0 md:h-20 md:w-24  header-logo cursor-pointer py-[9px]"
         />
         
         
