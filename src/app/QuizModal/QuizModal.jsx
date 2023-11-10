@@ -20,8 +20,6 @@ export default function QuizModal({ handleShowQuiz }) {
     const [selectedAnswersStep2, setSelectedAnswersStep2] = useState([]);
     const [selectedAnswersStep3, setSelectedAnswersStep3] = useState([]);
 
-
-
     const answer1a = "Light wear patterns";
     const answer1b = "Lots of noticeable scratches";
     const answer1c = "Unsure";
@@ -38,8 +36,31 @@ export default function QuizModal({ handleShowQuiz }) {
     const answer3c = "I am interested in a specific color for my floors";
     const answer3d = "I don't want to change the color of my floors";
 
+    const handleCheckboxChange = (event) => {
+        const selectedOption = event.target.value;
+    
+        setSelectedAnswers((prevSelected) => {
+            const updatedSelected = prevSelected.includes(selectedOption)
+                ? prevSelected.filter((option) => option !== selectedOption)
+                : [...prevSelected, selectedOption];
+    
+            if (step === 1) {
+                setSelectedAnswersStep1(updatedSelected);
+            } else if (step === 2) {
+                setSelectedAnswersStep2(updatedSelected);
+            } else if (step === 3) {
+                setSelectedAnswersStep3([selectedOption]);
+            }
+    
+            return updatedSelected;
+        });
+    };
+
     const handleNextStep = () => {
         if (step < 5) {
+            // console.log(`Step: ${step}`);
+            // console.log(`Selected Answers Step 2: ${selectedAnswersStep2}`);
+            // console.log(`Selected Answers Step 3: ${selectedAnswersStep3}`);
             if (step === 1 && selectedAnswersStep1.length === 0) {
                 alert('Please select at least one option in Step 1.');
                 return;
@@ -60,48 +81,13 @@ export default function QuizModal({ handleShowQuiz }) {
         }
     };
 
-    const handleCheckboxChange = (event) => {
-        const selectedOption = event.target.value; // Get the value of the selected option
-
-        if (selectedAnswers.includes(selectedOption)) {
-            setSelectedAnswers(selectedAnswers.filter((option) => option !== selectedOption));
-        } else {
-            setSelectedAnswers([...selectedAnswers, selectedOption]);
-        }
-
-        if (step === 1) {
-            if (selectedAnswersStep1.includes(selectedOption)) {
-                setSelectedAnswersStep1(selectedAnswersStep1.filter((option) => option !== selectedOption));
-            } else {
-                setSelectedAnswersStep1([...selectedAnswersStep1, selectedOption]);
-            }
-        } else if (step === 2) {
-            if (selectedAnswersStep2.includes(selectedOption)) {
-                setSelectedAnswersStep2(selectedAnswersStep2.filter((option) => option !== selectedOption));
-            } else {
-                setSelectedAnswersStep2([...selectedAnswersStep2, selectedOption]);
-            }
-        } else if (step === 3) {
-            if (selectedAnswersStep3.includes(selectedOption)) {
-                setSelectedAnswersStep3(selectedAnswersStep3.filter((option) => option !== selectedOption));
-            } else {
-                // Make sure you only allow selecting one checkbox for step 3
-                setSelectedAnswersStep3([selectedOption]);
-            }
-        }
-
-    };
-
     const handleSuggestService = () => {
         const buffTrue = [answer1a, answer1c, answer1d, answer2c, answer2f, answer3a, answer3b, answer3d];
         const buffFalse = [answer1b, answer1c, answer1e, answer2a, answer2b, answer2d, answer2e, answer3c];
         const sandTrue = [answer1a, answer1b, answer1c, answer1d, answer1e, answer2a, answer2b, answer2c, answer2d, answer2e, answer2f, answer3a, answer3b, answer3c, answer3d];
-        // const sandFalse = [answer1a, answer1c, answer1d];
         const repairTrue = [answer2a, answer2b, answer2d, answer2e];
-        // const repairFalse = [answer2c, answer2f];
         const stainTrue = [answer3c];
         const unsureTrue = [answer1c, answer2c, answer3b]
-
 
         const isBuffTrueSelected = buffTrue.some((option) =>
             selectedAnswers.includes(option)
@@ -109,23 +95,18 @@ export default function QuizModal({ handleShowQuiz }) {
         const isBuffFalseSelected = buffFalse.some((option) =>
             selectedAnswers.includes(option)
         );
-
         const isSandTrueSelected = sandTrue.some((option) =>
             selectedAnswers.includes(option)
         );
-
         const isRepairTrueSelected = repairTrue.some((option) =>
             selectedAnswers.includes(option)
         );
-
         const isStainTrueSelected = stainTrue.some((option) =>
             selectedAnswers.includes(option)
         );
-
         const isUnsureTrueSelected = unsureTrue.some((option) =>
             selectedAnswers.includes(option)
         );
-
         if (isSandTrueSelected && isRepairTrueSelected && isStainTrueSelected) {
             setSuggestedService("Repair, sand, stain, & finish")
             setSuggestedServiceText("Repair, sand, stain, & finish")
@@ -154,9 +135,7 @@ export default function QuizModal({ handleShowQuiz }) {
             setSuggestedService("Contact Bart to find out what your floor needs!")
             setSuggestedServiceText("Contact Bart.")
         }
-
         handleNextStep()
-
     }
 
     return (
@@ -192,59 +171,64 @@ export default function QuizModal({ handleShowQuiz }) {
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id="checkbox1a"
                                         className="quiz-checkbox"
-                                        value={answer1a} // Set the value to the corresponding answer
-                                        checked={selectedAnswers.includes(answer1a)} // Check if the answer is already selected
+                                        value={answer1a} 
+                                        checked={selectedAnswers.includes(answer1a)} 
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox1a" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer1a}
-                                    </span>
+                                    </label>
                                 </div>
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id="checkbox1b"
                                         className="quiz-checkbox"
                                         value={answer1b}
                                         checked={selectedAnswers.includes(answer1b)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox1b" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer1b}
-                                    </span>
+                                    </label>
                                 </div>
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id="checkbox1c"
                                         className="quiz-checkbox"
                                         value={answer1c}
                                         checked={selectedAnswers.includes(answer1c)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox1c" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer1c}
-                                    </span>
+                                    </label>
                                 </div>
                             </div>
                             <div className="flex flex-col sm:ml-16">
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id="checkbox1d"
                                         className="quiz-checkbox"
                                         value={answer1d}
                                         checked={selectedAnswers.includes(answer1d)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox1d" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer1d}
-                                    </span>
+                                    </label>
                                 </div>
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id="checkbox1e"
                                         className="quiz-checkbox"
                                         value={answer1e}
                                         checked={selectedAnswers.includes(answer1e)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox1e" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer1e}
-                                    </span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -268,70 +252,76 @@ export default function QuizModal({ handleShowQuiz }) {
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id='checkbox2a'
                                         className="quiz-checkbox"
                                         value={answer2a}
                                         checked={selectedAnswers.includes(answer2a)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black  w-28">
+                                    <label htmlFor="checkbox2a" className="text-xs sm:text-northBlue text-black w-28">  
                                         {answer2a}
-                                    </span>
+                                    </label>
                                 </div>
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id='checkbox2b'
                                         className="quiz-checkbox"
                                         value={answer2b}
                                         checked={selectedAnswers.includes(answer2b)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black  w-28">
+                                    <label htmlFor="checkbox2b" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer2b}
-                                    </span>
+                                    </label>
                                 </div>
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id='checkbox2c'
                                         className="quiz-checkbox"
                                         value={answer2c}
                                         checked={selectedAnswers.includes(answer2c)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox2c" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer2c}
-                                    </span>
+                                    </label>
                                 </div>
                             </div>
                             <div className="flex flex-col sm:ml-16">
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id='checkbox2d'
                                         className="quiz-checkbox"
                                         value={answer2d}
                                         checked={selectedAnswers.includes(answer2d)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox2d" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer2d}
-                                    </span>
+                                    </label>
                                 </div>
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id='checkbox2e'
                                         className="quiz-checkbox"
                                         value={answer2e}
                                         checked={selectedAnswers.includes(answer2e)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox2e" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer2e}
-                                    </span>
+                                    </label>
                                 </div>
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id='checkbox2f'
                                         className="quiz-checkbox"
                                         value={answer2f}
                                         checked={selectedAnswers.includes(answer2f)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox2f" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer2f}
-                                    </span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -364,48 +354,52 @@ export default function QuizModal({ handleShowQuiz }) {
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id='checkbox3a'
                                         className="quiz-checkbox"
                                         value={answer3a}
                                         checked={selectedAnswers.includes(answer3a)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox3a" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer3a}
-                                    </span>
+                                    </label>
                                 </div>
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id='checkbox3b'
                                         className="quiz-checkbox"
                                         value={answer3b}
                                         checked={selectedAnswers.includes(answer3b)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox3b" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer3b}
-                                    </span>
+                                    </label>
                                 </div>
                             </div>
                             <div className="flex flex-col sm:ml-16">
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id='checkbox3c'
                                         className="quiz-checkbox"
                                         value={answer3c}
                                         checked={selectedAnswers.includes(answer3c)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox3c" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer3c}
-                                    </span>
+                                    </label>
                                 </div>
                                 <div className="flex flex-row m-4">
                                     <input
                                         type="checkbox"
+                                        id='checkbox3d'
                                         className="quiz-checkbox"
                                         value={answer3d}
                                         checked={selectedAnswers.includes(answer3d)}
                                         onChange={handleCheckboxChange} />
-                                    <span className="text-xs sm:text-northBlue text-black w-28">
+                                    <label htmlFor="checkbox3d" className="text-xs sm:text-northBlue text-black w-28">
                                         {answer3d}
-                                    </span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -611,7 +605,6 @@ export default function QuizModal({ handleShowQuiz }) {
                     />
                 </div>
             </div>
-
         </div>
     )
 }

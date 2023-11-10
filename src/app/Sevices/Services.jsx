@@ -32,7 +32,7 @@ export default function Services () {
         <div id="services">
             {!display && (
             <div  className="services-container bg-northBlue flex justify-center items-center">
-                <div className="large-services-container text-white p-[10vh]">
+                <div className="large-services-container text-white p-16">
                     <h1 className="text-center mb-8">Services</h1>
                     <div className="large-grid-container">
                         <div className="sanding-container ml-6">

@@ -3,7 +3,7 @@
     position: fixed;
     background-color: var(--color-northBlue);
     color: var(--color-northBeige);
-    width: 50vw;
+    width: 75vw;
     height: 100vh;
     left: -100%; /* initial position */
     transition: left 0.5s ease;
@@ -16,5 +16,5 @@
   
   .hideNav {
     left: -100%;
-    transition: left 1.5s ease;
+    transition: left 1s ease;
   }
