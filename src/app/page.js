@@ -1,14 +1,16 @@
 'use client';
 import React, { useState } from 'react'
+import Head from 'next/head';
 import Footer from './Footer/Footer'
 import Intro from '@/app/Intro/Intro'
-import Services from './Sevices/Services'
+import Services from './Services/Services'
 import Gallery from './Gallery/Gallery'
 import Quiz from './Quiz/Quiz'
 import About from './About/About'
 import Process from './Process/Process'
 import Header from './Header/Header'
 import Contact from './Contact/Contact';
+
 
 
 export default function Home() {
