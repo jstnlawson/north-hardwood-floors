@@ -12,8 +12,8 @@ import Paragraph from "../Paragraph/Paragraph";
 export default function Intro() {
     return (
         <>
-        <div className="bg-northLightBlue h-[10vh]"></div>
-        <div className="md:p-0 p-16 md:bg-gradient-to-r from-[#eae2d9] to-white md:bg-[#eae2d9] bg-northLightBlue flex justify-center items-center flex-col md:flex-row h-auto">
+        <div className="bg-northBeige h-[10vh]"></div>
+        <div className="md:bg-gradient-to-r from-[#eae2d9] to-white md:bg-[#eae2d9] bg-northLightBlue flex justify-center items-center flex-col md:flex-row h-auto">
             
             <div className="flex relative intro-container  max-w-[1440px]">
                 <section className="flex-grow flex justify-center items-center">
@@ -28,7 +28,7 @@ export default function Intro() {
                             </div>
                         </div>
                     </div>
-                    <div className="intro-image-container w-[90vw] md:w-[100vw] ">
+                    <div className="intro-image-container w-[100vw] md:w-[100vw] ">
                         <Image
                             src={tallerMainFloor}
                             alt="Main Image"
