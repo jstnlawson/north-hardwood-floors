@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import uglyLogo from 'public/images/uglyLogo.svg';
+import northLogo from 'public/images/North_hardwood_floors.png'
 import "./Header.css";
 import JsHamburger from '../JsHamburger/JsHamburber';
 
@@ -10,7 +11,10 @@ const Header = ({ hideHeader }) => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start',
+       });
     }
   };
 
@@ -24,10 +28,10 @@ const Header = ({ hideHeader }) => {
         
         <div className='w-full md:hidden'></div>
         <Image
-          src={uglyLogo}
+          src={northLogo}
           alt="ugly logo"
           onClick={() => scrollToSection("header")}
-          className=" bg-northBeige rounded-full h-[50px] w-[80px] mr-2 md:mr-0 md:h-20 md:w-24  header-logo cursor-pointer py-[9px]"
+          className="h-[10vh] w-auto header-logo cursor-pointer py-[9px]"
         />
         
         

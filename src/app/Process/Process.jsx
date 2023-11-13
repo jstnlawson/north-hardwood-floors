@@ -17,7 +17,7 @@ export default function About({ hideHeader, setHideHeader }) {
 
     return (
         <>
-        <div id="process" className="flex flex-col bg-northLightBlue p-16 relative justify-center items-center overflow-hidden md:flex-row">
+        <div id="process" className="flex flex-col bg-northLightBlue p-8 md:p-16 relative justify-center items-center overflow-hidden md:flex-row">
 
             <div className="process-container ">
                 <Image

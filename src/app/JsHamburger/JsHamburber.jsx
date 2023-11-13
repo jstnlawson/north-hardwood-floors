@@ -10,7 +10,9 @@ export default function JsHamburger() {
         if (element) {
             element.scrollIntoView({ behavior: "smooth" });
         }
-        setIsOpen(!isOpen);
+        setTimeout(() => {
+            setIsOpen(!isOpen);
+        }, 600);
     };
 
     

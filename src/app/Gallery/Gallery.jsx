@@ -17,7 +17,7 @@ export default function Gallery({ hideHeader, setHideHeader }) {
     }
 
     return (
-        <div id="gallery" className="gallery-container flex bg-northBeige p-16 relative justify-center items-center overflow-hidden">
+        <div id="gallery" className="gallery-container flex bg-northBeige p-8 md:p-16 relative justify-center items-center overflow-hidden">
             <div className="gallery-text-container bg-white relative p-5 max-w-[500px]">
                 <h1 className="text-northBlue">Have a Look</h1>
                 <p className="text-northBlue paragraph-wrap mt-[14px]">

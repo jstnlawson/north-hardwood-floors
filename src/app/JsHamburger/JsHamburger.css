@@ -3,11 +3,12 @@
     position: fixed;
     background-color: var(--color-northBlue);
     color: var(--color-northBeige);
-    width: 75vw;
+    width: 100vw;
     height: 100vh;
     left: -100%; /* initial position */
     transition: left 0.5s ease;
     padding: 40px;
+    margin-top: 8px;
   }
   
   .showNav {
@@ -16,5 +17,5 @@
   
   .hideNav {
     left: -100%;
-    transition: left 1s ease;
+    transition: left 0.5s ease;
   }

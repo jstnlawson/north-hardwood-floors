@@ -18,7 +18,7 @@ export default function Quiz({ hideHeader, setHideHeader }) {
     }
 
     return (
-        <div id="quiz" className="quiz-container flex items-center justify-center p-16 bg-northBeige w-100">
+        <div id="quiz" className="quiz-container flex items-center justify-center p-8 md:p-16 bg-northBeige w-100">
             <div className="flex flex-col  items-center">
                 {/* <div className="guidance-container flex justify-center items-center">
                     <h2 className="text-northBlue text-center mb-10">TH<span className="the-guidance">E GUIDAN</span>CE</h2>

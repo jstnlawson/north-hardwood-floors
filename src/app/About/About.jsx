@@ -8,7 +8,7 @@ export default function About() {
 
 
     return (
-        <div id="about" className="flex flex-col bg-northLightBlue p-16 relative justify-center items-center overflow-hidden md:flex-row">
+        <div id="about" className="flex flex-col bg-northLightBlue p-8 md:p-16 relative justify-center items-center overflow-hidden md:flex-row">
 
             <div className="bart-container max-w-[900px]">
                 <Image
