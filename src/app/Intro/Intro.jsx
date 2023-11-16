@@ -21,9 +21,9 @@ export default function Intro() {
     return (
         <>
         <div className="bg-northBeige h-[10vh]"></div>
-        <div className="md:bg-gradient-to-r from-[#eae2d9] to-white md:bg-[#eae2d9] bg-northLightBlue flex justify-center items-center flex-col md:flex-row h-auto">
+        <div className="md:bg-gradient-to-r from-[#eae2d9] to-white md:bg-[#eae2d9] bg-northLightBlue flex justify-center items-center flex-col md:flex-row  h-auto">
             
-            <div className="flex relative intro-container  max-w-[1440px]">
+            <div className="flex relative intro-container  max-w-[1440px] ">
                 <section className="flex-grow flex justify-center items-center">
                     <div className="intro-text-container">
                         <div className="floating-container">
@@ -37,7 +37,7 @@ export default function Intro() {
                             </div>
                         </div>
                     </div>
-                    <div className="intro-image-container w-[100vw] md:w-[100vw] ">
+                    <div className="intro-image-container w-[100vw] md:w-[100vw]">
                         <Image
                             src={tallerMainFloor}
                             alt="Main Image"

@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'North Hardwood Floors',
   description: 'Floor Sanding and Installation in Minneapolis and Saint Paul',
+  icons: {
+    icon: '/icon.ico',
+  },
   keywords: [
     'Floor Sanding', 
     'Floor Installation', 
