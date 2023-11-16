@@ -14,7 +14,7 @@ const Header = ({ hideHeader }) => {
     return (vh * windowHeight) / 100;
   };
   
-  const offsetAdjustment = vhToPixels(10); // Adjust this value based on your requirements
+  const offsetAdjustment = vhToPixels(10); 
   
 
   // Function to handle scroll and update active section

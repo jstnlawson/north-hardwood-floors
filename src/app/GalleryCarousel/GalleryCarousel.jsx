@@ -79,7 +79,6 @@ const GalleryCarousel = ({ handleShowGallery }) => {
                 slidesPerView="1"
                 navigation="true"
                 pagination="true"
-                // className="max-h-[80vh] md:w-[600px] w-[90vw] rounded-lg"
                 style={{"--swiper-navigation-size": "30px"} }
             >
                

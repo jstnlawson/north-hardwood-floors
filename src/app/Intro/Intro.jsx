@@ -6,7 +6,15 @@ import tallerMainFloor from 'public/images/tallerMainFloor.png'
 import Paragraph from "../Paragraph/Paragraph";
 
 
-
+const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start',
+       });
+    }
+  };
 
 
 export default function Intro() {
@@ -25,6 +33,7 @@ export default function Intro() {
                                     and a level of care that goes beyond expectations. Living and working in Minneapolis and Saint Paul
                                     since 2003.
                                 </p>
+                                <button className="blue-button md:block hidden mt-[14px]" onClick={() => scrollToSection('contact')} >schedule an estimate</button>
                             </div>
                         </div>
                     </div>
