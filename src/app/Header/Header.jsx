@@ -19,6 +19,7 @@ const Header = ({ hideHeader }) => {
 
   // Function to handle scroll and update active section
   const handleScroll = () => {
+    if (typeof window !== 'undefined') { // Check that window is defined is necessary to prevent build errors
     const scrollPosition = window.scrollY;
 
     // Define the sections and their corresponding IDs
@@ -42,6 +43,7 @@ const Header = ({ hideHeader }) => {
     if (newActiveSection && newActiveSection[0] !== activeSection) {
       setActiveSection(newActiveSection[0]);
     }
+  }
   };
 
   // Add scroll event listener when the component mounts
