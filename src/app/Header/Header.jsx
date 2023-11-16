@@ -9,6 +9,9 @@ const Header = ({ hideHeader }) => {
 
   const [activeSection, setActiveSection] = useState(null);
 
+  // Add scroll event listener when the component mounts
+  useEffect(() => {
+
   const vhToPixels = (vh) => {
     const windowHeight = window.innerHeight;
     return (vh * windowHeight) / 100;
@@ -46,8 +49,7 @@ const Header = ({ hideHeader }) => {
   }
   };
 
-  // Add scroll event listener when the component mounts
-  useEffect(() => {
+  
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
