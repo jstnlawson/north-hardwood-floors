@@ -6,11 +6,9 @@
     align-items: center;
     justify-content: space-between;
     width: 100vw;
-    /* max-width: 1440px; */
     height: auto;
     margin-right: 20px;
     background-color: white;
-    /* background-color: var(--color-northBeige); */
     position: fixed;
     top: 0;
     z-index: 1000;
@@ -20,7 +18,7 @@
     position: relative;
     color: var(--color-northBeige);
   }
-  
+
   .header-links::after {
     content: '';
     position: absolute;
@@ -31,9 +29,15 @@
     background-color: var(--color-northOrange); 
     transform: scaleX(0);
     transition: transform 0.3s;
-  }
-  
-  .header-links:hover::after {
+}
+
+.header-links:not(.active-section):hover::after {
     transform: scaleX(1);
-  }
+}
+
+.header-links.active-section::after {
+    transform: scaleX(1);
+}
+
+
   

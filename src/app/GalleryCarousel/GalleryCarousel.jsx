@@ -80,7 +80,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
                 navigation="true"
                 pagination="true"
                 // className="max-h-[80vh] md:w-[600px] w-[90vw] rounded-lg"
-                style={{"--swiper-navigation-size": "30px" } }
+                style={{"--swiper-navigation-size": "30px"} }
             >
                
                     {images.map((image, index) => (
@@ -89,8 +89,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
                                 <Image
                                 src={image.src}
                                 alt={image.alt}
-                                className="max-h-[80vh] md:w-[600px] w-[90vw] rounded-lg mt-[5vh]"
-                                
+                                className="h-auto md:w-[500px] w-[70vw] rounded-lg my-[10vh] sm:my-[5vh]"
                                 />
                             </div>
                         </swiper-slide>

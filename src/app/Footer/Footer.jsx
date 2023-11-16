@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import uglyLogo from 'public/images/uglyLogo.svg'
-import northLogo from 'public/images/North_hardwood_floors.png'
+import northLogo from 'public/images/NHF_logo_SVG.svg'
 import facebookLogo from 'public/images/2023_Facebook_icon.svg.png'
 import './Footer.css';
 
@@ -14,7 +13,7 @@ export default function Footer() {
                 <Image
                     src={northLogo}
                     alt="north hardwood floors logo"
-                    className="h-[10vh] m:h-[12vh] w-auto  header-logo cursor-pointer py-2"
+                    className="h-[10vh] max-h-[90px] w-auto p-1 header-logo cursor-pointer my-2"
                 />
                 <div className="space-maker"></div>
 

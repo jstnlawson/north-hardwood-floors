@@ -1,12 +1,56 @@
 'use client';
-import React from 'react';
+import React, {useState} from 'react';
 import Image from 'next/image';
-import uglyLogo from 'public/images/uglyLogo.svg';
-import northLogo from 'public/images/North_hardwood_floors.png'
+import northLogo from 'public/images/NHF_logo_SVG.svg'
 import "./Header.css";
 import JsHamburger from '../JsHamburger/JsHamburber';
 
 const Header = ({ hideHeader }) => {
+
+  const [activeSection, setActiveSection] = useState(null);
+
+  const vhToPixels = (vh) => {
+    const windowHeight = window.innerHeight;
+    return (vh * windowHeight) / 100;
+  };
+  
+  const offsetAdjustment = vhToPixels(10); // Adjust this value based on your requirements
+  
+
+  // Function to handle scroll and update active section
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+
+    // Define the sections and their corresponding IDs
+    const sections = {
+      header: document.getElementById("header").offsetTop - offsetAdjustment,
+      services: document.getElementById("services").offsetTop - offsetAdjustment,
+      about: document.getElementById("about").offsetTop - offsetAdjustment,
+      gallery: document.getElementById("gallery").offsetTop - offsetAdjustment,
+      process: document.getElementById("process").offsetTop - offsetAdjustment,
+      quiz: document.getElementById("quiz").offsetTop - offsetAdjustment,
+      contact: document.getElementById("contact").offsetTop - offsetAdjustment,
+    };
+
+    //Find the active section based on scroll position
+    const newActiveSection = Object.entries(sections).find(
+      ([_, offset], index, array) =>
+        scrollPosition >= offset &&
+        (index === array.length - 1 || scrollPosition < array[index + 1][1])
+    );
+  
+    if (newActiveSection && newActiveSection[0] !== activeSection) {
+      setActiveSection(newActiveSection[0]);
+    }
+  };
+
+  // Add scroll event listener when the component mounts
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [activeSection]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -29,44 +73,44 @@ const Header = ({ hideHeader }) => {
         <div className='w-full md:hidden'></div>
         <Image
           src={northLogo}
-          alt="ugly logo"
+          alt="north hardwoods logo"
           onClick={() => scrollToSection("header")}
-          className="h-[10vh] w-auto header-logo cursor-pointer py-[9px]"
+          className="h-[10vh] max-h-[90px] p-2 w-auto header-logo cursor-pointer my-[9px]"
         />
         
         
           <span
-            className='header-links cursor-pointer md:flex hidden'
+            className={`header-links cursor-pointer md:flex hidden ${activeSection === "services" ? 'active active-section' : ''}`}
             onClick={() => scrollToSection("services")}>
             Services
           </span>
           <div></div>
           <span
-            className='header-links cursor-pointer md:flex hidden '
+            className={`header-links cursor-pointer md:flex hidden ${activeSection === "about" ? 'active active-section' : ''}`}
             onClick={() => scrollToSection("about")}>
             About
           </span>
           <div></div>
           <span 
-            className='header-links cursor-pointer  md:flex hidden' 
+            className={`header-links cursor-pointer md:flex hidden ${activeSection === "gallery" ? 'active active-section' : ''}`}
             onClick={() => scrollToSection("gallery")}>
               Gallery
           </span>
           <div></div>
           <span 
-            className='header-links cursor-pointer  md:flex hidden' 
+            className={`header-links cursor-pointer md:flex hidden ${activeSection === "process" ? 'active active-section' : ''}`} 
             onClick={() => scrollToSection("process")}>
               Process
           </span>
           <div></div>
           <span 
-            className='header-links cursor-pointer  md:flex hidden' 
+            className={`header-links cursor-pointer md:flex hidden ${activeSection === "quiz" ? 'active active-section' : ''}`} 
             onClick={() => scrollToSection("quiz")}>
               Guide
           </span>
           <div></div>
           <span 
-            className='header-links cursor-pointer  md:flex hidden' 
+            className={`header-links cursor-pointer md:flex hidden ${activeSection === "contact" ? 'active active-section' : ''}`}
             onClick={() => scrollToSection("contact")}>
               Contact
           </span>
@@ -74,52 +118,6 @@ const Header = ({ hideHeader }) => {
         
 
       </div>
-      {/* <div className="bg-northBlue fixed w-[100vw] flex items-center justify-between md:justify-normal p-2">
-        <div >
-          <Hamburger />
-        </div>
-
-        <Image
-          src={uglyLogo}
-          alt="ugly logo"
-          onClick={() => scrollToSection("header")}
-          className=" bg-northBeige rounded-full h-14 w-16  md:h-20 md:w-24 lg:h-28 lg:w-36 header-logo cursor-pointer py-2 mx-2 xl:mx-24 md:mx-14"
-        />
-        <div className="md:flex hidden ">
-          <span
-            className='header-links cursor-pointer '
-            onClick={() => scrollToSection("services")}>
-            Services
-          </span>
-          
-          <span
-            className='header-links cursor-pointer  '
-            onClick={() => scrollToSection("about")}>
-            About
-          </span>
-          <span 
-            className='header-links cursor-pointer  ' 
-            onClick={() => scrollToSection("gallery")}>
-              Gallery
-          </span>
-          <span 
-            className='header-links cursor-pointer  ' 
-            onClick={() => scrollToSection("process")}>
-              Process
-          </span>
-          <span 
-            className='header-links cursor-pointer  ' 
-            onClick={() => scrollToSection("quiz")}>
-              Guide
-          </span>
-          <span 
-            className='header-links cursor-pointer  ' 
-            onClick={() => scrollToSection("contact")}>
-              Contact
-          </span>
-        </div>
-
-      </div> */}
 
     </header>
   );
