@@ -1,5 +1,5 @@
 'use client';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Image from 'next/image';
 import northLogo from 'public/images/NHF_logo_SVG.svg'
 import "./Header.css";
@@ -45,7 +45,7 @@ const Header = ({ hideHeader }) => {
   };
 
   // Add scroll event listener when the component mounts
-  React.useEffect(() => {
+  useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);

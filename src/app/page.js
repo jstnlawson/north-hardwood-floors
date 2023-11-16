@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react'
 import Footer from './Footer/Footer'
-import Intro from '@/app/Intro/Intro'
+import Intro from './Intro/Intro'
 import Services from './Services/Services'
 import Gallery from './Gallery/Gallery'
 import Quiz from './Quiz/Quiz'
