@@ -35,6 +35,7 @@ export default function QuizModal({ handleShowQuiz }) {
   const answer3d = "I don't want to change the color of my floors";
 
   const handleCheckboxChange = (event) => {
+    if (event && event.target) {
     const selectedOption = event.target.value;
 
     setSelectedAnswers((prevSelected) => {
@@ -52,6 +53,7 @@ export default function QuizModal({ handleShowQuiz }) {
 
       return updatedSelected;
     });
+}
   };
 
   const handleNextStep = () => {
@@ -206,92 +208,138 @@ export default function QuizModal({ handleShowQuiz }) {
             <span className="text-xs sm:text-northBlue text-black text-center m-4 ">
               click all that apply
             </span>
-            <div className="flex flex-row ">
-              <div className="flex flex-col sm:mr-16 ">
-                <div className="flex flex-row m-4">
-                  <input
-                    type="checkbox"
-                    id="checkbox1a"
-                    className="quiz-checkbox"
-                    value={answer1a}
-                    checked={selectedAnswers.includes(answer1a)}
-                    onChange={handleCheckboxChange}
-                  />
-                  <label
-                    htmlFor="checkbox1a"
-                    className="text-xs sm:text-northBlue text-black w-28"
-                  >
-                    {answer1a}
-                  </label>
+
+            <fieldset>
+              <legend className="visually-hidden">
+                How would you describe your floor's finish (the surface)?
+              </legend>
+              <div className="flex flex-row ">
+                <div className="flex flex-col sm:mr-16 ">
+                  <div className="flex flex-row m-4">
+                    <input
+                      type="checkbox"
+                      id="checkbox1a"
+                      className="quiz-checkbox"
+                      value={answer1a}
+                      checked={selectedAnswers.includes(answer1a)}
+                      onChange={handleCheckboxChange}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          handleCheckboxChange(e);
+                        }
+                      }}
+                      tabIndex={0}
+                      aria-labelledby="label-1a"
+                    />
+                    <label
+                      id="label-1a"
+                      htmlFor="checkbox1a"
+                      className="text-xs sm:text-northBlue text-black w-28"
+                    >
+                      {answer1a}
+                    </label>
+                  </div>
+                  <div className="flex flex-row m-4">
+                    <input
+                      type="checkbox"
+                      id="checkbox1b"
+                      className="quiz-checkbox"
+                      value={answer1b}
+                      checked={selectedAnswers.includes(answer1b)}
+                      onChange={handleCheckboxChange}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          handleCheckboxChange(e);
+                        }
+                      }}
+                        tabIndex={0}
+                        aria-labelledby="label-1b"
+                    />
+                    <label
+                    id="label-1b"
+                      htmlFor="checkbox1b"
+                      className="text-xs sm:text-northBlue text-black w-28"
+                    >
+                      {answer1b}
+                    </label>
+                  </div>
+                  <div className="flex flex-row m-4">
+                    <input
+                      type="checkbox"
+                      id="checkbox1c"
+                      className="quiz-checkbox"
+                      value={answer1c}
+                      checked={selectedAnswers.includes(answer1c)}
+                      onChange={handleCheckboxChange}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                            handleCheckboxChange(e);
+                            }
+                        }}
+                            tabIndex={0}
+                            aria-labelledby="label-1c"
+                    />
+                    <label
+                    id="label-1c"
+                      htmlFor="checkbox1c"
+                      className="text-xs sm:text-northBlue text-black w-28"
+                    >
+                      {answer1c}
+                    </label>
+                  </div>
                 </div>
-                <div className="flex flex-row m-4">
-                  <input
-                    type="checkbox"
-                    id="checkbox1b"
-                    className="quiz-checkbox"
-                    value={answer1b}
-                    checked={selectedAnswers.includes(answer1b)}
-                    onChange={handleCheckboxChange}
-                  />
-                  <label
-                    htmlFor="checkbox1b"
-                    className="text-xs sm:text-northBlue text-black w-28"
-                  >
-                    {answer1b}
-                  </label>
-                </div>
-                <div className="flex flex-row m-4">
-                  <input
-                    type="checkbox"
-                    id="checkbox1c"
-                    className="quiz-checkbox"
-                    value={answer1c}
-                    checked={selectedAnswers.includes(answer1c)}
-                    onChange={handleCheckboxChange}
-                  />
-                  <label
-                    htmlFor="checkbox1c"
-                    className="text-xs sm:text-northBlue text-black w-28"
-                  >
-                    {answer1c}
-                  </label>
+                <div className="flex flex-col sm:ml-16">
+                  <div className="flex flex-row m-4">
+                    <input
+                      type="checkbox"
+                      id="checkbox1d"
+                      className="quiz-checkbox"
+                      value={answer1d}
+                      checked={selectedAnswers.includes(answer1d)}
+                      onChange={handleCheckboxChange}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                            handleCheckboxChange(e);
+                            }
+                        }}
+                            tabIndex={0}
+                            aria-labelledby="label-1d"
+                    />
+                    <label
+                    id="label-1d"
+                      htmlFor="checkbox1d"
+                      className="text-xs sm:text-northBlue text-black w-28"
+                    >
+                      {answer1d}
+                    </label>
+                  </div>
+                  <div className="flex flex-row m-4">
+                    <input
+                      type="checkbox"
+                      id="checkbox1e"
+                      className="quiz-checkbox"
+                      value={answer1e}
+                      checked={selectedAnswers.includes(answer1e)}
+                      onChange={handleCheckboxChange}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                            handleCheckboxChange(e);
+                            }
+                        }}
+                            tabIndex={0}
+                            aria-labelledby="label-1e"
+                    />
+                    <label
+                    id="label-1e"
+                      htmlFor="checkbox1e"
+                      className="text-xs sm:text-northBlue text-black w-28"
+                    >
+                      {answer1e}
+                    </label>
+                  </div>
                 </div>
               </div>
-              <div className="flex flex-col sm:ml-16">
-                <div className="flex flex-row m-4">
-                  <input
-                    type="checkbox"
-                    id="checkbox1d"
-                    className="quiz-checkbox"
-                    value={answer1d}
-                    checked={selectedAnswers.includes(answer1d)}
-                    onChange={handleCheckboxChange}
-                  />
-                  <label
-                    htmlFor="checkbox1d"
-                    className="text-xs sm:text-northBlue text-black w-28"
-                  >
-                    {answer1d}
-                  </label>
-                </div>
-                <div className="flex flex-row m-4">
-                  <input
-                    type="checkbox"
-                    id="checkbox1e"
-                    className="quiz-checkbox"
-                    value={answer1e}
-                    checked={selectedAnswers.includes(answer1e)}
-                    onChange={handleCheckboxChange}
-                  />
-                  <label
-                    htmlFor="checkbox1e"
-                    className="text-xs sm:text-northBlue text-black w-28"
-                  >
-                    {answer1e}
-                  </label>
-                </div>
-              </div>
-            </div>
+            </fieldset>
             <button className="quiz-button" onClick={handleNextStep}>
               next →
             </button>

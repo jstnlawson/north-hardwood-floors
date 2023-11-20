@@ -1,37 +1,45 @@
-
-
 .all-questions-container {
-    transition: transform 0.5s ease; /* Apply a smooth transition for the horizontal movement */ 
-    margin-top: auto;
-    margin-bottom: auto;
+  transition: transform 0.5s ease; /* Apply a smooth transition for the horizontal movement */
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .quiz-step {
-    flex: 1;
-    min-width: 100vw; 
-    transition: transform 0.5s ease; 
-  }
-  
-  .step-1 {
-    transform: translateX(0);
-  }
-  
-  .step-2 {
-    transform: translateX(-100%);
-  }
-  
-  .step-3 {
-    transform: translateX(-200%);
-  }
+  flex: 1;
+  min-width: 100vw;
+  transition: transform 0.5s ease;
+}
 
-  .step-4 {
-    transform: translateX(-300%);
-  }
+.quiz-checkbox:focus-visible,
+.quiz-checkbox:focus-visible + label {
+  outline: 2px solid blue;
+}
 
-  .step-5 {
-    transform: translateX(-400%);
-  }
+.quiz-checkbox:not(:focus-visible):active,
+.quiz-checkbox:not(:focus-visible):active + label {
+  outline: none;
+}
 
-  /* .question-container, .suggestions-container {
+.step-1 {
+  transform: translateX(0);
+}
+
+.step-2 {
+  transform: translateX(-100%);
+}
+
+.step-3 {
+  transform: translateX(-200%);
+}
+
+.step-4 {
+  transform: translateX(-300%);
+}
+
+.step-5 {
+  transform: translateX(-400%);
+}
+
+/* .question-container, .suggestions-container {
     height: 80vh;
   } */
