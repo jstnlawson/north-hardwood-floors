@@ -64,7 +64,13 @@ const GalleryCarousel = ({ handleShowGallery }) => {
                 <IoMdClose 
                     size={40}
                     onClick={handleShowGallery}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            handleShowGallery()
+                        }
+                    }}
                     className="close-modal-button"
+                    tabIndex={0} 
                 />
             </div> 
             <div  className="absolute top-8 cursor-pointer text-white sm:hidden">
@@ -72,6 +78,12 @@ const GalleryCarousel = ({ handleShowGallery }) => {
                     size={30}
                     onClick={handleShowGallery}
                     className="close-modal-button"
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            handleShowGallery()
+                        }
+                    }}
+                    tabIndex={0} 
                 />
             </div>            
                 <swiper-container
@@ -80,6 +92,7 @@ const GalleryCarousel = ({ handleShowGallery }) => {
                 navigation="true"
                 pagination="true"
                 style={{"--swiper-navigation-size": "30px"} }
+                tabIndex={1}
             >
                
                     {images.map((image, index) => (

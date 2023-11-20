@@ -35,13 +35,25 @@ export default function ProcessModal({ handleShowProcess }) {
                 <IoMdClose
                     size={40}
                     onClick={handleShowProcess}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            handleShowProcess()
+                        }
+                    }}
+                    tabIndex={0}
                 />
             </div>
 
             <div className="absolute top-2 ml-2 cursor-pointer sm:hidden text-northBlue  z-10">
                 <IoMdClose
                     size={30}
-                    onClick={handleShowProcess} 
+                    onClick={handleShowProcess}
+                    onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                            handleShowProcess()
+                        }
+                    }} 
+                    tabIndex={0}
                 />
             </div>
 
