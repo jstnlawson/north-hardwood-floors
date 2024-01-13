@@ -13,7 +13,7 @@ export default function Footer() {
                 <Image
                     src={northLogo}
                     alt="north hardwood floors logo"
-                    className="h-[10vh] max-h-[90px] w-auto p-1 header-logo cursor-pointer my-2"
+                    className="h-[20vh] max-h-[90px] w-auto p-1 header-logo cursor-pointer my-2"
                 />
                 <div className="space-maker"></div>
 
