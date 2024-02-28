@@ -21,7 +21,7 @@ export default function Footer() {
                 <div className="footer-contact flex flex-col">
                     <h2 className="text-xs leading-6">CONTACT</h2>
 
-                    <span className="small-texts text-xs">north@northhardfloors</span>
+                    <span className="small-texts text-xs">north@northhardwoodfloors</span>
                     <span className="small-texts text-xs leading-6">(612) 685-5200</span>
 
 
